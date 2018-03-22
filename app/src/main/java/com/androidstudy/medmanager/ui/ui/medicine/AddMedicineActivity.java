@@ -75,13 +75,9 @@ public class AddMedicineActivity extends AppCompatActivity {
 
     private void saveMedicalData() {
         addMedicineViewModel.addMedicine(new Medicine(
-                Long.parseLong("123"),
-                Long.parseLong("123"),
                 name,
                 description,
-                interval,
-                "",
-                ""
+                interval
         ));
 
         Intent main = new Intent(getApplicationContext(), MainActivity.class);
