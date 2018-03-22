@@ -20,7 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.auth.AuthActivity"></activity>
+        <activity android:name=".ui.auth.AuthActivity" />
+        <activity android:name=".ui.ui.medicine.AddMedicineActivity" />
+        <activity android:name=".ui.ui.medicine.ConfirmMedicineActivity" />
+        <activity android:name=".ui.ui.medicine.MedicineSuccessActivity"></activity>
     </application>
 
 </manifest>
