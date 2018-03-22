@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -37,6 +37,10 @@
     <style name="dailyMedicineStatisticsFooter">
         <item name="android:textSize">12sp</item>
         <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="generalScreenHints">
+        <item name="android:textColor">@color/black</item>
     </style>
 
 </resources>

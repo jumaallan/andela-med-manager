@@ -3,4 +3,8 @@
     <dimen name="margin_small">8dp</dimen>
     <dimen name="card_view_padding">8dp</dimen>
     <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_average">12dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
 </resources>

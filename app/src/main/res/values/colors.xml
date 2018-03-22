@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#29216A</color>
+    <color name="colorPrimary">#1D174F</color>
     <color name="colorAccent">#FF4081</color>
 
     <color name="black">#000000</color>
@@ -10,4 +10,6 @@
     <color name="gws_color_material_grey_500">#9E9E9E</color>
     <color name="scout_blue_dashboard">#349EE0</color>
     <color name="grey_400">#9E9E9E</color>
+    <color name="grey_500">#DBD8D9</color>
+    <color name="bg_login_button">#1D174F</color>
 </resources>
