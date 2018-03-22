@@ -11,7 +11,7 @@
         android:name=".MedManager"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.androidstudy.medmanager.ui.MainActivity"
+            android:name="com.androidstudy.medmanager.ui.ui.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
