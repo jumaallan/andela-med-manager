@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -16,6 +17,7 @@ import com.androidstudy.medmanager.data.model.Medicine;
 import com.androidstudy.medmanager.ui.adapter.DailyMedicineStatisticsAdapter;
 import com.androidstudy.medmanager.ui.ui.medicine.AddMedicineActivity;
 import com.androidstudy.medmanager.ui.viewmodel.MedicineViewModel;
+import com.androidstudy.medmanager.util.CirclePagerIndicatorDecoration;
 
 import java.util.ArrayList;
 
@@ -39,7 +41,15 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, new ArrayList<Medicine>());
-        recyclerViewDailyMedicineStatistics.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewDailyMedicineStatistics.setLayoutManager(new LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL, false));
+
+        // add pager behavior
+        PagerSnapHelper snapHelper = new PagerSnapHelper();
+        snapHelper.attachToRecyclerView(recyclerViewDailyMedicineStatistics);
+        // pager indicator
+        recyclerViewDailyMedicineStatistics.addItemDecoration(new CirclePagerIndicatorDecoration());
 
         recyclerViewDailyMedicineStatistics.setAdapter(dailyMedicineStatisticsAdapter);
 
