@@ -33,11 +33,11 @@ public class DailyMedicineStatisticsAdapter extends RecyclerView.Adapter<DailyMe
 
     @Override
     public void onBindViewHolder(MedicineHolder holder, int position) {
-        Medicine menuItem = medicineList.get(position);
-//
-//        holder.textViewTarget.setText(String.valueOf(menuItem.getTarget()));
-//        holder.textViewActual.setText(String.valueOf(menuItem.getActual()));
-//        holder.textViewRealization.setText(String.valueOf(menuItem.getRealization()) + "%");
+        Medicine medicine = medicineList.get(position);
+
+        holder.textViewTarget.setText(String.valueOf(medicine.getName()));
+        holder.textViewActual.setText(String.valueOf(medicine.getDescription()));
+        holder.textViewRealization.setText(String.valueOf(medicine.getInterval()));
     }
 
     @Override
@@ -48,6 +48,11 @@ public class DailyMedicineStatisticsAdapter extends RecyclerView.Adapter<DailyMe
     @Override
     public void onClick(View v) {
 
+    }
+
+    public void addItems(List<Medicine> medicineList) {
+        this.medicineList = medicineList;
+        notifyDataSetChanged();
     }
 
     class MedicineHolder extends RecyclerView.ViewHolder {

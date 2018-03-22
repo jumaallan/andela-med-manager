@@ -56,6 +56,7 @@
                 android:background="@color/gws_color_material_grey_500" />
 
             <EditText
+                android:id="@+id/editTextMedicineName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5.5"
@@ -96,10 +97,12 @@
                 android:background="@color/gws_color_material_grey_500" />
 
             <EditText
+                android:id="@+id/editTextMedicineDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5.5"
                 android:background="@android:color/transparent"
+                android:inputType="textCapSentences"
                 android:padding="@dimen/padding_average"
                 android:textColorHint="@color/grey_500" />
 
@@ -135,10 +138,12 @@
                 android:background="@color/gws_color_material_grey_500" />
 
             <EditText
+                android:id="@+id/editTextMedicineInterval"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5.5"
                 android:background="@android:color/transparent"
+                android:inputType="number"
                 android:padding="@dimen/padding_average"
                 android:textColorHint="@color/grey_500" />
 
@@ -172,12 +177,11 @@
                 android:background="@color/gws_color_material_grey_500" />
 
             <EditText
-                android:id="@+id/edtQuantity"
+                android:id="@+id/editTextMedicineStartDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5.5"
                 android:background="@android:color/transparent"
-                android:inputType="number"
                 android:padding="12dp" />
 
         </LinearLayout>
@@ -210,18 +214,17 @@
                 android:background="@color/gws_color_material_grey_500" />
 
             <EditText
-                android:id="@+id/edtPrice"
+                android:id="@+id/editTextMedicineEndDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5.5"
                 android:background="@android:color/transparent"
-                android:inputType="number"
                 android:padding="12dp" />
 
         </LinearLayout>
 
         <Button
-            android:id="@+id/buttonNext"
+            android:id="@+id/buttonContinue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
