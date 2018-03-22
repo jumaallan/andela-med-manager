@@ -1,4 +1,4 @@
-package com.androidstudy.med_manager;
+package com.androidstudy.medmanager;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

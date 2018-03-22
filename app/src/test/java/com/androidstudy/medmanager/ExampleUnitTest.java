@@ -1,4 +1,4 @@
-package com.androidstudy.med_manager;
+package com.androidstudy.medmanager;
 
 import org.junit.Test;
 
