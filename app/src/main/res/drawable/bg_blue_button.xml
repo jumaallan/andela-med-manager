@@ -8,6 +8,6 @@
         android:width="1dp"
         android:color="@color/bg_login_button" />
 
-    <corners android:radius="4dp"/>
+    <corners android:radius="6dp"/>
 
 </shape>
