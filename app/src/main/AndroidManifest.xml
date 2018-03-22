@@ -3,15 +3,15 @@
     package="com.androidstudy.medmanager">
 
     <application
+        android:name=".MedManager"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".MedManager"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.androidstudy.medmanager.ui.ui.MainActivity"
+            android:name=".ui.ui.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,6 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.auth.AuthActivity"></activity>
     </application>
 
 </manifest>
