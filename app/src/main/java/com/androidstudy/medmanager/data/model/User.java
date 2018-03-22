@@ -5,9 +5,16 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class User {
-    @PrimaryKey(autoGenerate = true) private long userId;
+    @PrimaryKey(autoGenerate = true)
+    private long userId;
     private String name;
     private String imageUrl;
+
+    public User(long userId, String name, String imageUrl) {
+        this.userId = userId;
+        this.name = name;
+        this.imageUrl = imageUrl;
+    }
 
     public long getUserId() {
         return userId;
