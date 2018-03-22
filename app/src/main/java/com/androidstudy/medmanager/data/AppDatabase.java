@@ -1,16 +1,10 @@
 package com.androidstudy.medmanager.data;
 
-import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
 
-import com.androidstudy.medmanager.data.model.Medicine;
-import com.androidstudy.medmanager.data.model.User;
-
-
-@Database(entities = {User.class, Medicine.class}, version = 1)
 @TypeConverters(DateConverter.class)
 public abstract class AppDatabase extends RoomDatabase {
 

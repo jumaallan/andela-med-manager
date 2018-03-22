@@ -54,8 +54,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="?selectableItemBackground"
-                    android:padding="@dimen/padding_average"
-                    app:srcCompat="@drawable/ic_famer_avatar" />
+                    android:padding="@dimen/padding_average" />
+                <!--app:srcCompat="@drawable/ic_famer_avatar" />-->
 
                 <View
                     android:layout_width="1dp"
@@ -94,8 +94,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="?selectableItemBackground"
-                    android:padding="@dimen/padding_average"
-                    app:srcCompat="@drawable/ic_login_phone_number" />
+                    android:padding="@dimen/padding_average" />
 
                 <View
                     android:layout_width="1dp"
@@ -133,8 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="?selectableItemBackground"
-                    android:padding="@dimen/padding_average"
-                    app:srcCompat="@drawable/ic_login_phone_number" />
+                    android:padding="@dimen/padding_average" />
 
                 <View
                     android:layout_width="1dp"
