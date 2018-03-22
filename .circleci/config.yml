@@ -13,16 +13,23 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum
-"app/build.gradle" }}
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run:
+          name: Create Directory
+          command: mkdir "${ANDROID_HOME}/licenses" || true
+      - run:
+          name: SDK License
+          command: echo "8933bad161af4178b1185d1a37fbf41ea5269c55" > "${ANDROID_HOME}/licenses/android-sdk-license"
+      - run:
+          name: SDK License
+          command: echo "d56f5187479451eabf01fb78af6dfcb131a6481e" >> "${ANDROID_HOME}/licenses/android-sdk-license"
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum
-"app/build.gradle" }}
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Run Tests
           command: ./gradlew lint test
@@ -30,4 +37,4 @@ jobs:
           path: app/build/reports
           destination: reports
       - store_test_results:
-          path: app/build/test-results
+          path: app/build/test-results          path: app/build/test-results
