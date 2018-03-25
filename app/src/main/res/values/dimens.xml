@@ -7,4 +7,5 @@
     <dimen name="padding_average">12dp</dimen>
     <dimen name="margin_normal">16dp</dimen>
     <dimen name="padding_small">8dp</dimen>
+    <dimen name="item_offset">4dp</dimen>
 </resources>

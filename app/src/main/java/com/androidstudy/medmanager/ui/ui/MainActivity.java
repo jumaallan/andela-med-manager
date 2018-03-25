@@ -3,8 +3,8 @@ package com.androidstudy.medmanager.ui.ui;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
@@ -12,17 +12,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.androidstudy.medmanager.R;
-import com.androidstudy.medmanager.data.model.Medicine;
+import com.androidstudy.medmanager.data.model.MenuView;
 import com.androidstudy.medmanager.ui.adapter.DailyMedicineStatisticsAdapter;
+import com.androidstudy.medmanager.ui.adapter.MainDashboardAdapter;
 import com.androidstudy.medmanager.ui.ui.medicine.AddMedicineActivity;
 import com.androidstudy.medmanager.ui.viewmodel.MedicineViewModel;
 import com.androidstudy.medmanager.util.CirclePagerIndicatorDecoration;
+import com.androidstudy.medmanager.util.ItemOffsetDecoration;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,10 +37,14 @@ public class MainActivity extends AppCompatActivity {
     TextView date;
     @BindView(R.id.recyclerViewDailyMedicineStatistics)
     RecyclerView recyclerViewDailyMedicineStatistics;
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
+
     Calendar calendar;
     SimpleDateFormat simpleDateFormat;
-    private MedicineViewModel medicineViewModel;
+    List<MenuView> menuViewList;
     private DailyMedicineStatisticsAdapter dailyMedicineStatisticsAdapter;
+    private MainDashboardAdapter mainDashboardAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,27 +59,45 @@ public class MainActivity extends AppCompatActivity {
         String currentDate = simpleDateFormat.format(calendar.getTime());
         date.setText(currentDate);
 
-        dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, new ArrayList<Medicine>());
+        menuViewList = getMenuOptions();
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.item_offset);
+        recyclerView.addItemDecoration(itemDecoration);
 
+        mainDashboardAdapter = new MainDashboardAdapter(this, menuViewList, (v, position) -> {
+            MenuView role = menuViewList.get(position);
+            String menuName = role.getName();
+            switch (menuName) {
+                case "Add Medicine":
+                    Intent addMedicine = new Intent(getApplicationContext(), AddMedicineActivity.class);
+                    startActivity(addMedicine);
+                    break;
+                case "Profile":
+                    break;
+                case "Reminders":
+                    break;
+                case "Monthly Intake":
+                    break;
+                default:
+                    Toast.makeText(MainActivity.this, "Sorry, It's Under development", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+
+        });
+        recyclerView.setAdapter(mainDashboardAdapter);
+
+        dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, new ArrayList<>());
         recyclerViewDailyMedicineStatistics.setLayoutManager(new LinearLayoutManager(this,
                 LinearLayoutManager.HORIZONTAL, false));
-
         // add pager behavior
         PagerSnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(recyclerViewDailyMedicineStatistics);
         // pager indicator
         recyclerViewDailyMedicineStatistics.addItemDecoration(new CirclePagerIndicatorDecoration());
-
         recyclerViewDailyMedicineStatistics.setAdapter(dailyMedicineStatisticsAdapter);
 
-        medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
+        MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
         medicineViewModel.getMedicineList().observe(MainActivity.this, medicineList -> dailyMedicineStatisticsAdapter.addItems(medicineList));
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> {
-            Intent medicine = new Intent(getApplicationContext(), AddMedicineActivity.class);
-            startActivity(medicine);
-        });
     }
 
     @Override
@@ -96,7 +122,17 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //Mock Data
+    private List<MenuView> getMenuOptions() {
+        List<MenuView> listViewItems = new ArrayList<MenuView>();
+        listViewItems.add(new MenuView(1, "Add Medicine", R.drawable.ic_dashboard_farmer));
+        listViewItems.add(new MenuView(2, "Profile", R.drawable.ic_dashboard_farm));
+        listViewItems.add(new MenuView(3, "Reminders", R.drawable.ic_dashboard_booking));
+        listViewItems.add(new MenuView(4, "Monthly Intake", R.drawable.ic_dashboard_calendar));
+        return listViewItems;
+    }
+
     //TODO :: Remove this later :)
     //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                       .setAction("Action", null).show();
+    //                       .setAction("Action", null).show();
 }
