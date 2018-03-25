@@ -1,16 +1,16 @@
 package com.androidstudy.medmanager.ui.ui.medicine;
 
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.androidstudy.medmanager.R;
 import com.androidstudy.medmanager.ui.ui.MainActivity;
-import com.androidstudy.medmanager.ui.viewmodel.AddMedicineViewModel;
 
 import java.util.Calendar;
 
@@ -31,6 +31,8 @@ public class AddMedicineActivity extends AppCompatActivity {
     EditText editTextMedicineEndDate;
     @BindView(R.id.buttonContinue)
     Button buttonContinue;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     String name, description, interval;
     private Calendar calendar;
@@ -40,6 +42,14 @@ public class AddMedicineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_medicine);
         ButterKnife.bind(this);
+
+
+        Drawable upArrow = getResources().getDrawable(R.drawable.ic_chevron_left_white_24dp);
+        toolbar.setNavigationIcon(upArrow);
+        setSupportActionBar(toolbar);
+        setTitle(getResources().getString(R.string.activity_add_medicine));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         calendar = Calendar.getInstance();
 

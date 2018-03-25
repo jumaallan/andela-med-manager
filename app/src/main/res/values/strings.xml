@@ -14,4 +14,5 @@
     <string name="add_medicine">Add Medicine</string>
     <string name="edit">Edit</string>
     <string name="save">Save</string>
+    <string name="activity_add_medicine">Add Medicine</string>
 </resources>
