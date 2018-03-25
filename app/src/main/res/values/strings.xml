@@ -9,4 +9,5 @@
     <string name="start_date">Start Date</string>
     <string name="end_date">End Date</string>
     <string name="action_profile">Profile</string>
+    <string name="select_activity">Select Activity</string>
 </resources>

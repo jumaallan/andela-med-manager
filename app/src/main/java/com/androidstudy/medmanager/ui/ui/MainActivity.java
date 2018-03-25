@@ -3,6 +3,7 @@ package com.androidstudy.medmanager.ui.ui;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -124,15 +125,11 @@ public class MainActivity extends AppCompatActivity {
 
     //Mock Data
     private List<MenuView> getMenuOptions() {
-        List<MenuView> listViewItems = new ArrayList<MenuView>();
-        listViewItems.add(new MenuView(1, "Add Medicine", R.drawable.ic_dashboard_farmer));
-        listViewItems.add(new MenuView(2, "Profile", R.drawable.ic_dashboard_farm));
-        listViewItems.add(new MenuView(3, "Reminders", R.drawable.ic_dashboard_booking));
-        listViewItems.add(new MenuView(4, "Monthly Intake", R.drawable.ic_dashboard_calendar));
+        List<MenuView> listViewItems = new ArrayList<>();
+        listViewItems.add(new MenuView(1, "Add Medicine", R.drawable.ic_sample));
+        listViewItems.add(new MenuView(2, "Profile", R.drawable.ic_sample));
+        listViewItems.add(new MenuView(3, "Reminders", R.drawable.ic_sample));
+        listViewItems.add(new MenuView(4, "Monthly Intake", R.drawable.ic_sample));
         return listViewItems;
     }
-
-    //TODO :: Remove this later :)
-    //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-    //                       .setAction("Action", null).show();
 }
