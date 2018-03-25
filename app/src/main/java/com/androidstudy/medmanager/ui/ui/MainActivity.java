@@ -3,7 +3,6 @@ package com.androidstudy.medmanager.ui.ui;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,6 +19,7 @@ import com.androidstudy.medmanager.data.model.MenuView;
 import com.androidstudy.medmanager.ui.adapter.DailyMedicineStatisticsAdapter;
 import com.androidstudy.medmanager.ui.adapter.MainDashboardAdapter;
 import com.androidstudy.medmanager.ui.ui.medicine.AddMedicineActivity;
+import com.androidstudy.medmanager.ui.ui.medicine.MedicineSuccessActivity;
 import com.androidstudy.medmanager.ui.viewmodel.MedicineViewModel;
 import com.androidstudy.medmanager.util.CirclePagerIndicatorDecoration;
 import com.androidstudy.medmanager.util.ItemOffsetDecoration;
@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(addMedicine);
                     break;
                 case "Profile":
+                    Intent s = new Intent(getApplicationContext(), MedicineSuccessActivity.class);
+                    startActivity(s);
                     break;
                 case "Reminders":
                     break;

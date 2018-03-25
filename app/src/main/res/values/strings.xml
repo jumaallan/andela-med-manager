@@ -10,4 +10,6 @@
     <string name="end_date">End Date</string>
     <string name="action_profile">Profile</string>
     <string name="select_activity">Select Activity</string>
+    <string name="home_page">Home Page</string>
+    <string name="add_medicine">Add Medicine</string>
 </resources>

@@ -17,6 +17,7 @@
 
     <color name="gws_color_material_grey_500">#9E9E9E</color>
     <color name="scout_blue_dashboard">#349EE0</color>
+    <color name="grey_200">#EEEEEE</color>
     <color name="grey_400">#9E9E9E</color>
     <color name="grey_500">#DBD8D9</color>
     <color name="bg_login_button">#1D174F</color>
