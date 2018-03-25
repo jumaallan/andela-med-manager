@@ -18,25 +18,35 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="mainDashboardWelcomeText">
-        <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:fontFamily">@font/oxygen_bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/oxygen_regular</item>
+        <item name="android:textColor">@color/main_gray</item>
     </style>
 
-    <style name="dailyMedicineStatisticsHeader">
-        <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:textAlignment">center</item>
+    <style name="dailyMedicineName">
+        <item name="android:textSize">21sp</item>
+        <item name="android:fontFamily">@font/oxygen_regular</item>
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <style name="dailyMedicineStatisticsData">
         <item name="android:textColor">@color/scout_blue_dashboard</item>
-        <item name="android:textSize">35sp</item>
+        <item name="android:textSize">21sp</item>
+        <item name="android:fontFamily">@font/oxygen_regular</item>
         <item name="android:textAlignment">center</item>
     </style>
 
     <style name="dailyMedicineStatisticsFooter">
         <item name="android:textSize">12sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/dashboard</item>
+        <item name="android:fontFamily">@font/oxygen_bold</item>
+    </style>
+
+    <style name="dailyMedicineRealization">
+        <item name="android:textColor">@color/scout_blue_dashboard_percentage</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:fontFamily">@font/oxygen_regular</item>
         <item name="android:textAlignment">center</item>
     </style>
 

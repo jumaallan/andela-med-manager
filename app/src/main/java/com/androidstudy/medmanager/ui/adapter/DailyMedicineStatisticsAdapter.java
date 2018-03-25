@@ -35,9 +35,10 @@ public class DailyMedicineStatisticsAdapter extends RecyclerView.Adapter<DailyMe
     public void onBindViewHolder(MedicineHolder holder, int position) {
         Medicine medicine = medicineList.get(position);
 
-        holder.textViewTarget.setText(String.valueOf(medicine.getName()));
-        holder.textViewActual.setText(String.valueOf(medicine.getDescription()));
-        holder.textViewRealization.setText(String.valueOf(medicine.getInterval()));
+        holder.textViewMedicineName.setText(String.valueOf(medicine.getName()));
+        holder.textViewDosage.setText("20");
+        holder.textViewTaken.setText("10");
+        holder.textViewRealization.setText("50" + " %");
     }
 
     @Override
@@ -57,12 +58,14 @@ public class DailyMedicineStatisticsAdapter extends RecyclerView.Adapter<DailyMe
 
     class MedicineHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.textViewTarget)
-        TextView textViewTarget;
-        @BindView(R.id.textViewActual)
-        TextView textViewActual;
+        @BindView(R.id.textViewDosage)
+        TextView textViewDosage;
+        @BindView(R.id.textViewTaken)
+        TextView textViewTaken;
         @BindView(R.id.textViewRealization)
         TextView textViewRealization;
+        @BindView(R.id.textViewMedicineName)
+        TextView textViewMedicineName;
 
         public MedicineHolder(View itemView) {
             super(itemView);
