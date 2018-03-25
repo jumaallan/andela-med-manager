@@ -12,4 +12,6 @@
     <string name="select_activity">Select Activity</string>
     <string name="home_page">Home Page</string>
     <string name="add_medicine">Add Medicine</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
 </resources>
