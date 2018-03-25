@@ -24,6 +24,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/margin_small"
+        android:fontFamily="@font/oxygen_light"
+        android:text="@string/dummy_date"
+        android:textSize="12sp"
         tools:text="@string/dummy_date" />
 
     <android.support.v7.widget.RecyclerView

@@ -32,7 +32,6 @@ dependencies {
     implementation deps.support.constraintLayout
 
     implementation deps.room.core
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     annotationProcessor deps.room.compiler
     implementation deps.room.lifecycleExtensions
 

@@ -1,5 +1,5 @@
 def versions = [
-        supportLib      : '27.1.0',
+        supportLib      : '27.0.2',
         constraintLayout: '1.0.2',
         timber          : '4.6.0',
         glide           : '4.6.1',
