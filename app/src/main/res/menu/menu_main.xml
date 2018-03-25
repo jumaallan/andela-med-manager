@@ -2,9 +2,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.androidstudy.medmanager.ui.ui.MainActivity">
+
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/ic_account_circle"
+        android:title="@string/action_profile"
+        app:showAsAction="ifRoom" />
+
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
 </menu>

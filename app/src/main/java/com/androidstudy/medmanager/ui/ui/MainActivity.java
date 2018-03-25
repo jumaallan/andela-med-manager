@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.androidstudy.medmanager.R;
 import com.androidstudy.medmanager.data.model.Medicine;
@@ -19,16 +20,21 @@ import com.androidstudy.medmanager.ui.ui.medicine.AddMedicineActivity;
 import com.androidstudy.medmanager.ui.viewmodel.MedicineViewModel;
 import com.androidstudy.medmanager.util.CirclePagerIndicatorDecoration;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
+    @BindView(R.id.date)
+    TextView date;
     @BindView(R.id.recyclerViewDailyMedicineStatistics)
     RecyclerView recyclerViewDailyMedicineStatistics;
-
+    Calendar calendar;
+    SimpleDateFormat simpleDateFormat;
     private MedicineViewModel medicineViewModel;
     private DailyMedicineStatisticsAdapter dailyMedicineStatisticsAdapter;
 
@@ -39,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
+
+        calendar = Calendar.getInstance();
+        simpleDateFormat = new SimpleDateFormat("EEEE, MMM d, yyyy");
+        String currentDate = simpleDateFormat.format(calendar.getTime());
+        date.setText(currentDate);
 
         dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, new ArrayList<Medicine>());
 

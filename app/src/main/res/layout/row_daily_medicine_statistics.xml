@@ -36,6 +36,12 @@
                 android:orientation="vertical">
 
                 <TextView
+                    style="@style/dailyMedicineStatisticsHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dosage" />
+
+                <TextView
                     android:id="@+id/textViewDosage"
                     style="@style/dailyMedicineStatisticsData"
                     android:layout_width="match_parent"
@@ -48,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_small"
-                    android:text="Dosage" />
+                    android:text="Tabs" />
 
             </LinearLayout>
 
@@ -62,6 +68,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
+
+                <TextView
+                    style="@style/dailyMedicineStatisticsHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Taken" />
 
                 <TextView
                     android:id="@+id/textViewTaken"
@@ -76,7 +88,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_small"
-                    android:text="Taken" />
+                    android:text="Tabs" />
 
             </LinearLayout>
 
@@ -92,10 +104,16 @@
                 android:orientation="vertical">
 
                 <TextView
+                    style="@style/dailyMedicineStatisticsHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Percentage" />
+
+                <TextView
                     android:id="@+id/textViewRealization"
                     style="@style/dailyMedicineRealization"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/margin_small"
                     tools:text="38%" />
 
