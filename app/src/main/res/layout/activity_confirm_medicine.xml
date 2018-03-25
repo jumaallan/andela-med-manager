@@ -65,18 +65,14 @@
                     android:layout_weight="0.5"
                     android:text="Name" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/white" />
-
                 <TextView
+                    android:id="@+id/textViewMedName"
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:gravity="end"
-                    android:text="Name" />
+                    tools:text="Name" />
 
             </LinearLayout>
 
@@ -97,18 +93,14 @@
                     android:layout_weight="0.5"
                     android:text="Description" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/white" />
-
                 <TextView
+                    android:id="@+id/textViewMedDescription"
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:gravity="end"
-                    android:text="Description" />
+                    tools:text="Description" />
 
             </LinearLayout>
 
@@ -129,18 +121,14 @@
                     android:layout_weight="0.5"
                     android:text="Interval" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/white" />
-
                 <TextView
+                    android:id="@+id/textViewMedInterval"
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:gravity="end"
-                    android:text="Interval" />
+                    tools:text="Interval" />
 
             </LinearLayout>
 
@@ -161,18 +149,14 @@
                     android:layout_weight="0.5"
                     android:text="Start Date" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/white" />
-
                 <TextView
+                    android:id="@+id/textViewMedStartDate"
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:gravity="end"
-                    android:text="Start Date" />
+                    tools:text="Start Date" />
 
             </LinearLayout>
 
@@ -193,18 +177,14 @@
                     android:layout_weight="0.5"
                     android:text="End Date" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/white" />
-
                 <TextView
+                    android:id="@+id/textViewMedEndDate"
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:gravity="end"
-                    android:text="End Date" />
+                    tools:text="End Date" />
 
             </LinearLayout>
 
@@ -221,7 +201,7 @@
         android:weightSum="1">
 
         <Button
-            android:id="@+id/buttonBookLater"
+            android:id="@+id/buttonEditMedicine"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_normal"
@@ -234,7 +214,7 @@
             android:textSize="16sp" />
 
         <Button
-            android:id="@+id/buttonBookProduce"
+            android:id="@+id/buttonSaveMedicine"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".5"

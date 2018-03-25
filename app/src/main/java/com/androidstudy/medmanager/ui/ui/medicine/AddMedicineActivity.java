@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.androidstudy.medmanager.R;
-import com.androidstudy.medmanager.data.model.Medicine;
 import com.androidstudy.medmanager.ui.ui.MainActivity;
 import com.androidstudy.medmanager.ui.viewmodel.AddMedicineViewModel;
 
@@ -34,7 +33,6 @@ public class AddMedicineActivity extends AppCompatActivity {
     Button buttonContinue;
 
     String name, description, interval;
-    private AddMedicineViewModel addMedicineViewModel;
     private Calendar calendar;
 
     @Override
@@ -43,7 +41,6 @@ public class AddMedicineActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_medicine);
         ButterKnife.bind(this);
 
-        addMedicineViewModel = ViewModelProviders.of(this).get(AddMedicineViewModel.class);
         calendar = Calendar.getInstance();
 
         buttonContinue.setOnClickListener(view -> validateMedicalDetails());
@@ -74,13 +71,21 @@ public class AddMedicineActivity extends AppCompatActivity {
     }
 
     private void saveMedicalData() {
-        addMedicineViewModel.addMedicine(new Medicine(
-                name,
-                description,
-                interval
-        ));
-
         Intent main = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(main);
+
+        Intent medicine = new Intent(this, ConfirmMedicineActivity.class);
+        Bundle bundle = new Bundle();
+        //TODO :: Change this :)
+        /**
+         * Pass data via Bundle
+         */
+        bundle.putString("name", name);
+        bundle.putString("description", description);
+        bundle.putString("interval", interval);
+//        bundle.putString("startDate", startDate);
+//        bundle.putString("endDate", endDate);
+        medicine.putExtras(bundle);
+        startActivity(medicine);
     }
 }

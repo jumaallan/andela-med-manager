@@ -1,22 +1,38 @@
 package com.androidstudy.medmanager.ui.ui.medicine;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.androidstudy.medmanager.R;
-import com.androidstudy.medmanager.ui.ui.MainActivity;
+import com.androidstudy.medmanager.data.model.Medicine;
+import com.androidstudy.medmanager.ui.viewmodel.AddMedicineViewModel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ConfirmMedicineActivity extends AppCompatActivity {
 
-    @BindView(R.id.buttonAddMedicine)
-    Button buttonAddMedicine;
-    @BindView(R.id.buttonHomePage)
-    Button buttonHomePage;
+    @BindView(R.id.textViewMedName)
+    TextView textViewMedName;
+    @BindView(R.id.textViewMedDescription)
+    TextView textViewMedDescription;
+    @BindView(R.id.textViewMedInterval)
+    TextView textViewMedInterval;
+    @BindView(R.id.textViewMedStartDate)
+    TextView textViewMedStartDate;
+    @BindView(R.id.textViewMedEndDate)
+    TextView textViewMedEndDate;
+    @BindView(R.id.buttonEditMedicine)
+    Button buttonEditMedicine;
+    @BindView(R.id.buttonSaveMedicine)
+    Button buttonSaveMedicine;
+    String name, description, interval, startDate, endDate;
+    Bundle bundle;
+    private AddMedicineViewModel addMedicineViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,22 +40,50 @@ public class ConfirmMedicineActivity extends AppCompatActivity {
         setContentView(R.layout.activity_confirm_medicine);
         ButterKnife.bind(this);
 
+        addMedicineViewModel = ViewModelProviders.of(this).get(AddMedicineViewModel.class);
+
+        Intent intent = getIntent();
+        bundle = intent.getExtras();
+
+        assert bundle != null;
+        name = bundle.getString("name");
+        description = bundle.getString("description");
+        interval = bundle.getString("interval");
+//        startDate = bundle.getString("startDate");
+//        endDate = bundle.getString("endDate");
+
+        textViewMedName.setText(name);
+        textViewMedDescription.setText(description);
+        textViewMedInterval.setText(interval);
+//        textViewMedicineStartDate.setText(startDate);
+//        textViewMedicineEndDate.setText(endDate);
+
         /**
-         * Redirect to add another medicine!
+         * User needs to edit the details again :)
          */
-        buttonAddMedicine.setOnClickListener(view -> {
-            Intent addMedicine = new Intent(getApplicationContext(), AddMedicineActivity.class);
-            startActivity(addMedicine);
-            finish();
+        buttonEditMedicine.setOnClickListener(v -> {
+            Intent med = new Intent(getApplicationContext(), AddMedicineActivity.class);
+            med.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(med);
         });
 
         /**
-         * Redirect back to home page, User is satisfied/done!
+         * User is happy with the data :) Save :)
          */
-        buttonHomePage.setOnClickListener(view -> {
-            Intent home = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(home);
-            finish();
+        buttonSaveMedicine.setOnClickListener(v -> {
+            saveMedicine();
         });
+    }
+
+    private void saveMedicine() {
+        addMedicineViewModel.addMedicine(new Medicine(
+                name,
+                description,
+                interval
+        ));
+
+        Intent success = new Intent(getApplicationContext(), MedicineSuccessActivity.class);
+        success.putExtras(bundle);
+        startActivity(success);
     }
 }
