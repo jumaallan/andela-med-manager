@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -65,13 +65,18 @@
                     android:layout_weight="0.5"
                     android:text="Name" />
 
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
                 <TextView
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:gravity="end"
-                    tools:text="Name" />
+                    android:text="Name" />
 
             </LinearLayout>
 
@@ -92,13 +97,18 @@
                     android:layout_weight="0.5"
                     android:text="Description" />
 
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
                 <TextView
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:gravity="end"
-                    tools:text="Description" />
+                    android:text="Description" />
 
             </LinearLayout>
 
@@ -119,13 +129,18 @@
                     android:layout_weight="0.5"
                     android:text="Interval" />
 
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
                 <TextView
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:gravity="end"
-                    tools:text="Interval" />
+                    android:text="Interval" />
 
             </LinearLayout>
 
@@ -146,13 +161,18 @@
                     android:layout_weight="0.5"
                     android:text="Start Date" />
 
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
                 <TextView
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:gravity="end"
-                    tools:text="Start Date" />
+                    android:text="Start Date" />
 
             </LinearLayout>
 
@@ -173,13 +193,18 @@
                     android:layout_weight="0.5"
                     android:text="End Date" />
 
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
                 <TextView
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:gravity="end"
-                    tools:text="End Date" />
+                    android:text="End Date" />
 
             </LinearLayout>
 
@@ -190,6 +215,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:padding="@dimen/padding_normal"
         android:weightSum="1">
@@ -221,4 +247,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
