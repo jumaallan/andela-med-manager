@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.androidstudy.medmanager.ui.ui.MainActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -20,6 +21,66 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_small">
 
-</android.support.design.widget.CoordinatorLayout>
+        <TextView
+            android:id="@+id/mainUserName"
+            style="@style/mainDashboardWelcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Hello, @{user.name}"
+            tools:text="Hello ," />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_small"
+            android:fontFamily="@font/oxygen_light"
+            android:text="@string/dummy_date"
+            android:textSize="14sp"
+            tools:text="@string/dummy_date" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewDailyMedicineStatistics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:clipToPadding="false"
+            tools:listitem="@layout/row_daily_medicine_statistics" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="21dp"
+            android:layout_marginRight="21dp"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:alpha="0.6"
+            android:background="@color/divider" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_small"
+            android:fontFamily="@font/oxygen_light"
+            android:text="@string/select_activity"
+            android:textSize="15sp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:clipToPadding="false"
+            tools:listitem="@layout/row_main_dashboard" />
+
+    </LinearLayout>
+
+</LinearLayout>
