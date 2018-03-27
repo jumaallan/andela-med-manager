@@ -56,6 +56,13 @@ public class AddMedicineActivity extends AppCompatActivity {
         buttonContinue.setOnClickListener(view -> validateMedicalDetails());
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        onBackPressed();
+        return true;
+    }
+
     private void validateMedicalDetails() {
 
         name = editTextMedicineName.getText().toString().trim();

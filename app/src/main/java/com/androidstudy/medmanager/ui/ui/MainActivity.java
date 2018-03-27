@@ -19,7 +19,6 @@ import com.androidstudy.medmanager.data.model.MenuView;
 import com.androidstudy.medmanager.ui.adapter.DailyMedicineStatisticsAdapter;
 import com.androidstudy.medmanager.ui.adapter.MainDashboardAdapter;
 import com.androidstudy.medmanager.ui.ui.medicine.AddMedicineActivity;
-import com.androidstudy.medmanager.ui.ui.medicine.MedicineSuccessActivity;
 import com.androidstudy.medmanager.ui.viewmodel.MedicineViewModel;
 import com.androidstudy.medmanager.util.CirclePagerIndicatorDecoration;
 import com.androidstudy.medmanager.util.ItemOffsetDecoration;
@@ -44,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
     Calendar calendar;
     SimpleDateFormat simpleDateFormat;
     List<MenuView> menuViewList;
-    private DailyMedicineStatisticsAdapter dailyMedicineStatisticsAdapter;
-    private MainDashboardAdapter mainDashboardAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);
 
-        mainDashboardAdapter = new MainDashboardAdapter(this, menuViewList, (v, position) -> {
+        MainDashboardAdapter mainDashboardAdapter = new MainDashboardAdapter(this, menuViewList, (v, position) -> {
             MenuView role = menuViewList.get(position);
             String menuName = role.getName();
             switch (menuName) {
@@ -74,8 +71,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(addMedicine);
                     break;
                 case "Profile":
-                    Intent s = new Intent(getApplicationContext(), MedicineSuccessActivity.class);
-                    startActivity(s);
                     break;
                 case "Reminders":
                     break;
@@ -85,11 +80,10 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Sorry, It's Under development", Toast.LENGTH_SHORT).show();
                     break;
             }
-
         });
         recyclerView.setAdapter(mainDashboardAdapter);
 
-        dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, new ArrayList<>());
+        DailyMedicineStatisticsAdapter dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, new ArrayList<>());
         recyclerViewDailyMedicineStatistics.setLayoutManager(new LinearLayoutManager(this,
                 LinearLayoutManager.HORIZONTAL, false));
         // add pager behavior
@@ -100,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewDailyMedicineStatistics.setAdapter(dailyMedicineStatisticsAdapter);
 
         MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
-        medicineViewModel.getMedicineList().observe(MainActivity.this, medicineList -> dailyMedicineStatisticsAdapter.addItems(medicineList));
+        medicineViewModel.getMedicineList().observe(MainActivity.this, dailyMedicineStatisticsAdapter::addItems);
     }
 
     @Override
