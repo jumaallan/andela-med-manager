@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -53,7 +54,12 @@ public class AddMedicineActivity extends AppCompatActivity {
 
         calendar = Calendar.getInstance();
 
-        buttonContinue.setOnClickListener(view -> validateMedicalDetails());
+        buttonContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AddMedicineActivity.this.validateMedicalDetails();
+            }
+        });
     }
 
     @Override
