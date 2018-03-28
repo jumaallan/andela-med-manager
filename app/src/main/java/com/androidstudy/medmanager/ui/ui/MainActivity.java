@@ -115,8 +115,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewDailyMedicineStatistics.addItemDecoration(new CirclePagerIndicatorDecoration());
         recyclerViewDailyMedicineStatistics.setAdapter(dailyMedicineStatisticsAdapter);
 
-        MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
-        medicineViewModel.getMedicineList().observe(MainActivity.this, dailyMedicineStatisticsAdapter::addItems);
+//        MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
+//        medicineViewModel.getMedicineList().observe(MainActivity.this, dailyMedicineStatisticsAdapter::addItems);
     }
 
     @Override
