@@ -21,6 +21,7 @@ import com.androidstudy.medmanager.R;
 import com.androidstudy.medmanager.data.model.MenuView;
 import com.androidstudy.medmanager.data.model.User;
 import com.androidstudy.medmanager.databinding.ActivityMainBinding;
+import com.androidstudy.medmanager.ui.auth.ui.AuthActivity;
 import com.androidstudy.medmanager.ui.base.adapter.DailyMedicineStatisticsAdapter;
 import com.androidstudy.medmanager.ui.base.adapter.MainDashboardAdapter;
 import com.androidstudy.medmanager.ui.base.viewmodel.MainViewModel;
@@ -34,6 +35,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.google.android.gms.auth.api.Auth;
 import com.tingyik90.snackprogressbar.SnackProgressBar;
 import com.tingyik90.snackprogressbar.SnackProgressBarManager;
 
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ProfileDialog profileDialog;
     private MainViewModel mainViewModel;
+    private SnackProgressBarManager snackProgressBarManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -187,16 +190,17 @@ public class MainActivity extends AppCompatActivity {
         snackProgressBarManager.show(snackProgressBar, SnackProgressBarManager.LENGTH_INDEFINITE);
 
         //TODO :: Enable this Google Sign Out :)
-//        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(status -> {
-//            //Clear Shared Pref File
-//            Settings.setLoggedInSharedPref(false);
-//            //Clear Local DB
-//            userBox.removeAll();
-//            //Redirect User to Login Page
-//            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-//            startActivity(intent);
-//            finish();
-//        });
+        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(status -> {
+            //Clear Shared Pref File
+            Settings.setLoggedInSharedPref(false);
+            //Clear Local DB
+            //TODO :: CLEAR DB
+
+            //Redirect User to Login Page
+            Intent intent = new Intent(getApplicationContext(), AuthActivity.class);
+            startActivity(intent);
+            finish();
+        });
 
         //Unreachable anyway
         snackProgressBarManager.dismiss();
