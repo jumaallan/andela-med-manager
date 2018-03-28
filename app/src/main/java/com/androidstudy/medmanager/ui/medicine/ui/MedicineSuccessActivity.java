@@ -3,7 +3,6 @@ package com.androidstudy.medmanager.ui.medicine.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -49,25 +48,19 @@ public class MedicineSuccessActivity extends AppCompatActivity {
         /**
          * Redirect to add another medicine!
          */
-        buttonAddMedicine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent addMedicine = new Intent(MedicineSuccessActivity.this.getApplicationContext(), AddMedicineActivity.class);
-                MedicineSuccessActivity.this.startActivity(addMedicine);
-                MedicineSuccessActivity.this.finish();
-            }
+        buttonAddMedicine.setOnClickListener(view -> {
+            Intent addMedicine = new Intent(getApplicationContext(), AddMedicineActivity.class);
+            startActivity(addMedicine);
+            finish();
         });
 
         /**
          * Redirect back to home page, User is satisfied/done!
          */
-        buttonHomePage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent home = new Intent(MedicineSuccessActivity.this.getApplicationContext(), MainActivity.class);
-                MedicineSuccessActivity.this.startActivity(home);
-                MedicineSuccessActivity.this.finish();
-            }
+        buttonHomePage.setOnClickListener(view -> {
+            Intent home = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(home);
+            finish();
         });
     }
 }

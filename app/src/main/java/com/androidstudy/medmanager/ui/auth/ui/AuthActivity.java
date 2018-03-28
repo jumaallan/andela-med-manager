@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.androidstudy.medmanager.R;
 import com.androidstudy.medmanager.data.model.User;
@@ -53,12 +52,7 @@ public class AuthActivity extends AppCompatActivity implements GoogleApiClient.O
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-        googleSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AuthActivity.this.googleSignIn();
-            }
-        });
+        googleSignIn.setOnClickListener(v -> googleSignIn());
     }
 
     private void googleSignIn() {

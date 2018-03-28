@@ -2,8 +2,6 @@ package com.androidstudy.medmanager;
 
 import android.app.Application;
 
-import com.androidstudy.medmanager.data.AppDatabase;
-
 import timber.log.Timber;
 
 
