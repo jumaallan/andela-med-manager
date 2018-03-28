@@ -66,6 +66,9 @@ dependencies {
     implementation deps.snackProgressBar
     //Google Auth
     implementation deps.playServices.auth
+    // State saving/restoring
+    implementation deps.state.core
+    annotationProcessor deps.state.processor
 
     //Testing !!!
     testImplementation 'junit:junit:4.12'
