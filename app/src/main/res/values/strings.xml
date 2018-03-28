@@ -15,4 +15,10 @@
     <string name="edit">Edit</string>
     <string name="save">Save</string>
     <string name="activity_add_medicine">Add Medicine</string>
+
+    <string name="text_sign_in_advantages">
+        When signed in:
+        \n\n&#8226; Your Medicine Data will be backed up to Google Drive.
+        \n\n&#8226; App preferences will be persisted across app installs.
+    </string>
 </resources>

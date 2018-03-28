@@ -18,6 +18,7 @@ def versions = [
         cicleImageView  : '2.2.0',
         jUnit           : '4.12',
         espresso        : '3.0.1',
+        snackProgressBar: '2.2',
 ]
 
 ext.versions = versions
@@ -59,4 +60,5 @@ ext.deps = [
                 core: 'com.afollestad.material-dialogs:core:' + versions.materialDialogs,
         ],
         circleImageView: 'de.hdodenhof:circleimageview:' + versions.cicleImageView,
+        snackProgressBar: 'com.github.tingyik90:snackprogressbar:' + versions.snackProgressBar,
 ]

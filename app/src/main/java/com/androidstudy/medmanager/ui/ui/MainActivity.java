@@ -27,6 +27,8 @@ import com.androidstudy.medmanager.ui.ui.medicine.AddMedicineActivity;
 import com.androidstudy.medmanager.ui.viewmodel.MedicineViewModel;
 import com.androidstudy.medmanager.util.CirclePagerIndicatorDecoration;
 import com.androidstudy.medmanager.util.ItemOffsetDecoration;
+import com.androidstudy.medmanager.util.ProfileDialog;
+import com.androidstudy.medmanager.util.Settings;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     List<MenuView> menuViewList;
 
     private ProfileDialog profileDialog;
+    private SnackProgressBarManager snackProgressBarManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_profile) {
             profileDialog.show(getSupportFragmentManager(), "profile");
             return true;
-        } else if  (id == R.id.action_settings) {
+        } else if (id == R.id.action_settings) {
             return true;
         }
 
@@ -162,5 +165,35 @@ public class MainActivity extends AppCompatActivity {
         listViewItems.add(new MenuView(3, "Reminders", R.drawable.ic_sample));
         listViewItems.add(new MenuView(4, "Monthly Intake", R.drawable.ic_sample));
         return listViewItems;
+    }
+
+    private void logout() {
+        if (!Settings.isLoggedIn()) {
+            return;
+        }
+
+        SnackProgressBar snackProgressBar = new SnackProgressBar(
+                SnackProgressBar.TYPE_INDETERMINATE,
+                "Logging out...")
+                .setSwipeToDismiss(false);
+
+        // Show snack progress during logout
+        snackProgressBarManager.dismissAll();
+        snackProgressBarManager.show(snackProgressBar, SnackProgressBarManager.LENGTH_INDEFINITE);
+
+        //TODO :: Enable this Google Sign Out :)
+//        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(status -> {
+//            //Clear Shared Pref File
+//            Settings.setLoggedInSharedPref(false);
+//            //Clear Local DB
+//            userBox.removeAll();
+//            //Redirect User to Login Page
+//            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+//            startActivity(intent);
+//            finish();
+//        });
+
+        //Unreachable anyway
+        snackProgressBarManager.dismiss();
     }
 }

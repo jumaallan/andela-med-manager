@@ -10,7 +10,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.androidstudy.medmanager.R;
+import com.androidstudy.medmanager.data.model.User;
 import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
@@ -36,8 +38,8 @@ public class ProfileDialog extends DialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Box<User> userBox = ((AndelaTrackChallenge) getActivity().getApplicationContext()).getBoxStore().boxFor(User.class);
-        user = userBox.query().build().findFirst();
+//        Box<User> userBox = ((AndelaTrackChallenge) getActivity().getApplicationContext()).getBoxStore().boxFor(User.class);
+//        user = userBox.query().build().findFirst();
     }
 
     @NonNull
@@ -47,9 +49,9 @@ public class ProfileDialog extends DialogFragment {
         ButterKnife.bind(this, view);
 
         if (user != null) {
-            nameText.setText(user.name);
+            nameText.setText("");
             Glide.with(this)
-                    .load(user.imageUrl)
+                    .load("")
                     .into(userImage);
         }
 

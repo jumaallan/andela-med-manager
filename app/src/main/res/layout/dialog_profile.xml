@@ -36,7 +36,7 @@
                 android:contentDescription="@null"
                 app:civ_border_color="@color/white"
                 app:civ_border_width="2dp"
-                tools:src="@drawable/flag_us" />
+                tools:src="@tools:sample/avatars" />
 
             <android.support.v4.widget.Space
                 android:layout_width="@dimen/padding_normal"
