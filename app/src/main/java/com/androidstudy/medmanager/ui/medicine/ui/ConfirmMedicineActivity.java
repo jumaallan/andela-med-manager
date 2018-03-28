@@ -1,4 +1,4 @@
-package com.androidstudy.medmanager.ui.medicine;
+package com.androidstudy.medmanager.ui.medicine.ui;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;

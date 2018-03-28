@@ -1,5 +1,6 @@
-package com.androidstudy.medmanager.ui.base;
+package com.androidstudy.medmanager.ui.base.ui;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
@@ -22,7 +23,9 @@ import com.androidstudy.medmanager.data.model.User;
 import com.androidstudy.medmanager.databinding.ActivityMainBinding;
 import com.androidstudy.medmanager.ui.base.adapter.DailyMedicineStatisticsAdapter;
 import com.androidstudy.medmanager.ui.base.adapter.MainDashboardAdapter;
-import com.androidstudy.medmanager.ui.medicine.AddMedicineActivity;
+import com.androidstudy.medmanager.ui.base.viewmodel.MainViewModel;
+import com.androidstudy.medmanager.ui.medicine.ui.AddMedicineActivity;
+import com.androidstudy.medmanager.ui.medicine.viewmodel.MedicineViewModel;
 import com.androidstudy.medmanager.util.CirclePagerIndicatorDecoration;
 import com.androidstudy.medmanager.util.ItemOffsetDecoration;
 import com.androidstudy.medmanager.util.ProfileDialog;
@@ -56,14 +59,16 @@ public class MainActivity extends AppCompatActivity {
     List<MenuView> menuViewList;
 
     private ProfileDialog profileDialog;
-    private SnackProgressBarManager snackProgressBarManager;
+    private MainViewModel mainViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        User user = new User(Long.valueOf("1"), "Data Binding", "User");
+        User user = new User("Data Binding", "User");
         binding.setUser(user);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -113,8 +118,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewDailyMedicineStatistics.addItemDecoration(new CirclePagerIndicatorDecoration());
         recyclerViewDailyMedicineStatistics.setAdapter(dailyMedicineStatisticsAdapter);
 
-//        MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
-//        medicineViewModel.getMedicineList().observe(MainActivity.this, dailyMedicineStatisticsAdapter::addItems);
+        MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
+        medicineViewModel.getMedicineList().observe(MainActivity.this, dailyMedicineStatisticsAdapter::addItems);
     }
 
     @Override

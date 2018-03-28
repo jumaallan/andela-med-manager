@@ -1,4 +1,4 @@
-package com.androidstudy.medmanager.ui.medicine;
+package com.androidstudy.medmanager.ui.medicine.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.androidstudy.medmanager.R;
-import com.androidstudy.medmanager.ui.base.MainActivity;
+import com.androidstudy.medmanager.ui.base.ui.MainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

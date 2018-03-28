@@ -1,13 +1,16 @@
-package com.androidstudy.medmanager.ui.auth;
+package com.androidstudy.medmanager.ui.auth.ui;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
 import com.androidstudy.medmanager.R;
+import com.androidstudy.medmanager.data.model.Medicine;
 import com.androidstudy.medmanager.data.model.User;
-import com.androidstudy.medmanager.ui.base.MainActivity;
+import com.androidstudy.medmanager.ui.auth.viewmodel.AddUserViewModel;
+import com.androidstudy.medmanager.ui.base.ui.MainActivity;
 import com.androidstudy.medmanager.util.Settings;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -29,12 +32,15 @@ public class AuthActivity extends AppCompatActivity implements GoogleApiClient.O
     SignInButton googleSignIn;
 
     GoogleApiClient mGoogleApiClient;
+    private AddUserViewModel addUserViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
         ButterKnife.bind(this);
+
+        addUserViewModel = ViewModelProviders.of(this).get(AddUserViewModel.class);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -81,16 +87,15 @@ public class AuthActivity extends AppCompatActivity implements GoogleApiClient.O
              * Set the Logged in status to true
              * Navigate user to Main Activity
              */
-            User user = new User();
-            user.name = name;
-            user.imageUrl = imageUrl;
-            userBox.put(user);
+            addUserViewModel.addUser(new User(
+                    name,
+                    imageUrl
+            ));
 
             Settings.setLoggedInSharedPref(true);
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
-
         }
     }
 

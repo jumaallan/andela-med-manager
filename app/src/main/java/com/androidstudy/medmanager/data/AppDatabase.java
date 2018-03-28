@@ -7,6 +7,7 @@ import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
 
 import com.androidstudy.medmanager.data.dao.MedicineDao;
+import com.androidstudy.medmanager.data.dao.UserDao;
 import com.androidstudy.medmanager.data.model.Medicine;
 import com.androidstudy.medmanager.data.model.User;
 
@@ -26,4 +27,6 @@ public abstract class AppDatabase extends RoomDatabase {
     }
 
     public abstract MedicineDao medicineDao();
+
+    public abstract UserDao userDao();
 }
