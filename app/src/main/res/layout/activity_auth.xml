@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context="com.androidstudy.medmanager.ui.auth.ui.AuthActivity">
+    tools:context="com.androidstudy.andelamedmanager.ui.auth.ui.AuthActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

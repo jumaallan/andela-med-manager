@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "70925821563",
+    "project_id": "andelamedmanager"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70925821563:android:75909cc3b5a67780",
+        "android_client_info": {
+          "package_name": "com.androidstudy.andelamedmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70925821563-ftai6ibg4t7o812njt18a32g354n2so4.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "70925821563-sd4u7r8fukf4p6cp5l3b1h3ue0q7lr6v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.androidstudy.andelamedmanager",
+            "certificate_hash": "b0ebe455b4f39e647eeb41d4aef11bdfb77a9193"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB4yCZSIH2UcblL1YDo3N5wXHvkoS6ISk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

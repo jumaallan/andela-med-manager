@@ -6,14 +6,14 @@
     <data>
         <variable
             name="user"
-            type="com.androidstudy.medmanager.data.model.User" />
+            type="com.androidstudy.andelamedmanager.data.model.User" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="com.androidstudy.medmanager.ui.main.ui.MainActivity">
+        tools:context="com.androidstudy.andelamedmanager.ui.main.ui.MainActivity">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
