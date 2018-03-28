@@ -31,6 +31,8 @@ ext.deps = [
                 supportV13      : 'com.android.support:support-v13:' + versions.supportLib,
                 design          : 'com.android.support:design:' + versions.supportLib,
                 cardview        : 'com.android.support:cardview-v7:' + versions.supportLib,
+                preferencesV7   : 'com.android.support:preference-v7:' + versions.supportLib,
+                preferencesV14  : 'com.android.support:preference-v14:' + versions.supportLib,
                 recyclerview    : 'com.android.support:recyclerview-v7:' + versions.supportLib,
                 constraintLayout: 'com.android.support.constraint:constraint-layout:' + versions.constraintLayout,
         ],

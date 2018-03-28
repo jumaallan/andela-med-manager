@@ -176,6 +176,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             profileDialog.show(getSupportFragmentManager(), "profile");
             return true;
         } else if (id == R.id.action_settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
 

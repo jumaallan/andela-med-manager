@@ -32,6 +32,8 @@ dependencies {
     implementation deps.support.appcompat
     implementation deps.support.design
     implementation deps.support.supportV13
+    implementation deps.support.preferencesV7
+    implementation deps.support.preferencesV14
     implementation deps.support.cardview
     implementation deps.support.recyclerview
     implementation deps.support.constraintLayout

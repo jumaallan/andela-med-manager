@@ -16,6 +16,9 @@
     <string name="save">Save</string>
     <string name="activity_add_medicine">Add Medicine</string>
 
+    <string name="preference_category_ui">User Interface</string>
+    <string name="preference_theme">Theme</string>
+
     <string name="text_sign_in_advantages">
         When signed in:
         \n\n&#8226; Your Medicine Data will be backed up to Google Drive.
