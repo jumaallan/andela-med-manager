@@ -35,30 +35,29 @@ dependencies {
     implementation deps.support.cardview
     implementation deps.support.recyclerview
     implementation deps.support.constraintLayout
-
+    //Room - Sqlite Wrapper
     implementation deps.room.core
     annotationProcessor deps.room.compiler
     implementation deps.room.lifecycleExtensions
-
+    //Butterknife - Bind Views
     implementation deps.butterknife.core
     annotationProcessor deps.butterknife.compiler
-
+    //RxJava and RxAndroid
     implementation deps.rxjava2
     implementation deps.rxandroid2
-
+    //Log - Replace the Android Log Class
     implementation deps.timber
-
+    //My Lib -> Monitor Internet Connectivity
     implementation deps.networkmanager
-
+    //Dagger 2 - Dependency Injection
     implementation deps.dagger.core
     annotationProcessor deps.dagger.compiler
     compileOnly deps.jsr250api
-
+    //Glide - Handle Images
     implementation deps.glide.core
     annotationProcessor deps.glide.compiler
-
+    //Recycler View Snap Helper
     implementation deps.snaphelper
-
     // Circular Profile ImageView
     implementation deps.circleImageView
     // Material Dialogs alt alert dialogs
