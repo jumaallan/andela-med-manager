@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         SnackProgressBar snackProgressBar = new SnackProgressBar(
                 SnackProgressBar.TYPE_INDETERMINATE,
-                "Logging out...")
+                "Logging You Out...")
                 .setSwipeToDismiss(false);
 
         // Show snack progress during logout

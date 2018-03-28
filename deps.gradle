@@ -38,7 +38,8 @@ ext.deps = [
         ],
         room            : [
                 core               : 'android.arch.persistence.room:runtime:' + versions.room,
-                compiler           : 'android.arch.lifecycle:common-java8:' + versions.roomJava8,
+//                compiler           : 'android.arch.lifecycle:common-java8:' + versions.roomJava8,
+                compiler           : 'android.arch.persistence.room:compiler:' + versions.room,
                 lifecycleExtensions: 'android.arch.lifecycle:extensions:' + versions.roomExtensions,
         ],
         glide           : [
