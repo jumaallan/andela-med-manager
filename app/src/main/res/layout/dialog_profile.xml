@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?cardColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/padding_medium"
+            android:layout_marginLeft="@dimen/padding_medium"
+            android:layout_marginRight="@dimen/padding_medium"
+            android:layout_marginStart="@dimen/padding_medium"
+            android:layout_marginTop="@dimen/padding_medium"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/padding_normal"
+            android:paddingLeft="@dimen/padding_normal"
+            android:paddingRight="@dimen/padding_normal"
+            android:paddingStart="@dimen/padding_normal"
+            tools:ignore="UseCompoundDrawables">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_view_user"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="@dimen/padding_normal"
+                android:layout_marginTop="@dimen/padding_normal"
+                android:contentDescription="@null"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp"
+                tools:src="@drawable/flag_us" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="@dimen/padding_normal"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/text_view_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="@dimen/padding_normal"
+                android:paddingTop="@dimen/padding_normal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                tools:text="Juma Allan" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="0.5"
+            android:background="?dividerColor" />
+
+        <TextView
+            android:id="@+id/text_adv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/padding_medium"
+            android:layout_marginLeft="@dimen/padding_medium"
+            android:layout_marginRight="@dimen/padding_medium"
+            android:layout_marginStart="@dimen/padding_medium"
+            android:padding="@dimen/padding_normal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:text="@string/text_sign_in_advantages" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

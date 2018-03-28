@@ -58,6 +58,11 @@ dependencies {
 
     implementation deps.snaphelper
 
+    // Circular Profile ImageView
+    implementation deps.circleImageView
+    // Material Dialogs alt alert dialogs
+    implementation deps.materialDialogs.core
+
     //Testing !!!
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

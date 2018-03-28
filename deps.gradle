@@ -8,12 +8,14 @@ def versions = [
         butterknife     : '8.8.1',
         snaphelper      : '1.5',
         room            : '1.0.0',
+        roomJava8       : '1.1.1',
         roomExtensions  : '1.1.0',
         dagger          : '2.14.1',
         jsr250api       : '1.0',
         networkmanager  : '0.0.2',
         circleimageview : '2.2.0',
-
+        materialDialogs : '0.9.4.7',
+        cicleImageView  : '2.2.0',
         jUnit           : '4.12',
         espresso        : '3.0.1',
 ]
@@ -30,7 +32,7 @@ ext.deps = [
         ],
         room           : [
                 core               : 'android.arch.persistence.room:runtime:' + versions.room,
-                compiler           : 'android.arch.persistence.room:compiler:' + versions.room,
+                compiler           : 'android.arch.lifecycle:common-java8:' + versions.roomJava8,
                 lifecycleExtensions: 'android.arch.lifecycle:extensions:' + versions.roomExtensions,
         ],
         glide          : [
@@ -53,4 +55,8 @@ ext.deps = [
         circleimageview: 'de.hdodenhof:circleimageview:' + versions.circleimageview,
         jsr250api      : 'javax.annotation:jsr250-api:' + versions.jsr250api,
         snaphelper     : 'com.github.rubensousa:gravitysnaphelper:' + versions.snaphelper,
+        materialDialogs: [
+                core: 'com.afollestad.material-dialogs:core:' + versions.materialDialogs,
+        ],
+        circleImageView: 'de.hdodenhof:circleimageview:' + versions.cicleImageView,
 ]

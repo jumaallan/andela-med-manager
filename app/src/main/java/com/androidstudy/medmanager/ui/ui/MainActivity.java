@@ -2,6 +2,9 @@ package com.androidstudy.medmanager.ui.ui;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -16,12 +19,18 @@ import android.widget.Toast;
 
 import com.androidstudy.medmanager.R;
 import com.androidstudy.medmanager.data.model.MenuView;
+import com.androidstudy.medmanager.data.model.User;
+import com.androidstudy.medmanager.databinding.ActivityMainBinding;
 import com.androidstudy.medmanager.ui.adapter.DailyMedicineStatisticsAdapter;
 import com.androidstudy.medmanager.ui.adapter.MainDashboardAdapter;
 import com.androidstudy.medmanager.ui.ui.medicine.AddMedicineActivity;
 import com.androidstudy.medmanager.ui.viewmodel.MedicineViewModel;
 import com.androidstudy.medmanager.util.CirclePagerIndicatorDecoration;
 import com.androidstudy.medmanager.util.ItemOffsetDecoration;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -44,14 +53,21 @@ public class MainActivity extends AppCompatActivity {
     SimpleDateFormat simpleDateFormat;
     List<MenuView> menuViewList;
 
+    private ProfileDialog profileDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        User user = new User(Long.valueOf("1"), "Data Binding", "User");
+        binding.setUser(user);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
+
+        profileDialog = ProfileDialog.newInstance(((dialog, which) -> logout()));
 
         calendar = Calendar.getInstance();
         simpleDateFormat = new SimpleDateFormat("EEEE, MMM d, yyyy");
@@ -106,14 +122,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuItem profileItem = menu.findItem(R.id.action_profile);
+        Glide.with(this)
+                .asBitmap()
+                .load("")
+                .apply(RequestOptions.circleCropTransform())
+                .into(new SimpleTarget<Bitmap>(100, 100) {
+                    @Override
+                    public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
+                        profileItem.setIcon(new BitmapDrawable(getResources(), resource));
+                    }
+                });
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_profile) {
+            profileDialog.show(getSupportFragmentManager(), "profile");
+            return true;
+        } else if  (id == R.id.action_settings) {
             return true;
         }
 
