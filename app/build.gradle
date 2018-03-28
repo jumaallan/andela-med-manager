@@ -64,6 +64,8 @@ dependencies {
     implementation deps.materialDialogs.core
     // Progress SnackBar
     implementation deps.snackProgressBar
+    //Google Auth
+    implementation deps.playServices.auth
 
     //Testing !!!
     testImplementation 'junit:junit:4.12'

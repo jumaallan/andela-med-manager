@@ -30,6 +30,12 @@
         <item name="android:textColor">@color/main_gray</item>
     </style>
 
+    <style name="appLoginText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/oxygen_bold</item>
+        <item name="android:textColor">@color/main_gray</item>
+    </style>
+
     <style name="dailyMedicineName">
         <item name="android:textSize">21sp</item>
         <item name="android:fontFamily">@font/oxygen_regular</item>

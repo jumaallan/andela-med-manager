@@ -1,6 +1,7 @@
 def versions = [
         supportLib      : '27.0.2',
         constraintLayout: '1.0.2',
+        playServices    : '11.8.0',
         timber          : '4.6.0',
         glide           : '4.6.1',
         rxjava2         : '2.1.9',
@@ -62,4 +63,8 @@ ext.deps = [
         ],
         circleImageView : 'de.hdodenhof:circleimageview:' + versions.cicleImageView,
         snackProgressBar: 'com.github.tingyik90:snackprogressbar:' + versions.snackProgressBar,
+        playServices    : [
+                auth: 'com.google.android.gms:play-services-auth:' + versions.playServices,
+        ],
+
 ]
