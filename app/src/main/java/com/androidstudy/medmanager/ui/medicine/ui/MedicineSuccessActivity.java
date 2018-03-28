@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.androidstudy.medmanager.R;
-import com.androidstudy.medmanager.ui.base.ui.MainActivity;
+import com.androidstudy.medmanager.ui.main.ui.MainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

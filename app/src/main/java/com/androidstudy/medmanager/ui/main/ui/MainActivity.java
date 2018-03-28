@@ -1,4 +1,4 @@
-package com.androidstudy.medmanager.ui.base.ui;
+package com.androidstudy.medmanager.ui.main.ui;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -23,9 +23,9 @@ import com.androidstudy.medmanager.data.model.MenuView;
 import com.androidstudy.medmanager.data.model.User;
 import com.androidstudy.medmanager.databinding.ActivityMainBinding;
 import com.androidstudy.medmanager.ui.auth.ui.AuthActivity;
-import com.androidstudy.medmanager.ui.base.adapter.DailyMedicineStatisticsAdapter;
-import com.androidstudy.medmanager.ui.base.adapter.MainDashboardAdapter;
-import com.androidstudy.medmanager.ui.base.viewmodel.MainViewModel;
+import com.androidstudy.medmanager.ui.main.adapter.DailyMedicineStatisticsAdapter;
+import com.androidstudy.medmanager.ui.main.adapter.MainDashboardAdapter;
+import com.androidstudy.medmanager.ui.main.viewmodel.MainViewModel;
 import com.androidstudy.medmanager.ui.medicine.ui.AddMedicineActivity;
 import com.androidstudy.medmanager.ui.medicine.viewmodel.MedicineViewModel;
 import com.androidstudy.medmanager.util.CirclePagerIndicatorDecoration;

@@ -1,4 +1,4 @@
-package com.androidstudy.medmanager.ui.base.viewmodel;
+package com.androidstudy.medmanager.ui.main.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;

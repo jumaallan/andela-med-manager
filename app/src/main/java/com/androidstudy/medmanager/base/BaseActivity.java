@@ -1,4 +1,4 @@
-package com.androidstudy.medmanager;
+package com.androidstudy.medmanager.base;
 
 import android.content.Intent;
 import android.os.Bundle;

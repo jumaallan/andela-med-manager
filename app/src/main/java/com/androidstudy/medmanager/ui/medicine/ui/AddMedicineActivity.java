@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.androidstudy.medmanager.R;
-import com.androidstudy.medmanager.ui.base.ui.MainActivity;
+import com.androidstudy.medmanager.ui.main.ui.MainActivity;
 
 import java.util.Calendar;
 

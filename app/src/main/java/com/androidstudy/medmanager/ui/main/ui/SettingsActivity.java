@@ -1,4 +1,4 @@
-package com.androidstudy.medmanager.ui.base.ui;
+package com.androidstudy.medmanager.ui.main.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -1,4 +1,4 @@
-package com.androidstudy.medmanager;
+package com.androidstudy.medmanager.base;
 
 public class ThemableActivity extends BaseActivity {
 //    public static final int[] themes = {R.style.AppTheme, R.style.AppTheme_Light};
