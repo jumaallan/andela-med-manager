@@ -18,47 +18,47 @@ def versions = [
         cicleImageView  : '2.2.0',
         jUnit           : '4.12',
         espresso        : '3.0.1',
-        snackProgressBar: '2.2',
+        snackProgressBar: '3.4',
 ]
 
 ext.versions = versions
 
 ext.deps = [
-        support        : [
+        support         : [
                 appcompat       : 'com.android.support:appcompat-v7:' + versions.supportLib,
                 design          : 'com.android.support:design:' + versions.supportLib,
                 cardview        : 'com.android.support:cardview-v7:' + versions.supportLib,
                 recyclerview    : 'com.android.support:recyclerview-v7:' + versions.supportLib,
                 constraintLayout: 'com.android.support.constraint:constraint-layout:' + versions.constraintLayout,
         ],
-        room           : [
+        room            : [
                 core               : 'android.arch.persistence.room:runtime:' + versions.room,
                 compiler           : 'android.arch.lifecycle:common-java8:' + versions.roomJava8,
                 lifecycleExtensions: 'android.arch.lifecycle:extensions:' + versions.roomExtensions,
         ],
-        glide          : [
+        glide           : [
                 core    : 'com.github.bumptech.glide:glide:' + versions.glide,
                 compiler: 'com.github.bumptech.glide:compiler:' + versions.glide,
         ],
-        networkmanager : 'com.github.jumadeveloper:networkmanager:' + versions.networkmanager,
-        rxjava2        : 'io.reactivex.rxjava2:rxjava:' + versions.rxjava2,
-        rxandroid2     : 'io.reactivex.rxjava2:rxandroid:' + versions.rxandroid2,
-        dagger         : [
+        networkmanager  : 'com.github.jumadeveloper:networkmanager:' + versions.networkmanager,
+        rxjava2         : 'io.reactivex.rxjava2:rxjava:' + versions.rxjava2,
+        rxandroid2      : 'io.reactivex.rxjava2:rxandroid:' + versions.rxandroid2,
+        dagger          : [
                 core    : 'com.google.dagger:dagger:' + versions.dagger,
                 compiler: 'com.google.dagger:dagger-compiler:' + versions.dagger,
         ],
 
-        butterknife    : [
+        butterknife     : [
                 core    : 'com.jakewharton:butterknife:' + versions.butterknife,
                 compiler: 'com.jakewharton:butterknife-compiler:' + versions.butterknife,
         ],
-        timber         : 'com.jakewharton.timber:timber:' + versions.timber,
-        circleimageview: 'de.hdodenhof:circleimageview:' + versions.circleimageview,
-        jsr250api      : 'javax.annotation:jsr250-api:' + versions.jsr250api,
-        snaphelper     : 'com.github.rubensousa:gravitysnaphelper:' + versions.snaphelper,
-        materialDialogs: [
+        timber          : 'com.jakewharton.timber:timber:' + versions.timber,
+        circleimageview : 'de.hdodenhof:circleimageview:' + versions.circleimageview,
+        jsr250api       : 'javax.annotation:jsr250-api:' + versions.jsr250api,
+        snaphelper      : 'com.github.rubensousa:gravitysnaphelper:' + versions.snaphelper,
+        materialDialogs : [
                 core: 'com.afollestad.material-dialogs:core:' + versions.materialDialogs,
         ],
-        circleImageView: 'de.hdodenhof:circleimageview:' + versions.cicleImageView,
+        circleImageView : 'de.hdodenhof:circleimageview:' + versions.cicleImageView,
         snackProgressBar: 'com.github.tingyik90:snackprogressbar:' + versions.snackProgressBar,
 ]
