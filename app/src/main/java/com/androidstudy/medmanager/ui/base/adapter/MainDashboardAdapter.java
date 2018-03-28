@@ -1,4 +1,4 @@
-package com.androidstudy.medmanager.ui.adapter;
+package com.androidstudy.medmanager.ui.base.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

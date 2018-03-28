@@ -1,4 +1,4 @@
-package com.androidstudy.medmanager.ui.ui.medicine;
+package com.androidstudy.medmanager.ui.medicine;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.androidstudy.medmanager.R;
 import com.androidstudy.medmanager.data.model.Medicine;
-import com.androidstudy.medmanager.ui.viewmodel.AddMedicineViewModel;
+import com.androidstudy.medmanager.ui.medicine.viewmodel.AddMedicineViewModel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

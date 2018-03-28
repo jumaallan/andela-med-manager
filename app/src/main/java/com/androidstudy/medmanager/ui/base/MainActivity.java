@@ -1,6 +1,5 @@
-package com.androidstudy.medmanager.ui.ui;
+package com.androidstudy.medmanager.ui.base;
 
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
@@ -21,10 +20,9 @@ import com.androidstudy.medmanager.R;
 import com.androidstudy.medmanager.data.model.MenuView;
 import com.androidstudy.medmanager.data.model.User;
 import com.androidstudy.medmanager.databinding.ActivityMainBinding;
-import com.androidstudy.medmanager.ui.adapter.DailyMedicineStatisticsAdapter;
-import com.androidstudy.medmanager.ui.adapter.MainDashboardAdapter;
-import com.androidstudy.medmanager.ui.ui.medicine.AddMedicineActivity;
-import com.androidstudy.medmanager.ui.viewmodel.MedicineViewModel;
+import com.androidstudy.medmanager.ui.base.adapter.DailyMedicineStatisticsAdapter;
+import com.androidstudy.medmanager.ui.base.adapter.MainDashboardAdapter;
+import com.androidstudy.medmanager.ui.medicine.AddMedicineActivity;
 import com.androidstudy.medmanager.util.CirclePagerIndicatorDecoration;
 import com.androidstudy.medmanager.util.ItemOffsetDecoration;
 import com.androidstudy.medmanager.util.ProfileDialog;

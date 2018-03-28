@@ -1,4 +1,4 @@
-package com.androidstudy.medmanager.ui.adapter;
+package com.androidstudy.medmanager.ui.base.adapter;
 
 import android.view.View;
 
