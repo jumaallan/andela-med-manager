@@ -7,10 +7,12 @@ import android.arch.persistence.room.PrimaryKey;
 public class User {
     @PrimaryKey(autoGenerate = true)
     private long userId;
+    private String id;
     private String name;
     private String imageUrl;
 
-    public User(String name, String imageUrl) {
+    public User(String id, String name, String imageUrl) {
+        this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
     }
@@ -21,6 +23,14 @@ public class User {
 
     public void setUserId(long userId) {
         this.userId = userId;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

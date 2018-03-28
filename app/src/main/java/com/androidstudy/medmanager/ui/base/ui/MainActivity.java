@@ -6,6 +6,7 @@ import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -37,6 +38,7 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.tingyik90.snackprogressbar.SnackProgressBar;
 import com.tingyik90.snackprogressbar.SnackProgressBarManager;
@@ -49,7 +51,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     @BindView(R.id.date)
     TextView date;
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     Calendar calendar;
     SimpleDateFormat simpleDateFormat;
     List<MenuView> menuViewList;
-
+    User user;
     private ProfileDialog profileDialog;
     private MainViewModel mainViewModel;
     private SnackProgressBarManager snackProgressBarManager;
@@ -72,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        user = mainViewModel.getUserLiveData();
 
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        User user = new User("Data Binding", "User");
         binding.setUser(user);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -219,5 +221,10 @@ public class MainActivity extends AppCompatActivity {
 
         //Unreachable anyway
         snackProgressBarManager.dismiss();
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
     }
 }

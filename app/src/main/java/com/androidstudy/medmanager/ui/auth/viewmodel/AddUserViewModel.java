@@ -2,10 +2,14 @@ package com.androidstudy.medmanager.ui.auth.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
+import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 
 import com.androidstudy.medmanager.data.AppDatabase;
+import com.androidstudy.medmanager.data.model.Medicine;
 import com.androidstudy.medmanager.data.model.User;
+
+import java.util.List;
 
 public class AddUserViewModel extends AndroidViewModel {
     private AppDatabase appDatabase;

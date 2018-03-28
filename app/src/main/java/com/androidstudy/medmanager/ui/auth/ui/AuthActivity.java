@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
 import com.androidstudy.medmanager.R;
-import com.androidstudy.medmanager.data.model.Medicine;
 import com.androidstudy.medmanager.data.model.User;
 import com.androidstudy.medmanager.ui.auth.viewmodel.AddUserViewModel;
 import com.androidstudy.medmanager.ui.base.ui.MainActivity;
@@ -88,6 +87,7 @@ public class AuthActivity extends AppCompatActivity implements GoogleApiClient.O
              * Navigate user to Main Activity
              */
             addUserViewModel.addUser(new User(
+                    "1",
                     name,
                     imageUrl
             ));
