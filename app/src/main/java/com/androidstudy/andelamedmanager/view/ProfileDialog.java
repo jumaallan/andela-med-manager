@@ -1,6 +1,7 @@
 package com.androidstudy.andelamedmanager.view;
 
 import android.app.Dialog;
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.androidstudy.andelamedmanager.R;
 import com.androidstudy.andelamedmanager.data.model.User;
+import com.androidstudy.andelamedmanager.ui.main.viewmodel.MainViewModel;
 import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
@@ -20,15 +22,15 @@ import butterknife.ButterKnife;
 
 public class ProfileDialog extends DialogFragment {
 
+    private static MaterialDialog.SingleButtonCallback callback;
     @BindView(R.id.text_view_name)
     TextView nameText;
     @BindView(R.id.text_adv)
     TextView advText;
     @BindView(R.id.image_view_user)
     ImageView userImage;
-
     private User user;
-    private static MaterialDialog.SingleButtonCallback callback;
+    private MainViewModel mainViewModel;
 
     public static ProfileDialog newInstance(MaterialDialog.SingleButtonCallback buttonCallback) {
         callback = buttonCallback;
@@ -40,6 +42,8 @@ public class ProfileDialog extends DialogFragment {
         super.onCreate(savedInstanceState);
 //        Box<User> userBox = ((AndelaTrackChallenge) getActivity().getApplicationContext()).getBoxStore().boxFor(User.class);
 //        user = userBox.query().build().findFirst();
+        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        user = mainViewModel.getUserLiveData();
     }
 
     @NonNull
@@ -49,9 +53,9 @@ public class ProfileDialog extends DialogFragment {
         ButterKnife.bind(this, view);
 
         if (user != null) {
-            nameText.setText("");
+            nameText.setText(user.getName());
             Glide.with(this)
-                    .load("")
+                    .load(user.getImageUrl())
                     .into(userImage);
         }
 

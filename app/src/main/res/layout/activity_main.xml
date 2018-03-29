@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="user"
             type="com.androidstudy.andelamedmanager.data.model.User" />
     </data>
 
-    <LinearLayout
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:id="@+id/coordinator_layout"
         tools:context="com.androidstudy.andelamedmanager.ui.main.ui.MainActivity">
 
         <android.support.design.widget.AppBarLayout
@@ -30,6 +30,37 @@
 
         </android.support.design.widget.AppBarLayout>
 
+        <!--<FrameLayout-->
+        <!--android:id="@+id/layout_empty"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="?selectableItemBackground"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="vertical"-->
+        <!--android:padding="@dimen/padding_normal"-->
+        <!--android:visibility="gone"-->
+        <!--tools:visibility="visible">-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/image_empty"-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:contentDescription="@null"-->
+        <!--android:src="@drawable/ic_empty" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/text_empty"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|center_horizontal"-->
+        <!--android:layout_marginBottom="@dimen/padding_empty_bottom"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:padding="@dimen/padding_normal"-->
+        <!--android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+        <!--tools:text="@string/text_empty_message" />-->
+        <!--</FrameLayout>-->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -37,7 +68,6 @@
             android:padding="@dimen/padding_small">
 
             <TextView
-                android:id="@+id/mainUserName"
                 style="@style/mainDashboardWelcomeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -92,6 +122,6 @@
 
         </LinearLayout>
 
-    </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
 
 </layout>

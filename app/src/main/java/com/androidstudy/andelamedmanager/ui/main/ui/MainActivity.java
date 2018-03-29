@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
@@ -14,6 +15,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +24,7 @@ import com.androidstudy.andelamedmanager.base.ThemableActivity;
 import com.androidstudy.andelamedmanager.data.model.MenuView;
 import com.androidstudy.andelamedmanager.data.model.User;
 import com.androidstudy.andelamedmanager.databinding.ActivityMainBinding;
+import com.androidstudy.andelamedmanager.settings.Settings;
 import com.androidstudy.andelamedmanager.ui.auth.ui.AuthActivity;
 import com.androidstudy.andelamedmanager.ui.main.adapter.DailyMedicineStatisticsAdapter;
 import com.androidstudy.andelamedmanager.ui.main.adapter.MainDashboardAdapter;
@@ -31,7 +34,6 @@ import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.MedicineViewModel
 import com.androidstudy.andelamedmanager.util.CirclePagerIndicatorDecoration;
 import com.androidstudy.andelamedmanager.util.ItemOffsetDecoration;
 import com.androidstudy.andelamedmanager.view.ProfileDialog;
-import com.androidstudy.andelamedmanager.settings.Settings;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
@@ -59,6 +61,8 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
     RecyclerView recyclerViewDailyMedicineStatistics;
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
+    @BindView(R.id.coordinator_layout)
+    CoordinatorLayout coordinatorLayout;
 
     Calendar calendar;
     SimpleDateFormat simpleDateFormat;
@@ -72,8 +76,8 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        // User me = new User("1", "Juma Allan", "");
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         user = mainViewModel.getUserLiveData();
         binding.setUser(user);
@@ -101,8 +105,12 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
         String currentDate = simpleDateFormat.format(calendar.getTime());
         date.setText(currentDate);
 
+        snackProgressBarManager = new SnackProgressBarManager(coordinatorLayout)
+                .setProgressBarColor(R.color.colorAccent)
+                .setOverlayLayoutAlpha(0.6f);
+
         menuViewList = getMenuOptions();
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);
 
@@ -113,8 +121,6 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
                 case "Add Medicine":
                     Intent addMedicine = new Intent(getApplicationContext(), AddMedicineActivity.class);
                     startActivity(addMedicine);
-                    break;
-                case "Profile":
                     break;
                 case "Reminders":
                     break;
@@ -186,7 +192,6 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
     private List<MenuView> getMenuOptions() {
         List<MenuView> listViewItems = new ArrayList<>();
         listViewItems.add(new MenuView(1, "Add Medicine", R.drawable.ic_sample));
-        listViewItems.add(new MenuView(2, "Profile", R.drawable.ic_sample));
         listViewItems.add(new MenuView(3, "Reminders", R.drawable.ic_sample));
         listViewItems.add(new MenuView(4, "Monthly Intake", R.drawable.ic_sample));
         return listViewItems;
@@ -199,7 +204,7 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
 
         SnackProgressBar snackProgressBar = new SnackProgressBar(
                 SnackProgressBar.TYPE_INDETERMINATE,
-                "Logging You Out...")
+                "Logging Out...")
                 .setSwipeToDismiss(false);
 
         // Show snack progress during logout
