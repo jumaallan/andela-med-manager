@@ -19,7 +19,7 @@ def versions = [
         cicleImageView  : '2.2.0',
         jUnit           : '4.12',
         espresso        : '3.0.1',
-        snackProgressBar: '3.4',
+        snackProgressBar: '2.2',
         state           : '1.1.6',
 ]
 
