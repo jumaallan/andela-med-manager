@@ -92,7 +92,9 @@ public class AuthActivity extends AppCompatActivity implements GoogleApiClient.O
                     imageUrl
             ));
 
-            Settings.setLoggedInSharedPref(true);
+            //TODO :: FIX THIS
+           // Settings.setLoggedInSharedPref(true);
+
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();

@@ -72,11 +72,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        // User me = new User("1", "Juma Allan", "");
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         user = mainViewModel.getUserLiveData();
-
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setUser(user);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
