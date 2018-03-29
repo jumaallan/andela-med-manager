@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.androidstudy.andelamedmanager"
-        minSdkVersion 21
+        minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -31,6 +31,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation deps.support.appcompat
     implementation deps.support.design
+    implementation deps.support.support
     implementation deps.support.supportV13
     implementation deps.support.preferencesV7
     implementation deps.support.preferencesV14
