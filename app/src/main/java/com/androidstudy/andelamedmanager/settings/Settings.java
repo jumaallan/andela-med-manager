@@ -1,4 +1,4 @@
-package com.androidstudy.andelamedmanager.util;
+package com.androidstudy.andelamedmanager.settings;
 
 import android.content.Context;
 import android.content.SharedPreferences;

@@ -10,6 +10,7 @@ import com.androidstudy.andelamedmanager.base.TransparentActivity;
 import com.androidstudy.andelamedmanager.data.model.User;
 import com.androidstudy.andelamedmanager.ui.auth.viewmodel.AddUserViewModel;
 import com.androidstudy.andelamedmanager.ui.main.ui.MainActivity;
+import com.androidstudy.andelamedmanager.settings.Settings;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -91,8 +92,7 @@ public class AuthActivity extends TransparentActivity implements GoogleApiClient
                     imageUrl
             ));
 
-            //TODO :: FIX THIS
-            // Settings.setLoggedInSharedPref(true);
+            Settings.setLoggedInSharedPref(true);
 
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
@@ -103,5 +103,15 @@ public class AuthActivity extends TransparentActivity implements GoogleApiClient
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!Settings.isFirstTimeLaunch()) {
+            startActivity(new Intent(AuthActivity.this,
+                    Settings.isLoggedIn() ? MainActivity.class : AuthActivity.class));
+            finish();
+        }
     }
 }

@@ -4,7 +4,7 @@ import android.content.res.Resources;
 import android.support.annotation.StyleRes;
 
 import com.androidstudy.andelamedmanager.R;
-import com.androidstudy.andelamedmanager.util.Settings;
+import com.androidstudy.andelamedmanager.settings.Settings;
 
 import timber.log.Timber;
 

@@ -2,8 +2,9 @@ package com.androidstudy.andelamedmanager;
 
 import android.app.Application;
 
-import timber.log.Timber;
+import com.androidstudy.andelamedmanager.settings.Settings;
 
+import timber.log.Timber;
 
 public class MedManager extends Application {
     @Override
@@ -14,5 +15,8 @@ public class MedManager extends Application {
         if (BuildConfig.DEBUG) {
             Timber.plant(new Timber.DebugTree());
         }
+
+        // init Settings
+        Settings.init(this);
     }
 }

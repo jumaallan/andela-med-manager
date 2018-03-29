@@ -1,4 +1,4 @@
-package com.androidstudy.andelamedmanager.util;
+package com.androidstudy.andelamedmanager.view;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;

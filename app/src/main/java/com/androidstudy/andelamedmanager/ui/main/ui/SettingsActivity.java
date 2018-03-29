@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.androidstudy.andelamedmanager.R;
-import com.androidstudy.andelamedmanager.util.SettingsFragment;
+import com.androidstudy.andelamedmanager.view.SettingsFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
