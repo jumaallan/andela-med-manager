@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.androidstudy.andelamedmanager.R;
+import com.androidstudy.andelamedmanager.base.ThemableActivity;
 import com.androidstudy.andelamedmanager.data.model.MenuView;
 import com.androidstudy.andelamedmanager.data.model.User;
 import com.androidstudy.andelamedmanager.databinding.ActivityMainBinding;
@@ -51,7 +52,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+public class MainActivity extends ThemableActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     @BindView(R.id.date)
     TextView date;

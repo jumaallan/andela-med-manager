@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="toggle_normal">@color/button_inactive</color>
+    <color name="toggle_active">@color/button_active</color>
+
+    <color name="button_inactive">#be424242</color>
+    <color name="button_active">@color/colorAccent</color>
+</resources>

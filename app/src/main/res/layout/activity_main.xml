@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="user"
             type="com.androidstudy.andelamedmanager.data.model.User" />
@@ -41,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@{user.name}"
+                android:text="@{`Hello ` + user.name}"
                 tools:text="Hello ," />
 
             <TextView

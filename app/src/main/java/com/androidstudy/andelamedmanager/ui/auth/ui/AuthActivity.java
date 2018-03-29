@@ -4,13 +4,12 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 
 import com.androidstudy.andelamedmanager.R;
+import com.androidstudy.andelamedmanager.base.TransparentActivity;
 import com.androidstudy.andelamedmanager.data.model.User;
 import com.androidstudy.andelamedmanager.ui.auth.viewmodel.AddUserViewModel;
 import com.androidstudy.andelamedmanager.ui.main.ui.MainActivity;
-import com.androidstudy.andelamedmanager.util.Settings;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -23,7 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
-public class AuthActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+public class AuthActivity extends TransparentActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private static final int RC_SIGN_IN = 121;
 
@@ -93,7 +92,7 @@ public class AuthActivity extends AppCompatActivity implements GoogleApiClient.O
             ));
 
             //TODO :: FIX THIS
-           // Settings.setLoggedInSharedPref(true);
+            // Settings.setLoggedInSharedPref(true);
 
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
