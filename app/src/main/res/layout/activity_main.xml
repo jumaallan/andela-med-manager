@@ -55,7 +55,7 @@
                     android:layout_height="150dp"
                     android:layout_gravity="center"
                     android:contentDescription="@null"
-                    android:src="@drawable/ic_no_medicine" />
+                    app:srcCompat="@drawable/ic_no_medicine" />
 
                 <TextView
                     android:id="@+id/text_empty"

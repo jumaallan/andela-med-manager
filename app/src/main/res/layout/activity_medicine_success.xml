@@ -38,7 +38,7 @@
                 android:layout_width="152dp"
                 android:layout_height="152dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_success" />
+                app:srcCompat="@drawable/ic_success" />
 
             <View
                 android:layout_width="match_parent"
