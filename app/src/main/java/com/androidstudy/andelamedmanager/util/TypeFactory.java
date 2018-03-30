@@ -5,16 +5,17 @@ import android.graphics.Typeface;
 
 public class TypeFactory {
 
-    private Typeface regular;
-    private Typeface bold;
-    private Typeface light;
+    final String OXYGEN_REGULAR = "fonts/oxygen_regular.ttf";
+    final String OXYGEN_BOLD = "fonts/oxygen_bold.ttf";
+    final String OXYGEN_LIGHT = "fonts/oxygen_light.ttf";
+
+    Typeface regular;
+    Typeface bold;
+    Typeface light;
 
     public TypeFactory(Context context) {
-        String OXYGEN_REGULAR = "fonts/oxygen_regular.ttf";
         regular = Typeface.createFromAsset(context.getAssets(), OXYGEN_REGULAR);
-        String OXYGEN_BOLD = "fonts/oxygen_bold.ttf";
         bold = Typeface.createFromAsset(context.getAssets(), OXYGEN_BOLD);
-        String OXYGEN_LIGHT = "fonts/oxygen_light.ttf";
         light = Typeface.createFromAsset(context.getAssets(), OXYGEN_LIGHT);
     }
 

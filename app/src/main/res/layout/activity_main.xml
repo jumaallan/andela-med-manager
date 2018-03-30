@@ -46,7 +46,7 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="@dimen/padding_normal"
-                android:visibility="visible"
+                android:visibility="gone"
                 tools:visibility="visible">
 
                 <ImageView
@@ -55,7 +55,7 @@
                     android:layout_height="150dp"
                     android:layout_gravity="center"
                     android:contentDescription="@null"
-                    android:src="@drawable/ic_add_medicine" />
+                    android:src="@drawable/ic_no_medicine" />
 
                 <TextView
                     android:id="@+id/text_empty"

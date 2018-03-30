@@ -37,18 +37,8 @@ public class Settings {
                 .apply();
     }
 
-    public static boolean isFirstTimeLaunch() {
-        return settings.getBoolean(IS_FIRST_TIME_LAUNCH, true);
-    }
-
-    public static void setFirstTimeLaunch(boolean isFirstTime) {
-        settings.edit()
-                .putBoolean(IS_FIRST_TIME_LAUNCH, isFirstTime)
-                .apply();
-    }
-
     public static int themeIndex() {
-        int themeIndex = 1; // 0 -> Dark 1 -> Light
+        int themeIndex = 0; // 0 -> Dark 1 -> Light
         try {
             themeIndex = Integer.parseInt(defaultPrefs.getString("THEME", "0"));
         } catch (Exception e) {

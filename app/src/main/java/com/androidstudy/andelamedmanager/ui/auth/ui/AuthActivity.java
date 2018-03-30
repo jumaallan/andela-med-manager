@@ -118,9 +118,9 @@ public class AuthActivity extends TransparentActivity implements GoogleApiClient
     @Override
     protected void onResume() {
         super.onResume();
-        if (!Settings.isFirstTimeLaunch()) {
-            startActivity(new Intent(AuthActivity.this,
-                    Settings.isLoggedIn() ? MainActivity.class : AuthActivity.class));
+        if (Settings.isLoggedIn()) {
+            Intent auth = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(auth);
             finish();
         }
     }

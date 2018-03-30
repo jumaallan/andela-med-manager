@@ -16,18 +16,22 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class DailyMedicineStatisticsAdapter extends RecyclerView.Adapter<DailyMedicineStatisticsAdapter.MedicineHolder> implements View.OnClickListener {
+    CustomItemClickListener listener;
     private Context context;
     private List<Medicine> medicineList;
 
-    public DailyMedicineStatisticsAdapter(Context context, List<Medicine> medicineList) {
+    public DailyMedicineStatisticsAdapter(Context context, List<Medicine> medicineList, CustomItemClickListener listener) {
         this.context = context;
         this.medicineList = medicineList;
+        this.listener = listener;
     }
 
     @Override
     public MedicineHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_daily_medicine_statistics, parent, false);
+        final MedicineHolder mViewHolder = new MedicineHolder(view);
+        view.setOnClickListener(v -> listener.onItemClick(v, mViewHolder.getPosition()));
         return new MedicineHolder(view);
     }
 

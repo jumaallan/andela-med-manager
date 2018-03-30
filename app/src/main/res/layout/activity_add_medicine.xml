@@ -55,7 +55,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/gws_color_material_grey_500" />
 
-            <com.androidstudy.andelamedmanager.util.CustomEditText
+            <EditText
                 android:id="@+id/editTextMedicineName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -64,8 +64,7 @@
                 android:inputType="textCapWords"
                 android:padding="@dimen/padding_average"
                 android:singleLine="true"
-                android:textColorHint="@color/grey_500"
-                app:font_name="regular" />
+                android:textColorHint="@color/grey_500" />
 
         </LinearLayout>
 
@@ -185,6 +184,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="5.5"
                 android:background="@android:color/transparent"
+                android:focusable="false"
                 android:padding="12dp"
                 android:singleLine="true" />
 
@@ -223,6 +223,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="5.5"
                 android:background="@android:color/transparent"
+                android:focusable="false"
                 android:padding="12dp"
                 android:singleLine="true" />
 

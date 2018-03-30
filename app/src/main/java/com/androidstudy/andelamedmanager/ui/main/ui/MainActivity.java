@@ -16,11 +16,14 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.androidstudy.andelamedmanager.R;
 import com.androidstudy.andelamedmanager.base.ThemableActivity;
+import com.androidstudy.andelamedmanager.data.model.Medicine;
 import com.androidstudy.andelamedmanager.data.model.MenuView;
 import com.androidstudy.andelamedmanager.data.model.User;
 import com.androidstudy.andelamedmanager.databinding.ActivityMainBinding;
@@ -65,6 +68,8 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
     CoordinatorLayout coordinatorLayout;
     @BindView(R.id.text_empty)
     TextView emptyText;
+    @BindView(R.id.layout_empty)
+    FrameLayout emptyFrame;
 
     Calendar calendar;
     SimpleDateFormat simpleDateFormat;
@@ -73,6 +78,9 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
     private ProfileDialog profileDialog;
     private SnackProgressBarManager snackProgressBarManager;
     private GoogleApiClient mGoogleApiClient;
+
+    private DailyMedicineStatisticsAdapter dailyMedicineStatisticsAdapter;
+    private List<Medicine> medicineList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,7 +146,34 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
 
         recyclerView.setAdapter(mainDashboardAdapter);
 
-        DailyMedicineStatisticsAdapter dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, new ArrayList<>());
+        MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
+        medicineViewModel.getMedicineList().observe(this, medicines -> {
+            if (MainActivity.this.medicineList == null) {
+                setListData(medicines);
+            }
+        });
+    }
+
+    public void setListData(final List<Medicine> medicineList) {
+        this.medicineList = medicineList;
+
+        if (medicineList.isEmpty()) {
+            emptyFrame.setVisibility(View.VISIBLE);
+        }
+
+        dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, medicineList, (v, position) -> {
+//                Farmer farmer = listOfFarmers.get(position);
+//                Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
+//                Bundle b = new Bundle();
+//
+//                b.putString("farmerId", farmer.getFarmerId());
+//                b.putString("farmerName", farmer.getFarmerName());
+//                b.putString("phoneNumber", farmer.getPhoneNumber());
+//                intent.putExtras(b);
+//                startActivity(intent);
+
+        });
+
         recyclerViewDailyMedicineStatistics.setLayoutManager(new LinearLayoutManager(this,
                 LinearLayoutManager.HORIZONTAL, false));
         // add pager behavior
@@ -147,10 +182,6 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
         // pager indicator
         recyclerViewDailyMedicineStatistics.addItemDecoration(new CirclePagerIndicatorDecoration());
         recyclerViewDailyMedicineStatistics.setAdapter(dailyMedicineStatisticsAdapter);
-
-        MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
-        medicineViewModel.getMedicineList().observe(MainActivity.this, dailyMedicineStatisticsAdapter::addItems);
-
     }
 
     private void init() {

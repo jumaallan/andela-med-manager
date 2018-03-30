@@ -28,6 +28,7 @@ public class MedManager extends Application {
 
         // init Settings
         Settings.init(this);
+        mInstance = this;
     }
 
     public Typeface getTypeFace(int type) {
