@@ -104,6 +104,7 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
         String currentDate = simpleDateFormat.format(calendar.getTime());
         date.setText(currentDate);
 
+        //Initialize Snackbar Manager -> Attach/pin to the bottom of the layout :)
         snackProgressBarManager = new SnackProgressBarManager(coordinatorLayout)
                 .setProgressBarColor(R.color.colorAccent)
                 .setOverlayLayoutAlpha(0.6f);
@@ -130,6 +131,7 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
                     break;
             }
         });
+
         recyclerView.setAdapter(mainDashboardAdapter);
 
         DailyMedicineStatisticsAdapter dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, new ArrayList<>());
@@ -144,6 +146,7 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
 
         MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
         medicineViewModel.getMedicineList().observe(MainActivity.this, dailyMedicineStatisticsAdapter::addItems);
+
     }
 
     @Override
@@ -187,7 +190,7 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
         return super.onOptionsItemSelected(item);
     }
 
-    //Mock Data
+    //Mock Data for UI Cards
     private List<MenuView> getMenuOptions() {
         List<MenuView> listViewItems = new ArrayList<>();
         listViewItems.add(new MenuView(1, "Add Medicine", R.drawable.ic_sample));
@@ -210,7 +213,6 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
         snackProgressBarManager.dismissAll();
         snackProgressBarManager.show(snackProgressBar, SnackProgressBarManager.LENGTH_INDEFINITE);
 
-        //TODO :: Enable this Google Sign Out :)
         Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(status -> {
             //Clear Shared Pref File
             Settings.setLoggedInSharedPref(false);
