@@ -12,6 +12,7 @@ import com.androidstudy.andelamedmanager.R;
 import com.androidstudy.andelamedmanager.base.ThemableActivity;
 import com.androidstudy.andelamedmanager.ui.main.ui.MainActivity;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import butterknife.BindView;
@@ -34,7 +35,8 @@ public class AddMedicineActivity extends ThemableActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    String name, description, interval;
+    String name, description, interval, startDate, endDate;
+    SimpleDateFormat simpleDateFormat;
     private Calendar calendar;
 
     @Override
@@ -42,7 +44,6 @@ public class AddMedicineActivity extends ThemableActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_medicine);
         ButterKnife.bind(this);
-
 
         Drawable upArrow = getResources().getDrawable(R.drawable.ic_chevron_left_white_24dp);
         toolbar.setNavigationIcon(upArrow);
@@ -52,6 +53,10 @@ public class AddMedicineActivity extends ThemableActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         calendar = Calendar.getInstance();
+        simpleDateFormat = new SimpleDateFormat("MMM d, yyyy");
+        String today = simpleDateFormat.format(calendar.getTime());
+        editTextMedicineStartDate.setText(today);
+        editTextMedicineEndDate.setText(today);
 
         buttonContinue.setOnClickListener(view -> validateMedicalDetails());
     }
@@ -68,6 +73,8 @@ public class AddMedicineActivity extends ThemableActivity {
         name = editTextMedicineName.getText().toString().trim();
         description = editTextMedicineDescription.getText().toString().trim();
         interval = editTextMedicineInterval.getText().toString().trim();
+        startDate = editTextMedicineStartDate.getText().toString().trim();
+        endDate = editTextMedicineEndDate.getText().toString().trim();
 
         if (TextUtils.isEmpty(name)) {
             editTextMedicineName.setError("Please Enter Medicine Name");
@@ -82,6 +89,14 @@ public class AddMedicineActivity extends ThemableActivity {
         if (TextUtils.isEmpty(interval)) {
             editTextMedicineInterval.setError("Please Enter Medicine Interval");
             return;
+        }
+
+        if (TextUtils.isEmpty(startDate)) {
+            return;
+        }
+
+        if (TextUtils.isEmpty(endDate)) {
+
         }
 
         saveMedicalData();
