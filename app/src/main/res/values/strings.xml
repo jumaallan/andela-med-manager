@@ -24,4 +24,9 @@
         \n\n&#8226; Your Medicine Data will be backed up to Google Drive.
         \n\n&#8226; App preferences will be persisted across app installs.
     </string>
+
+    <string name="text_empty_message"><![CDATA[
+        No Medicine added. Tap the <font color=\'#FF4081\'>+</font> card to add one now.
+        ]]>
+    </string>
 </resources>

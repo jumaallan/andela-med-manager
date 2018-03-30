@@ -31,42 +31,45 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <!--<FrameLayout-->
-        <!--android:id="@+id/layout_empty"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:background="?selectableItemBackground"-->
-        <!--android:gravity="center"-->
-        <!--android:orientation="vertical"-->
-        <!--android:padding="@dimen/padding_normal"-->
-        <!--android:visibility="gone"-->
-        <!--tools:visibility="visible">-->
-
-        <!--<ImageView-->
-        <!--android:id="@+id/image_empty"-->
-        <!--android:layout_width="150dp"-->
-        <!--android:layout_height="150dp"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:contentDescription="@null"-->
-        <!--android:src="@drawable/ic_empty" />-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/text_empty"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="bottom|center_horizontal"-->
-        <!--android:layout_marginBottom="@dimen/padding_empty_bottom"-->
-        <!--android:gravity="center_horizontal"-->
-        <!--android:padding="@dimen/padding_normal"-->
-        <!--android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
-        <!--tools:text="@string/text_empty_message" />-->
-        <!--</FrameLayout>-->
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="@dimen/padding_small"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <FrameLayout
+                android:id="@+id/layout_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/linearTwo"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_normal"
+                android:visibility="visible"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/image_empty"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_add_medicine" />
+
+                <TextView
+                    android:id="@+id/text_empty"
+                    style="@style/mainDashboardNoMedicine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="@dimen/padding_empty_bottom"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/padding_normal"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    tools:text="@string/text_empty_message" />
+
+            </FrameLayout>
 
             <LinearLayout
                 android:id="@+id/linearOne"

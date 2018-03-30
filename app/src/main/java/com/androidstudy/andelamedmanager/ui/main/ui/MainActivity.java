@@ -13,6 +13,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -62,13 +63,14 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
     RecyclerView recyclerView;
     @BindView(R.id.coordinator_layout)
     CoordinatorLayout coordinatorLayout;
+    @BindView(R.id.text_empty)
+    TextView emptyText;
 
     Calendar calendar;
     SimpleDateFormat simpleDateFormat;
     List<MenuView> menuViewList;
     User user;
     private ProfileDialog profileDialog;
-    private MainViewModel mainViewModel;
     private SnackProgressBarManager snackProgressBarManager;
     private GoogleApiClient mGoogleApiClient;
 
@@ -77,7 +79,7 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
         super.onCreate(savedInstanceState);
 
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        MainViewModel mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         user = mainViewModel.getUserLiveData();
         binding.setUser(user);
 
@@ -96,6 +98,8 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
                 .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
+
+        init();
 
         profileDialog = ProfileDialog.newInstance(((dialog, which) -> logout()));
 
@@ -147,6 +151,10 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
         MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
         medicineViewModel.getMedicineList().observe(MainActivity.this, dailyMedicineStatisticsAdapter::addItems);
 
+    }
+
+    private void init() {
+        emptyText.setText(Html.fromHtml(getString(R.string.text_empty_message)));
     }
 
     @Override
