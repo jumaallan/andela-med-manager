@@ -21,7 +21,7 @@
 
         <activity
             android:name=".ui.auth.ui.AuthActivity"
-            android:theme="@style/AppTheme"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,6 +46,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.main.ui.SettingsActivity"
             android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

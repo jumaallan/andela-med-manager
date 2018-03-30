@@ -4,6 +4,9 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 
 import com.androidstudy.andelamedmanager.R;
 import com.androidstudy.andelamedmanager.base.TransparentActivity;
@@ -28,8 +31,8 @@ public class AuthActivity extends TransparentActivity implements GoogleApiClient
 
     private static final int RC_SIGN_IN = 121;
 
-    @BindView(R.id.googleSignIn)
-    SignInButton googleSignIn;
+    @BindView(R.id.loginButton)
+    Button loginButton;
 
     GoogleApiClient mGoogleApiClient;
     private AddUserViewModel addUserViewModel;
@@ -37,6 +40,9 @@ public class AuthActivity extends TransparentActivity implements GoogleApiClient
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_auth);
         ButterKnife.bind(this);
 
@@ -53,9 +59,9 @@ public class AuthActivity extends TransparentActivity implements GoogleApiClient
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-        googleSignIn.setOnClickListener(v -> {
+        loginButton.setOnClickListener(v -> {
             //Check Internet Connection
-            if (NetworkUtil.isConnected(this))
+          //  if (NetworkUtil.isConnected(this))
             googleSignIn();
 
         });

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Med-Manager</string>
+    <string name="app_name">Med Manager</string>
     <string name="action_settings">Settings</string>
     <string name="dummy_date">Feb 12 2018</string>
     <string name="proceed">Continue</string>
@@ -29,4 +29,5 @@
         No Medicine added. Tap the <font color=\'#FF4081\'>+</font> card to add one now.
         ]]>
     </string>
+    <string name="sign_in">Sign In with Google</string>
 </resources>

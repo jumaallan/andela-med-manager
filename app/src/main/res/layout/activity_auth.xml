@@ -1,49 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="1"
     tools:context="com.androidstudy.andelamedmanager.ui.auth.ui.AuthActivity">
 
-    <LinearLayout
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".7"
-        android:background="@color/background">
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg" />
 
-
-    </LinearLayout>
-
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".3"
-        android:orientation="vertical"
-        android:padding="@dimen/padding_normal">
+        android:layout_height="match_parent"
+        android:background="#77000000" />
 
-        <TextView
-            style="@style/appLoginText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textAlignment="center" />
+    <Button
+        android:id="@+id/loginButton"
+        style="@style/allBlueButtons"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/margin_normal"
+        android:background="@drawable/bg_blue_button"
+        android:drawableStart="@drawable/ic_google_icon"
+        android:paddingStart="@dimen/padding_normal"
+        android:text="@string/sign_in"
+        android:textAllCaps="false" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_normal"
-            android:gravity="center"
-            android:orientation="horizontal">
+</RelativeLayout>
 
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/googleSignIn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-</LinearLayout>
