@@ -12,4 +12,13 @@ The app uses the **MVVM Architecture**. I have used the following components for
 
 > The final apk can be download here : <insert link>
 
+## Prerequisites
+You will need the following to run this project:
+1. A laptop or desktop machine with internet access
+2. Android Studio 3.1 Stable Channel (Latest Stable Release)
+
+## Setting Up
+* Clone the Repository from Github
+* Open the project folder using Android Studio IDE
+
 
