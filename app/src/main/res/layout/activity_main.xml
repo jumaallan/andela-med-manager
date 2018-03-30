@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="user"
             type="com.androidstudy.andelamedmanager.data.model.User" />
     </data>
 
     <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:id="@+id/coordinator_layout"
         tools:context="com.androidstudy.andelamedmanager.ui.main.ui.MainActivity">
 
         <android.support.design.widget.AppBarLayout
@@ -61,67 +62,84 @@
         <!--tools:text="@string/text_empty_message" />-->
         <!--</FrameLayout>-->
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:padding="@dimen/padding_small">
+            android:padding="@dimen/padding_small"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <TextView
-                style="@style/mainDashboardWelcomeText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@{`Hello ` + user.name}"
-                tools:text="Hello ," />
-
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/margin_small"
-                android:fontFamily="@font/oxygen_light"
-                android:text="@string/dummy_date"
-                android:textSize="14sp"
-                tools:text="@string/dummy_date" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerViewDailyMedicineStatistics"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:clipToPadding="false"
-                tools:listitem="@layout/row_daily_medicine_statistics" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="21dp"
-                android:layout_marginRight="21dp"
-                android:layout_marginTop="@dimen/margin_normal"
-                android:alpha="0.6"
-                android:background="@color/divider" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/margin_small"
-                android:fontFamily="@font/oxygen_light"
-                android:text="@string/select_activity"
-                android:textSize="15sp" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerView"
+            <LinearLayout
+                android:id="@+id/linearOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/margin_normal"
-                android:clipToPadding="false"
-                tools:listitem="@layout/row_main_dashboard" />
+                android:layout_above="@id/linearTwo"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <TextView
+                    style="@style/mainDashboardWelcomeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@{`Hello ` + user.name}"
+                    tools:text="Hello ," />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:fontFamily="@font/oxygen_light"
+                    android:text="@string/dummy_date"
+                    android:textSize="14sp"
+                    tools:text="@string/dummy_date" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewDailyMedicineStatistics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:clipToPadding="false"
+                    tools:listitem="@layout/row_daily_medicine_statistics" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="linearTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginRight="21dp"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:alpha="0.6"
+                    android:background="@color/divider" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:fontFamily="@font/oxygen_light"
+                    android:text="@string/select_activity"
+                    android:textSize="15sp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:clipToPadding="false"
+                    tools:listitem="@layout/row_main_dashboard" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 
