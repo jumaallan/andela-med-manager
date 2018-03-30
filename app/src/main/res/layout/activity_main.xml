@@ -105,6 +105,14 @@
                     android:clipToPadding="false"
                     tools:listitem="@layout/row_daily_medicine_statistics" />
 
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewDailyMedicine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:clipToPadding="false"
+                    tools:listitem="@layout/row_daily_medicine" />
+
             </LinearLayout>
 
             <LinearLayout
