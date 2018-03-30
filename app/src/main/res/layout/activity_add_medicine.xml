@@ -48,14 +48,14 @@
                 android:layout_weight="1"
                 android:background="?selectableItemBackground"
                 android:padding="@dimen/padding_average"
-                android:src="@drawable/ic_medicine_name" />
+                android:src="@drawable/ic_add_medicine" />
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:background="@color/gws_color_material_grey_500" />
 
-            <EditText
+            <com.androidstudy.andelamedmanager.util.CustomEditText
                 android:id="@+id/editTextMedicineName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -63,7 +63,8 @@
                 android:background="@android:color/transparent"
                 android:inputType="textCapWords"
                 android:padding="@dimen/padding_average"
-                android:textColorHint="@color/grey_500" />
+                android:textColorHint="@color/grey_500"
+                app:font_name="regular" />
 
         </LinearLayout>
 
