@@ -21,4 +21,8 @@ You will need the following to run this project:
 * Clone the Repository from Github
 * Open the project folder using Android Studio IDE
 
+### Splash Screen
+The user will be presented with a splash screen first time they use the app. This page has a simple visual aid to show the user what the app does in like 2 secs :)
 
+### Login Page
+The User will the be presented with the Login Page, where they are required to

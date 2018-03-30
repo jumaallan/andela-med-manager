@@ -3,13 +3,13 @@ package com.androidstudy.andelamedmanager.ui.medicine.ui;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.androidstudy.andelamedmanager.R;
+import com.androidstudy.andelamedmanager.base.ThemableActivity;
 import com.androidstudy.andelamedmanager.ui.main.ui.MainActivity;
 
 import java.util.Calendar;
@@ -17,7 +17,7 @@ import java.util.Calendar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AddMedicineActivity extends AppCompatActivity {
+public class AddMedicineActivity extends ThemableActivity {
 
     @BindView(R.id.editTextMedicineName)
     EditText editTextMedicineName;

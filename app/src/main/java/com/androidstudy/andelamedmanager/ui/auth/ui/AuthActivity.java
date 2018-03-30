@@ -8,9 +8,10 @@ import android.support.annotation.NonNull;
 import com.androidstudy.andelamedmanager.R;
 import com.androidstudy.andelamedmanager.base.TransparentActivity;
 import com.androidstudy.andelamedmanager.data.model.User;
+import com.androidstudy.andelamedmanager.settings.Settings;
 import com.androidstudy.andelamedmanager.ui.auth.viewmodel.AddUserViewModel;
 import com.androidstudy.andelamedmanager.ui.main.ui.MainActivity;
-import com.androidstudy.andelamedmanager.settings.Settings;
+import com.androidstudy.networkmanager.internal.NetworkUtil;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -52,7 +53,12 @@ public class AuthActivity extends TransparentActivity implements GoogleApiClient
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-        googleSignIn.setOnClickListener(v -> googleSignIn());
+        googleSignIn.setOnClickListener(v -> {
+            //Check Internet Connection
+            if (NetworkUtil.isConnected(this))
+            googleSignIn();
+
+        });
     }
 
     private void googleSignIn() {

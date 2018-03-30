@@ -193,9 +193,9 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
     //Mock Data for UI Cards
     private List<MenuView> getMenuOptions() {
         List<MenuView> listViewItems = new ArrayList<>();
-        listViewItems.add(new MenuView(1, "Add Medicine", R.drawable.ic_sample));
-        listViewItems.add(new MenuView(3, "Reminders", R.drawable.ic_sample));
-        listViewItems.add(new MenuView(4, "Monthly Intake", R.drawable.ic_sample));
+        listViewItems.add(new MenuView(1, "Add Medicine", R.drawable.ic_add_medicine));
+        listViewItems.add(new MenuView(3, "Reminders", R.drawable.ic_medicine_reminder));
+        listViewItems.add(new MenuView(4, "Monthly Intake", R.drawable.ic_monthly_intake));
         return listViewItems;
     }
 
