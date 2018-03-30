@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="5.5"
                 android:background="@android:color/transparent"
-                android:inputType="textCapWdords"
+                android:inputType="textCapWords"
                 android:padding="@dimen/padding_average"
                 android:singleLine="true"
                 android:textColorHint="@color/grey_500"
@@ -91,7 +91,7 @@
                 android:layout_weight="1"
                 android:background="?selectableItemBackground"
                 android:padding="@dimen/padding_average"
-                android:src="@drawable/ic_medicine_description" />
+                android:src="@drawable/ic_add_description" />
 
             <View
                 android:layout_width="1dp"
@@ -184,9 +184,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5.5"
-                android:singleLine="true"
                 android:background="@android:color/transparent"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:singleLine="true" />
 
         </LinearLayout>
 
@@ -222,9 +222,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5.5"
-                android:singleLine="true"
                 android:background="@android:color/transparent"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:singleLine="true" />
 
         </LinearLayout>
 
@@ -232,7 +232,7 @@
             android:id="@+id/buttonContinue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_normal"
             android:background="@drawable/bg_blue_button"
             android:text="@string/proceed"
             android:textAllCaps="true"
