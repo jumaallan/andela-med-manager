@@ -92,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/margin_small"
-                    android:fontFamily="@font/oxygen_light"
+                    android:fontFamily="@font/oxygen_bold"
                     android:text="@string/dummy_date"
                     android:textSize="14sp"
                     tools:text="@string/dummy_date" />
@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/margin_small"
-                    android:fontFamily="@font/oxygen_light"
+                    android:fontFamily="@font/oxygen_bold"
                     android:text="@string/select_activity"
                     android:textSize="15sp" />
 
