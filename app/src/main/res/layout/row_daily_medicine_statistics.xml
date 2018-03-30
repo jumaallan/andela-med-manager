@@ -22,7 +22,7 @@
             android:orientation="horizontal">
 
             <android.support.v4.widget.Space
-                android:layout_width="@dimen/padding_normal"
+                android:layout_width="@dimen/padding_small"
                 android:layout_height="0dp" />
 
             <ImageView
@@ -37,8 +37,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/padding_medium"
-                android:layout_marginLeft="@dimen/padding_normal"
-                android:layout_marginRight="@dimen/padding_medium"
                 android:layout_marginStart="@dimen/padding_normal"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 tools:text="Medicine Name" />
@@ -48,113 +46,91 @@
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
-            <ImageButton
-                android:id="@+id/button_overflow"
-                style="?actionButtonStyle"
+            <Switch
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@null"
-                app:srcCompat="@drawable/ic_more" />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
             android:orientation="horizontal"
-            android:weightSum="3">
+            android:weightSum="4">
 
-            <LinearLayout
+            <TextView
+                style="@style/dailyMedicineStatisticsHeader"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/dailyMedicineStatisticsHeader"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Dosage" />
-
-                <TextView
-                    android:id="@+id/textViewDosage"
-                    style="@style/dailyMedicineStatisticsData"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_small"
-                    tools:text="1000" />
-
-                <TextView
-                    style="@style/dailyMedicineStatisticsFooter"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:text="Tabs" />
-
-            </LinearLayout>
+                android:text="8:00 am" />
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/gws_color_material_grey_500" />
+                android:background="@color/divider" />
 
-            <LinearLayout
+            <TextView
+                style="@style/dailyMedicineStatisticsHeader"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/dailyMedicineStatisticsHeader"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Taken" />
-
-                <TextView
-                    android:id="@+id/textViewTaken"
-                    style="@style/dailyMedicineStatisticsData"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_small"
-                    tools:text="380" />
-
-                <TextView
-                    style="@style/dailyMedicineStatisticsFooter"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:text="Tabs" />
-
-            </LinearLayout>
+                android:text="12:00 noon" />
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/gws_color_material_grey_500" />
+                android:background="@color/divider" />
 
-            <LinearLayout
+            <TextView
+                style="@style/dailyMedicineStatisticsHeader"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:text="5:00 pm" />
 
-                <TextView
-                    style="@style/dailyMedicineStatisticsHeader"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Percentage" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/divider" />
 
-                <TextView
-                    android:id="@+id/textViewRealization"
-                    style="@style/dailyMedicineRealization"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/margin_small"
-                    tools:text="38%" />
-
-            </LinearLayout>
+            <TextView
+                style="@style/dailyMedicineStatisticsHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10:00 pm" />
 
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@color/divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_small">
+
+            <TextView
+                style="@style/dailyMedicineStatisticsHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:text="2 Times" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@drawable/ic_alarm" />
+
+        </RelativeLayout>
 
     </LinearLayout>
 
