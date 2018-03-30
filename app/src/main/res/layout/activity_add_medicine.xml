@@ -48,7 +48,7 @@
                 android:layout_weight="1"
                 android:background="?selectableItemBackground"
                 android:padding="@dimen/padding_average"
-                android:src="@drawable/ic_add_medicine" />
+                app:srcCompat="@drawable/ic_add_medicine" />
 
             <View
                 android:layout_width="1dp"
@@ -90,7 +90,7 @@
                 android:layout_weight="1"
                 android:background="?selectableItemBackground"
                 android:padding="@dimen/padding_average"
-                android:src="@drawable/ic_add_description" />
+                app:srcCompat="@drawable/ic_add_description" />
 
             <View
                 android:layout_width="1dp"
@@ -131,7 +131,7 @@
                 android:layout_weight="1"
                 android:background="?selectableItemBackground"
                 android:padding="@dimen/padding_average"
-                android:src="@drawable/ic_add_interval" />
+                app:srcCompat="@drawable/ic_add_interval" />
 
             <View
                 android:layout_width="1dp"
@@ -171,7 +171,7 @@
                 android:layout_weight="1"
                 android:background="?selectableItemBackground"
                 android:padding="@dimen/padding_average"
-                android:src="@drawable/ic_add_time" />
+                app:srcCompat="@drawable/ic_add_time" />
 
             <View
                 android:layout_width="1dp"
@@ -210,7 +210,7 @@
                 android:layout_weight="1"
                 android:background="?selectableItemBackground"
                 android:padding="@dimen/padding_average"
-                android:src="@drawable/ic_add_time" />
+                app:srcCompat="@drawable/ic_add_time" />
 
             <View
                 android:layout_width="1dp"
