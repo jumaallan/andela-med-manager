@@ -14,13 +14,11 @@ import com.androidstudy.andelamedmanager.data.model.User;
 import com.androidstudy.andelamedmanager.settings.Settings;
 import com.androidstudy.andelamedmanager.ui.auth.viewmodel.AddUserViewModel;
 import com.androidstudy.andelamedmanager.ui.main.ui.MainActivity;
-import com.androidstudy.networkmanager.internal.NetworkUtil;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import butterknife.BindView;
@@ -61,7 +59,7 @@ public class AuthActivity extends TransparentActivity implements GoogleApiClient
 
         loginButton.setOnClickListener(v -> {
             //Check Internet Connection
-          //  if (NetworkUtil.isConnected(this))
+            //  if (NetworkUtil.isConnected(this))
             googleSignIn();
 
         });
