@@ -16,11 +16,13 @@
         <activity
             android:name=".ui.main.ui.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.auth.ui.AuthActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,16 +32,20 @@
 
         <activity
             android:name=".ui.medicine.ui.AddMedicineActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.medicine.ui.ConfirmMedicineActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.medicine.ui.MedicineSuccessActivity"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".ui.main.ui.SettingsActivity" />
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.main.ui.SettingsActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
