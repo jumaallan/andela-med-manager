@@ -48,7 +48,7 @@ public class Settings {
     }
 
     public static int themeIndex() {
-        int themeIndex = 0;
+        int themeIndex = 1; // 0 -> Dark 1 -> Light
         try {
             themeIndex = Integer.parseInt(defaultPrefs.getString("THEME", "0"));
         } catch (Exception e) {
@@ -57,6 +57,7 @@ public class Settings {
         return themeIndex;
     }
 
+    //TODO :: Set Theme here
     public static void setThemeIndex(int themeIndex) {
         defaultPrefs.edit()
                 .putString("THEME", String.valueOf(themeIndex))
