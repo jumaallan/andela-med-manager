@@ -7,12 +7,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.androidstudy.andelamedmanager.R;
+import com.androidstudy.andelamedmanager.base.ThemableActivity;
 import com.androidstudy.andelamedmanager.ui.main.ui.MainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MedicineSuccessActivity extends AppCompatActivity {
+public class MedicineSuccessActivity extends ThemableActivity {
 
     @BindView(R.id.textViewMedicineName)
     TextView textViewMedicineName;

@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/margin_small"
     card_view:cardCornerRadius="6dp"
-    card_view:cardElevation="4dp"
+    card_view:cardElevation="6dp"
     card_view:contentPadding="@dimen/card_view_padding">
 
     <LinearLayout
@@ -16,9 +16,9 @@
 
         <TextView
             android:id="@+id/textViewMedicineName"
+            style="@style/mainDashboardWelcomeText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/mainDashboardWelcomeText"
             android:layout_marginBottom="@dimen/margin_small"
             android:gravity="center"
             tools:text="Medicine Name" />
