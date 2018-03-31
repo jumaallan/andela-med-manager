@@ -30,7 +30,7 @@ public class DailyMedicineStatisticsAdapter extends RecyclerView.Adapter<DailyMe
     @Override
     public MedicineHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.row_daily_medicine, parent, false);
+                .inflate(R.layout.row_daily_medicine_statistics, parent, false);
         final MedicineHolder mViewHolder = new MedicineHolder(itemView);
         itemView.setOnClickListener(v -> listener.onItemClick(v, mViewHolder.getPosition()));
         return mViewHolder;
