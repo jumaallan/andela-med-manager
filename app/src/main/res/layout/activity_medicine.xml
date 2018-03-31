@@ -99,7 +99,7 @@
                 android:orientation="vertical">
 
                 <com.robinhood.spark.SparkView
-                    android:id="@+id/sparkview"
+                    android:id="@+id/sparkView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:spark_animateChanges="true"
