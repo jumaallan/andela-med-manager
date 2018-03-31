@@ -6,12 +6,10 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.androidstudy.andelamedmanager.R;
 import com.androidstudy.andelamedmanager.base.ThemableActivity;
@@ -26,7 +24,6 @@ import java.util.concurrent.TimeUnit;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import timber.log.Timber;
 
 public class AddMedicineActivity extends ThemableActivity {
 
@@ -111,16 +108,12 @@ public class AddMedicineActivity extends ThemableActivity {
         //Get Number of Days * Intervals to get the Number of Pills
         SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy");
         String startDateMed = editTextMedicineStartDate.getText().toString().trim();
-        Log.d("START", startDateMed);
         String endDateMed = editTextMedicineEndDate.getText().toString().trim();
-        Log.d("END", endDateMed);
 
         try {
             Date date1 = myFormat.parse(startDateMed);
             Date date2 = myFormat.parse(endDateMed);
             long diff = date2.getTime() - date1.getTime();
-
-            Timber.d("Days: " + TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
 
             pills = String.valueOf(TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS) * interval);
 
@@ -129,7 +122,6 @@ public class AddMedicineActivity extends ThemableActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
     }
 
     private void updateStartMedLabel(String start) {

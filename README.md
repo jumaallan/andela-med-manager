@@ -24,9 +24,4 @@ You will need the following to run this project:
 ### Login Page
 The User will the be presented with the Login Page, where they are required to authenticate themselves using Google Login
 
-### ToDo
-1. Align the cards
-2. Align daily cards icons on the left -> Better Icon maybe
-3. Add Alarm settings in settings page
-4. Add UI for No date -> Like crypto app
-5. Selectable UI on the Add Med Page -> Like dms
+****
