@@ -270,7 +270,8 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
         List<Medicine> listViewItems = new ArrayList<>();
         listViewItems.add(new Medicine("Panadol", "This is a pain reliever", "2"));
         listViewItems.add(new Medicine("Bruffen", "Helps to heal cold and flue", "4"));
-        listViewItems.add(new Medicine("Eno", "Fastest cure for bad stomach pains", "3"));
+        listViewItems.add(new Medicine("Eno", "Fastest cure for bad stomach pains", "1"));
+        listViewItems.add(new Medicine("Malaria Tabs", "Help to heal Malaria Disease", "3"));
         return listViewItems;
     }
 

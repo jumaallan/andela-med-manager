@@ -12,29 +12,45 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:contentDescription="@null"
-            app:srcCompat="@drawable/ic_add_medicine" />
+            app:srcCompat="@drawable/ic_add_description" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
             android:layout_marginStart="@dimen/margin_normal"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textViewMedicineName"
-                style="@style/rowHeader"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Medicine Name" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textViewMedicineName"
+                    style="@style/rowHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Medicine Name" />
+
+                <TextView
+                    style="@style/rowHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="50%"
+                    tools:text="Pills Ratio" />
+
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/textViewMedicineDescription"
                 style="@style/rowLabelBody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
                 android:layout_marginTop="@dimen/margin_small"
                 tools:text="This is a short Medicine Description" />
 
