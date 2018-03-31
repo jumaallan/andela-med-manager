@@ -47,7 +47,8 @@
 
             <Switch
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:checked="true" />
 
         </LinearLayout>
 
@@ -59,11 +60,12 @@
             android:weightSum="4">
 
             <TextView
+                android:id="@+id/textViewOne"
                 style="@style/dailyMedicineStatisticsHeader"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="8:00 am" />
+                android:text="--:-- " />
 
             <View
                 android:layout_width="1dp"
@@ -71,11 +73,12 @@
                 android:background="@color/divider" />
 
             <TextView
+                android:id="@+id/textViewTwo"
                 style="@style/dailyMedicineStatisticsHeader"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="12:00 noon" />
+                android:text="--:-- " />
 
             <View
                 android:layout_width="1dp"
@@ -83,11 +86,12 @@
                 android:background="@color/divider" />
 
             <TextView
+                android:id="@+id/textViewThree"
                 style="@style/dailyMedicineStatisticsHeader"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="5:00 pm" />
+                android:text="--:-- " />
 
             <View
                 android:layout_width="1dp"
@@ -95,11 +99,12 @@
                 android:background="@color/divider" />
 
             <TextView
+                android:id="@+id/textViewFour"
                 style="@style/dailyMedicineStatisticsHeader"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="10:00 pm" />
+                android:text="--:-- " />
 
         </LinearLayout>
 
@@ -117,11 +122,12 @@
             android:padding="@dimen/padding_small">
 
             <TextView
+                android:id="@+id/textViewIntervals"
                 style="@style/dailyMedicineStatisticsHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_small"
-                android:text="4 Times" />
+                tools:text="4 Times" />
 
             <ImageView
                 android:layout_width="wrap_content"

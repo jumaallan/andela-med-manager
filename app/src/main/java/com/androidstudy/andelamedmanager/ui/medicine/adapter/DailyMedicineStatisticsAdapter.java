@@ -41,6 +41,28 @@ public class DailyMedicineStatisticsAdapter extends RecyclerView.Adapter<DailyMe
         Medicine medicine = medicineList.get(position);
 
         holder.textViewMedicineName.setText(String.valueOf(medicine.getName()));
+        holder.textViewIntervals.setText(String.valueOf(medicine.getInterval()) + " Times");
+
+        switch (medicine.getInterval()) {
+            case "1":
+                holder.textViewOne.setText("8:00 AM");
+                break;
+            case "2":
+                holder.textViewOne.setText("8:00 AM");
+                holder.textViewThree.setText("5:00 PM");
+                break;
+            case "3":
+                holder.textViewOne.setText("8:00 AM");
+                holder.textViewTwo.setText("12:00 Noon");
+                holder.textViewThree.setText("5:00 PM");
+                break;
+            case "4":
+                holder.textViewOne.setText("8:00 AM");
+                holder.textViewTwo.setText("12:00 Noon");
+                holder.textViewThree.setText("5:00 PM");
+                holder.textViewFour.setText("10:00 PM");
+                break;
+        }
     }
 
     @Override
@@ -62,6 +84,16 @@ public class DailyMedicineStatisticsAdapter extends RecyclerView.Adapter<DailyMe
 
         @BindView(R.id.textViewMedicineName)
         TextView textViewMedicineName;
+        @BindView(R.id.textViewOne)
+        TextView textViewOne;
+        @BindView(R.id.textViewTwo)
+        TextView textViewTwo;
+        @BindView(R.id.textViewThree)
+        TextView textViewThree;
+        @BindView(R.id.textViewFour)
+        TextView textViewFour;
+        @BindView(R.id.textViewIntervals)
+        TextView textViewIntervals;
 
         public MedicineHolder(View itemView) {
             super(itemView);

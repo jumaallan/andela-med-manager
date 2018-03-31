@@ -55,7 +55,7 @@
                 android:layout_marginRight="@dimen/margin_normal"
                 android:layout_marginTop="@dimen/margin_normal"
                 android:orientation="horizontal"
-                android:weightSum="1">
+                android:weightSum="1.5">
 
                 <TextView
                     style="@style/successDataDetailsRows"
@@ -70,7 +70,7 @@
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_weight="1"
                     android:gravity="end"
                     tools:text="Name" />
 
@@ -83,7 +83,7 @@
                 android:layout_marginRight="@dimen/margin_normal"
                 android:layout_marginTop="@dimen/margin_normal"
                 android:orientation="horizontal"
-                android:weightSum="1">
+                android:weightSum="1.5">
 
                 <TextView
                     style="@style/successDataDetailsRows"
@@ -98,7 +98,7 @@
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_weight="1"
                     android:gravity="end"
                     tools:text="Description" />
 
@@ -111,7 +111,7 @@
                 android:layout_marginRight="@dimen/margin_normal"
                 android:layout_marginTop="@dimen/margin_normal"
                 android:orientation="horizontal"
-                android:weightSum="1">
+                android:weightSum="1.5">
 
                 <TextView
                     style="@style/successDataDetailsRows"
@@ -126,7 +126,7 @@
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_weight="1"
                     android:gravity="end"
                     tools:text="Interval" />
 
@@ -139,7 +139,7 @@
                 android:layout_marginRight="@dimen/margin_normal"
                 android:layout_marginTop="@dimen/margin_normal"
                 android:orientation="horizontal"
-                android:weightSum="1">
+                android:weightSum="1.5">
 
                 <TextView
                     style="@style/successDataDetailsRows"
@@ -154,7 +154,7 @@
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_weight="1"
                     android:gravity="end"
                     tools:text="Start Date" />
 
@@ -167,7 +167,7 @@
                 android:layout_marginRight="@dimen/margin_normal"
                 android:layout_marginTop="@dimen/margin_normal"
                 android:orientation="horizontal"
-                android:weightSum="1">
+                android:weightSum="1.5">
 
                 <TextView
                     style="@style/successDataDetailsRows"
@@ -182,7 +182,7 @@
                     style="@style/successDataDetailsRows"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_weight="1"
                     android:gravity="end"
                     tools:text="End Date" />
 
