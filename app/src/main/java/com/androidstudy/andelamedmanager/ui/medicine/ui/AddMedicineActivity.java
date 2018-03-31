@@ -1,12 +1,15 @@
 package com.androidstudy.andelamedmanager.ui.medicine.ui;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.androidstudy.andelamedmanager.R;
 import com.androidstudy.andelamedmanager.base.ThemableActivity;
@@ -17,6 +20,7 @@ import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class AddMedicineActivity extends ThemableActivity {
 
@@ -24,8 +28,6 @@ public class AddMedicineActivity extends ThemableActivity {
     EditText editTextMedicineName;
     @BindView(R.id.editTextMedicineDescription)
     EditText editTextMedicineDescription;
-    @BindView(R.id.editTextMedicineInterval)
-    EditText editTextMedicineInterval;
     @BindView(R.id.editTextMedicineStartDate)
     EditText editTextMedicineStartDate;
     @BindView(R.id.editTextMedicineEndDate)
@@ -35,7 +37,17 @@ public class AddMedicineActivity extends ThemableActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    String name, description, interval, startDate, endDate;
+    @BindView(R.id.textViewOne)
+    TextView textViewOne;
+    @BindView(R.id.textViewTwo)
+    TextView textViewTwo;
+    @BindView(R.id.textViewThree)
+    TextView textViewThree;
+    @BindView(R.id.textViewFour)
+    TextView textViewFour;
+
+    String name, description, startDate, endDate;
+    int interval;
     SimpleDateFormat simpleDateFormat;
     private Calendar calendar;
 
@@ -52,13 +64,53 @@ public class AddMedicineActivity extends ThemableActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        final DatePickerDialog.OnDateSetListener startMedDate = (view, year, monthOfYear, dayOfMonth) -> {
+            calendar.set(Calendar.YEAR, year);
+            calendar.set(Calendar.MONTH, monthOfYear);
+            calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            AddMedicineActivity.this.updateStartMedLabel(startDate);
+        };
+
+        final DatePickerDialog.OnDateSetListener endMedDate = (view, year, monthOfYear, dayOfMonth) -> {
+            calendar.set(Calendar.YEAR, year);
+            calendar.set(Calendar.MONTH, monthOfYear);
+            calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            AddMedicineActivity.this.updateEndMedLabel(endDate);
+        };
+
         calendar = Calendar.getInstance();
-        simpleDateFormat = new SimpleDateFormat("MMM d, yyyy");
+        simpleDateFormat = new SimpleDateFormat("EEEE, MMM d, yyyy");
         String today = simpleDateFormat.format(calendar.getTime());
         editTextMedicineStartDate.setText(today);
         editTextMedicineEndDate.setText(today);
 
+        interval = 1;
+
+        editTextMedicineStartDate.setOnClickListener(v -> {
+            new DatePickerDialog(AddMedicineActivity.this, startMedDate, calendar
+                    .get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+                    calendar.get(Calendar.DAY_OF_MONTH)).show();
+        });
+
+        editTextMedicineEndDate.setOnClickListener(v -> {
+            new DatePickerDialog(AddMedicineActivity.this, endMedDate, calendar
+                    .get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+                    calendar.get(Calendar.DAY_OF_MONTH)).show();
+        });
+
         buttonContinue.setOnClickListener(view -> validateMedicalDetails());
+    }
+
+    private void updateStartMedLabel(String start) {
+        String date = simpleDateFormat.format(calendar.getTime());
+        editTextMedicineStartDate.setText(date);
+        startDate = start;
+    }
+
+    private void updateEndMedLabel(String end) {
+        String date = simpleDateFormat.format(calendar.getTime());
+        editTextMedicineEndDate.setText(date);
+        endDate = end;
     }
 
     @Override
@@ -68,11 +120,78 @@ public class AddMedicineActivity extends ThemableActivity {
         return true;
     }
 
+    @OnClick(R.id.textViewOne)
+    public void textViewOne(View view) {
+        textViewOne.setBackgroundResource(R.drawable.bg_blue_button_sharp);
+        textViewOne.setTextColor(getResources().getColor(R.color.white));
+
+        textViewTwo.setBackgroundResource(R.drawable.bg_white_button_sharp);
+        textViewTwo.setTextColor(getResources().getColor(R.color.bg_login_button));
+
+        textViewThree.setBackgroundResource(R.drawable.bg_white_button_sharp);
+        textViewThree.setTextColor(getResources().getColor(R.color.bg_login_button));
+
+        textViewFour.setBackgroundResource(R.drawable.bg_white_button_sharp);
+        textViewFour.setTextColor(getResources().getColor(R.color.bg_login_button));
+
+        interval = 1;
+    }
+
+    @OnClick(R.id.textViewTwo)
+    public void textViewTwo(View view) {
+        textViewOne.setBackgroundResource(R.drawable.bg_white_button_sharp);
+        textViewOne.setTextColor(getResources().getColor(R.color.bg_login_button));
+
+        textViewTwo.setBackgroundResource(R.drawable.bg_blue_button_sharp);
+        textViewTwo.setTextColor(getResources().getColor(R.color.white));
+
+        textViewThree.setBackgroundResource(R.drawable.bg_white_button_sharp);
+        textViewThree.setTextColor(getResources().getColor(R.color.bg_login_button));
+
+        textViewFour.setBackgroundResource(R.drawable.bg_white_button_sharp);
+        textViewFour.setTextColor(getResources().getColor(R.color.bg_login_button));
+
+        interval = 2;
+    }
+
+    @OnClick(R.id.textViewThree)
+    public void textViewThree(View view) {
+        textViewOne.setBackgroundResource(R.drawable.bg_white_button_sharp);
+        textViewOne.setTextColor(getResources().getColor(R.color.bg_login_button));
+
+        textViewTwo.setBackgroundResource(R.drawable.bg_white_button_sharp);
+        textViewTwo.setTextColor(getResources().getColor(R.color.bg_login_button));
+
+        textViewThree.setBackgroundResource(R.drawable.bg_blue_button_sharp);
+        textViewThree.setTextColor(getResources().getColor(R.color.white));
+
+        textViewFour.setBackgroundResource(R.drawable.bg_white_button_sharp);
+        textViewFour.setTextColor(getResources().getColor(R.color.bg_login_button));
+
+        interval = 3;
+    }
+
+    @OnClick(R.id.textViewFour)
+    public void textViewFour(View view) {
+        textViewOne.setBackgroundResource(R.drawable.bg_white_button_sharp);
+        textViewOne.setTextColor(getResources().getColor(R.color.bg_login_button));
+
+        textViewTwo.setBackgroundResource(R.drawable.bg_white_button_sharp);
+        textViewTwo.setTextColor(getResources().getColor(R.color.bg_login_button));
+
+        textViewThree.setBackgroundResource(R.drawable.bg_white_button_sharp);
+        textViewThree.setTextColor(getResources().getColor(R.color.bg_login_button));
+
+        textViewFour.setBackgroundResource(R.drawable.bg_blue_button_sharp);
+        textViewFour.setTextColor(getResources().getColor(R.color.white));
+
+        interval = 4;
+    }
+
     private void validateMedicalDetails() {
 
         name = editTextMedicineName.getText().toString().trim();
         description = editTextMedicineDescription.getText().toString().trim();
-        interval = editTextMedicineInterval.getText().toString().trim();
         startDate = editTextMedicineStartDate.getText().toString().trim();
         endDate = editTextMedicineEndDate.getText().toString().trim();
 
@@ -86,17 +205,14 @@ public class AddMedicineActivity extends ThemableActivity {
             return;
         }
 
-        if (TextUtils.isEmpty(interval)) {
-            editTextMedicineInterval.setError("Please Enter Medicine Interval");
-            return;
-        }
-
         if (TextUtils.isEmpty(startDate)) {
+            editTextMedicineStartDate.setError("Please Enter Medicine Start Date");
             return;
         }
 
         if (TextUtils.isEmpty(endDate)) {
-
+            editTextMedicineEndDate.setError("Please Enter Medicine End Date");
+            return;
         }
 
         saveMedicalData();
@@ -109,14 +225,15 @@ public class AddMedicineActivity extends ThemableActivity {
         Intent medicine = new Intent(this, ConfirmMedicineActivity.class);
         Bundle bundle = new Bundle();
         //TODO :: Change this :)
+        //TODO :: CALCULATE PILLS
         /**
          * Pass data via Bundle
          */
         bundle.putString("name", name);
         bundle.putString("description", description);
-        bundle.putString("interval", interval);
-//        bundle.putString("startDate", startDate);
-//        bundle.putString("endDate", endDate);
+        bundle.putString("interval", String.valueOf(interval));
+        bundle.putString("startDate", startDate);
+        bundle.putString("endDate", endDate);
         medicine.putExtras(bundle);
         startActivity(medicine);
     }

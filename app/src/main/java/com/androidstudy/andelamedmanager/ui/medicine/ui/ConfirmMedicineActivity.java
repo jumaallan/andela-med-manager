@@ -3,7 +3,6 @@ package com.androidstudy.andelamedmanager.ui.medicine.ui;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -27,6 +26,7 @@ public class ConfirmMedicineActivity extends ThemableActivity {
     TextView textViewMedStartDate;
     @BindView(R.id.textViewMedEndDate)
     TextView textViewMedEndDate;
+
     @BindView(R.id.buttonEditMedicine)
     Button buttonEditMedicine;
     @BindView(R.id.buttonSaveMedicine)
@@ -50,14 +50,14 @@ public class ConfirmMedicineActivity extends ThemableActivity {
         name = bundle.getString("name");
         description = bundle.getString("description");
         interval = bundle.getString("interval");
-//        startDate = bundle.getString("startDate");
-//        endDate = bundle.getString("endDate");
+        startDate = bundle.getString("startDate");
+        endDate = bundle.getString("endDate");
 
         textViewMedName.setText(name);
         textViewMedDescription.setText(description);
         textViewMedInterval.setText(interval);
-//        textViewMedicineStartDate.setText(startDate);
-//        textViewMedicineEndDate.setText(endDate);
+        textViewMedStartDate.setText(startDate);
+        textViewMedEndDate.setText(endDate);
 
         /**
          * User needs to edit the details again :)

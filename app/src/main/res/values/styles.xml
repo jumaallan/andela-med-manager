@@ -137,6 +137,8 @@
 
     <style name="generalScreenHints">
         <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/oxygen_bold</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="rowHeader">
@@ -147,6 +149,11 @@
 
     <style name="rowLabelBody">
         <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/oxygen_regular</item>
+    </style>
+
+    <style name="medInterval">
         <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">@font/oxygen_regular</item>
     </style>

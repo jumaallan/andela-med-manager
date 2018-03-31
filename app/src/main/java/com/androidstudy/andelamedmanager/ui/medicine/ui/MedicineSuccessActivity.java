@@ -2,7 +2,6 @@ package com.androidstudy.andelamedmanager.ui.medicine.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -43,8 +42,8 @@ public class MedicineSuccessActivity extends ThemableActivity {
         textViewMedicineName.setText(bundle.getString("name"));
         textViewMedicineDescription.setText(bundle.getString("description"));
         textViewMedicineInterval.setText(bundle.getString("interval"));
-//        textViewMedicineStartDate.setText(bundle.getString("startDate"));
-//        textViewMedicineEndDate.setText(bundle.getString("endDate"));
+        textViewMedicineStartDate.setText(bundle.getString("startDate"));
+        textViewMedicineEndDate.setText(bundle.getString("endDate"));
 
         /**
          * Redirect to add another medicine!
