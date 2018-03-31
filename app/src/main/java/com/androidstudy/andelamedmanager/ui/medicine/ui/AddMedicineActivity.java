@@ -6,21 +6,27 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.androidstudy.andelamedmanager.R;
 import com.androidstudy.andelamedmanager.base.ThemableActivity;
 import com.androidstudy.andelamedmanager.ui.main.ui.MainActivity;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import timber.log.Timber;
 
 public class AddMedicineActivity extends ThemableActivity {
 
@@ -46,7 +52,7 @@ public class AddMedicineActivity extends ThemableActivity {
     @BindView(R.id.textViewFour)
     TextView textViewFour;
 
-    String name, description, startDate, endDate;
+    String name, description, startDate, endDate, pills;
     int interval;
     SimpleDateFormat simpleDateFormat;
     private Calendar calendar;
@@ -79,7 +85,7 @@ public class AddMedicineActivity extends ThemableActivity {
         };
 
         calendar = Calendar.getInstance();
-        simpleDateFormat = new SimpleDateFormat("EEEE, MMM d, yyyy");
+        simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String today = simpleDateFormat.format(calendar.getTime());
         editTextMedicineStartDate.setText(today);
         editTextMedicineEndDate.setText(today);
@@ -98,7 +104,32 @@ public class AddMedicineActivity extends ThemableActivity {
                     calendar.get(Calendar.DAY_OF_MONTH)).show();
         });
 
-        buttonContinue.setOnClickListener(view -> validateMedicalDetails());
+        buttonContinue.setOnClickListener(view -> getPills());
+    }
+
+    private void getPills() {
+        //Get Number of Days * Intervals to get the Number of Pills
+        SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String startDateMed = editTextMedicineStartDate.getText().toString().trim();
+        Log.d("START", startDateMed);
+        String endDateMed = editTextMedicineEndDate.getText().toString().trim();
+        Log.d("END", endDateMed);
+
+        try {
+            Date date1 = myFormat.parse(startDateMed);
+            Date date2 = myFormat.parse(endDateMed);
+            long diff = date2.getTime() - date1.getTime();
+
+            Timber.d("Days: " + TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
+
+            pills = String.valueOf(TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS) * interval);
+
+            validateMedicalDetails();
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void updateStartMedLabel(String start) {
@@ -234,6 +265,7 @@ public class AddMedicineActivity extends ThemableActivity {
         bundle.putString("interval", String.valueOf(interval));
         bundle.putString("startDate", startDate);
         bundle.putString("endDate", endDate);
+        bundle.putString("pills", pills);
         medicine.putExtras(bundle);
         startActivity(medicine);
     }

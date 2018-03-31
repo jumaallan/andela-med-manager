@@ -11,15 +11,19 @@ public class Medicine {
     private String name;
     private String description;
     private String interval;
-//    private String pills;
-//    private boolean hasNotification;  //User can switch them on/off per Med
-//    private String startDate;
-//    private String endDate;
+    private String pills;
+    private boolean hasNotification;  //User can switch them on/off per Med
+    private String startDate;
+    private String endDate;
 
-    public Medicine(String name, String description, String interval) {
+    public Medicine(String name, String description, String interval, String pills, boolean hasNotification, String startDate, String endDate) {
         this.name = name;
         this.description = description;
         this.interval = interval;
+        this.pills = pills;
+        this.hasNotification = hasNotification;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
     public long getMedicineId() {
@@ -52,5 +56,37 @@ public class Medicine {
 
     public void setInterval(String interval) {
         this.interval = interval;
+    }
+
+    public String getPills() {
+        return pills;
+    }
+
+    public void setPills(String pills) {
+        this.pills = pills;
+    }
+
+    public boolean isHasNotification() {
+        return hasNotification;
+    }
+
+    public void setHasNotification(boolean hasNotification) {
+        this.hasNotification = hasNotification;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 }

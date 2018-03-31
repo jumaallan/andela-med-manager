@@ -31,7 +31,7 @@ public class ConfirmMedicineActivity extends ThemableActivity {
     Button buttonEditMedicine;
     @BindView(R.id.buttonSaveMedicine)
     Button buttonSaveMedicine;
-    String name, description, interval, startDate, endDate;
+    String name, description, interval, startDate, endDate, pills;
     Bundle bundle;
     private AddMedicineViewModel addMedicineViewModel;
 
@@ -52,6 +52,7 @@ public class ConfirmMedicineActivity extends ThemableActivity {
         interval = bundle.getString("interval");
         startDate = bundle.getString("startDate");
         endDate = bundle.getString("endDate");
+        pills = bundle.getString("pills");
 
         textViewMedName.setText(name);
         textViewMedDescription.setText(description);
@@ -80,7 +81,11 @@ public class ConfirmMedicineActivity extends ThemableActivity {
         addMedicineViewModel.addMedicine(new Medicine(
                 name,
                 description,
-                interval
+                interval,
+                pills,
+                true,
+                startDate,
+                endDate
         ));
 
         Intent success = new Intent(getApplicationContext(), MedicineSuccessActivity.class);
