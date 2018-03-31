@@ -26,6 +26,22 @@ public class MedicineActivity extends ThemableActivity {
     TextView textViewMedicineName;
     @BindView(R.id.sparkView)
     SparkView sparkView;
+    @BindView(R.id.textViewOne)
+    TextView textViewOne;
+    @BindView(R.id.textViewTwo)
+    TextView textViewTwo;
+    @BindView(R.id.textViewThree)
+    TextView textViewThree;
+    @BindView(R.id.textViewFour)
+    TextView textViewFour;
+    @BindView(R.id.textViewInterval)
+    TextView textViewInterval;
+    @BindView(R.id.textViewMedPills)
+    TextView textViewMedPills;
+    @BindView(R.id.textViewMedicinePercentage)
+    TextView textViewMedicinePercentage;
+    @BindView(R.id.textViewMedDescription)
+    TextView textViewMedDescription;
 
     private List<MedData> medDataList;
 
@@ -51,6 +67,35 @@ public class MedicineActivity extends ThemableActivity {
 
         assert b != null;
         textViewMedicineName.setText(b.getString("name"));
+        //Calculate Percentage
+        int takePercentage = (Integer.parseInt(b.getString("pillsTaken")) * 100 / Integer.parseInt(b.getString("pills")));
+        textViewMedicinePercentage.setText(String.format("%d%s", 100 - takePercentage, getString(R.string.percentage)));
+
+        textViewMedDescription.setText(b.getString("description"));
+        textViewInterval.setText(b.getString("interval") + " Times");
+        textViewMedPills.setText(b.getString("pills"));
+
+        switch (b.getString("interval")) {
+            case "1":
+                textViewOne.setText("8:00 AM");
+                break;
+            case "2":
+                textViewOne.setText("8:00 AM");
+                textViewThree.setText("5:00 PM");
+                break;
+            case "3":
+                textViewOne.setText("8:00 AM");
+                textViewTwo.setText("12:00 Noon");
+                textViewThree.setText("5:00 PM");
+                break;
+            case "4":
+                textViewOne.setText("8:00 AM");
+                textViewTwo.setText("12:00 Noon");
+                textViewThree.setText("5:00 PM");
+                textViewFour.setText("10:00 PM");
+                break;
+        }
+
     }
 
     @Override

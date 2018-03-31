@@ -35,4 +35,5 @@
     <string name="percentage">%</string>
     <string name="medicine_statistics">Medicine Intake Statistics</string>
     <string name="medicine_info">Medicine Info</string>
+    <string name="med_times"> Times</string>
 </resources>

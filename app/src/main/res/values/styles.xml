@@ -165,4 +165,15 @@
         <item name="android:fontFamily">@font/oxygen_regular</item>
     </style>
 
+    <style name="cardDataDetailsSubHeading">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/oxygen_regular</item>
+    </style>
+
+    <style name="cardDataDetailsRows">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/oxygen_regular</item>
+    </style>
+
 </resources>

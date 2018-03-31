@@ -65,10 +65,14 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <Switch
+                <TextView
+                    android:id="@+id/textViewMedicinePercentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true" />
+                    android:layout_marginEnd="@dimen/padding_medium"
+                    android:layout_marginStart="@dimen/padding_normal"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    tools:text="%" />
 
             </LinearLayout>
 
@@ -104,7 +108,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="@dimen/padding_small"
                     android:text="@string/medicine_statistics"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                 <com.robinhood.spark.SparkView
                     android:id="@+id/sparkView"
@@ -132,20 +136,20 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingTop="@dimen/padding_normal">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:padding="8dp"
                     android:text="@string/medicine_info"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_normal"
                     android:orientation="horizontal"
                     android:weightSum="4">
 
@@ -195,6 +199,86 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="--:-- " />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/cardDataDetailsSubHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="Medicine Description" />
+
+                <TextView
+                    android:id="@+id/textViewMedDescription"
+                    style="@style/cardDataDetailsRows"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="8dp"
+                    tools:text="Have a simple Medicine description here" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:background="@color/divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_normal"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/cardDataDetailsSubHeading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Medicine Intervals" />
+
+                        <TextView
+                            android:id="@+id/textViewInterval"
+                            style="@style/cardDataDetailsRows"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            tools:text="4 Times" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/cardDataDetailsSubHeading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Medicine Units" />
+
+                        <TextView
+                            android:id="@+id/textViewMedPills"
+                            style="@style/cardDataDetailsRows"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            tools:text="28 pills" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
