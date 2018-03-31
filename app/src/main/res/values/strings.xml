@@ -33,4 +33,6 @@
     <string name="full_percentage">100%</string>
     <string name="zero_percentage">0%</string>
     <string name="percentage">%</string>
+    <string name="medicine_statistics">Medicine Intake Statistics</string>
+    <string name="medicine_info">Medicine Info</string>
 </resources>

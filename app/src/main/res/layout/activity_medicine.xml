@@ -98,6 +98,14 @@
                 android:layout_height="150dp"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/padding_small"
+                    android:text="@string/medicine_statistics"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
                 <com.robinhood.spark.SparkView
                     android:id="@+id/sparkView"
                     android:layout_width="match_parent"
@@ -131,7 +139,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:text="Medicine Info"
+                    android:text="@string/medicine_info"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                 <LinearLayout

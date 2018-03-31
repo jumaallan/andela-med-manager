@@ -31,7 +31,6 @@ import com.androidstudy.andelamedmanager.data.model.User;
 import com.androidstudy.andelamedmanager.databinding.ActivityMainBinding;
 import com.androidstudy.andelamedmanager.settings.Settings;
 import com.androidstudy.andelamedmanager.ui.auth.ui.AuthActivity;
-import com.androidstudy.andelamedmanager.ui.main.adapter.CustomItemClickListener;
 import com.androidstudy.andelamedmanager.ui.main.adapter.MainDashboardAdapter;
 import com.androidstudy.andelamedmanager.ui.main.viewmodel.MainViewModel;
 import com.androidstudy.andelamedmanager.ui.medicine.adapter.DailyMedicineAdapter;
@@ -185,6 +184,7 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
                 b.putBoolean("true", medicine.isHasNotification());
                 b.putString("startDate", medicine.getStartDate());
                 b.putString("endDate", medicine.getEndDate());
+                b.putInt("days", medicine.getDays());
                 intent.putExtras(b);
                 startActivity(intent);
             });
@@ -211,6 +211,7 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
                 b.putBoolean("true", medicine.isHasNotification());
                 b.putString("startDate", medicine.getStartDate());
                 b.putString("endDate", medicine.getEndDate());
+                b.putInt("days", medicine.getDays());
                 intent.putExtras(b);
                 MainActivity.this.startActivity(intent);
             });
@@ -280,10 +281,10 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
     //Mock Data for UI Cards
     private List<Medicine> getMedicineDemo() {
         List<Medicine> listViewItems = new ArrayList<>();
-        listViewItems.add(new Medicine("Panadol", "This is a pain reliever", "2", "20", "", true, "", ""));
-        listViewItems.add(new Medicine("Bruffen", "Helps to heal cold and flue", "4", "20", "", true, "", ""));
-        listViewItems.add(new Medicine("Eno", "Fastest cure for bad stomach pains", "1", "20", "", true, "", ""));
-        listViewItems.add(new Medicine("Malaria Tabs", "Help to heal Malaria Disease", "3", "20", "", true, "", ""));
+        listViewItems.add(new Medicine("Panadol", "This is a pain reliever", "2", "20", "", true, "", "", 2));
+        listViewItems.add(new Medicine("Bruffen", "Helps to heal cold and flue", "4", "20", "", true, "", "", 7));
+        listViewItems.add(new Medicine("Eno", "Fastest cure for bad stomach pains", "1", "20", "", true, "", "", 15));
+        listViewItems.add(new Medicine("Malaria Tabs", "Help to heal Malaria Disease", "3", "20", "", true, "", "", 8));
         return listViewItems;
     }
 

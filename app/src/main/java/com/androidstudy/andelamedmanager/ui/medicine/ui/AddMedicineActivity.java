@@ -50,7 +50,7 @@ public class AddMedicineActivity extends ThemableActivity {
     TextView textViewFour;
 
     String name, description, startDate, endDate, pills;
-    int interval;
+    int interval, days;
     SimpleDateFormat simpleDateFormat;
     private Calendar calendar;
 
@@ -116,6 +116,7 @@ public class AddMedicineActivity extends ThemableActivity {
             long diff = date2.getTime() - date1.getTime();
 
             pills = String.valueOf(TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS) * interval);
+            days = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 
             validateMedicalDetails();
 
@@ -258,6 +259,7 @@ public class AddMedicineActivity extends ThemableActivity {
         bundle.putString("startDate", startDate);
         bundle.putString("endDate", endDate);
         bundle.putString("pills", pills);
+        bundle.putInt("days", days);
         medicine.putExtras(bundle);
         startActivity(medicine);
     }

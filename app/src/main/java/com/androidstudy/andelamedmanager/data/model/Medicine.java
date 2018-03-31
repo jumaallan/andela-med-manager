@@ -4,7 +4,8 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity
-public class Medicine {
+public class
+Medicine {
     @PrimaryKey(autoGenerate = true)
     private long medicineId;
     // private long userId;
@@ -16,8 +17,9 @@ public class Medicine {
     private boolean hasNotification;  //User can switch them on/off per Med
     private String startDate;
     private String endDate;
+    private int days;
 
-    public Medicine(String name, String description, String interval, String pills, String pillsTaken, boolean hasNotification, String startDate, String endDate) {
+    public Medicine(String name, String description, String interval, String pills, String pillsTaken, boolean hasNotification, String startDate, String endDate, int days) {
         this.name = name;
         this.description = description;
         this.interval = interval;
@@ -26,6 +28,7 @@ public class Medicine {
         this.hasNotification = hasNotification;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.days = days;
     }
 
     public long getMedicineId() {
@@ -98,5 +101,13 @@ public class Medicine {
 
     public void setEndDate(String endDate) {
         this.endDate = endDate;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
     }
 }

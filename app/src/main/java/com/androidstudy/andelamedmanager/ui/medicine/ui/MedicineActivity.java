@@ -68,8 +68,12 @@ public class MedicineActivity extends ThemableActivity {
     private List<MedData> getDummyMedData() {
         List<MedData> listViewItems = new ArrayList<>();
         listViewItems.add(new MedData(2L, 5L));
-        listViewItems.add(new MedData(3L, 4L));
-        listViewItems.add(new MedData(1L, 8L));
+        listViewItems.add(new MedData(3L, 5L));
+        listViewItems.add(new MedData(5L, 8L));
+        listViewItems.add(new MedData(4L, 8L));
+        listViewItems.add(new MedData(8L, 14L));
+        listViewItems.add(new MedData(9L, 13L));
+        listViewItems.add(new MedData(10L, 16L));
         return listViewItems;
     }
 }
