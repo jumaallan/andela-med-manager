@@ -51,7 +51,7 @@ public class MedicineSuccessActivity extends ThemableActivity {
         buttonAddMedicine.setOnClickListener(view -> {
             Intent addMedicine = new Intent(getApplicationContext(), AddMedicineActivity.class);
             startActivity(addMedicine);
-            finish();
+            this.finish();
         });
 
         /**
@@ -60,7 +60,7 @@ public class MedicineSuccessActivity extends ThemableActivity {
         buttonHomePage.setOnClickListener(view -> {
             Intent home = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(home);
-            finish();
+            this.finish();
         });
     }
 }

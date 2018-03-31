@@ -16,7 +16,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DailyMedicineStatisticsAdapter extends RecyclerView.Adapter<DailyMedicineStatisticsAdapter.MedicineHolder> implements View.OnClickListener {
+public class DailyMedicineStatisticsAdapter extends RecyclerView.Adapter<DailyMedicineStatisticsAdapter.MedicineHolder> {
     CustomItemClickListener listener;
     private Context context;
     private List<Medicine> medicineList;
@@ -29,11 +29,11 @@ public class DailyMedicineStatisticsAdapter extends RecyclerView.Adapter<DailyMe
 
     @Override
     public MedicineHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_daily_medicine_statistics, parent, false);
-        final MedicineHolder mViewHolder = new MedicineHolder(view);
-        view.setOnClickListener(v -> listener.onItemClick(v, mViewHolder.getPosition()));
-        return new MedicineHolder(view);
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.row_daily_medicine, parent, false);
+        final MedicineHolder mViewHolder = new MedicineHolder(itemView);
+        itemView.setOnClickListener(v -> listener.onItemClick(v, mViewHolder.getPosition()));
+        return mViewHolder;
     }
 
     @Override
@@ -68,16 +68,6 @@ public class DailyMedicineStatisticsAdapter extends RecyclerView.Adapter<DailyMe
     @Override
     public int getItemCount() {
         return medicineList.size();
-    }
-
-    @Override
-    public void onClick(View v) {
-
-    }
-
-    public void addItems(List<Medicine> medicineList) {
-        this.medicineList = medicineList;
-        notifyDataSetChanged();
     }
 
     class MedicineHolder extends RecyclerView.ViewHolder {

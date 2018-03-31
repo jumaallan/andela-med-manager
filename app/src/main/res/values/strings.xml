@@ -30,4 +30,7 @@
         ]]>
     </string>
     <string name="sign_in">Sign In with Google</string>
+    <string name="full_percentage">100%</string>
+    <string name="zero_percentage">0%</string>
+    <string name="percentage">%</string>
 </resources>

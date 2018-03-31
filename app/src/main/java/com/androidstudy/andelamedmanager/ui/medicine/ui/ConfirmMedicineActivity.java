@@ -81,7 +81,7 @@ public class ConfirmMedicineActivity extends ThemableActivity {
                 description,
                 interval,
                 pills,
-                "0",
+                "2",
                 true,
                 startDate,
                 endDate
@@ -90,5 +90,6 @@ public class ConfirmMedicineActivity extends ThemableActivity {
         Intent success = new Intent(getApplicationContext(), MedicineSuccessActivity.class);
         success.putExtras(bundle);
         startActivity(success);
+        this.finish();
     }
 }

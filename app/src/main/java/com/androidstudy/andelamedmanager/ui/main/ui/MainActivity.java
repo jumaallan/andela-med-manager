@@ -31,11 +31,13 @@ import com.androidstudy.andelamedmanager.data.model.User;
 import com.androidstudy.andelamedmanager.databinding.ActivityMainBinding;
 import com.androidstudy.andelamedmanager.settings.Settings;
 import com.androidstudy.andelamedmanager.ui.auth.ui.AuthActivity;
+import com.androidstudy.andelamedmanager.ui.main.adapter.CustomItemClickListener;
 import com.androidstudy.andelamedmanager.ui.main.adapter.MainDashboardAdapter;
 import com.androidstudy.andelamedmanager.ui.main.viewmodel.MainViewModel;
 import com.androidstudy.andelamedmanager.ui.medicine.adapter.DailyMedicineAdapter;
 import com.androidstudy.andelamedmanager.ui.medicine.adapter.DailyMedicineStatisticsAdapter;
 import com.androidstudy.andelamedmanager.ui.medicine.ui.AddMedicineActivity;
+import com.androidstudy.andelamedmanager.ui.medicine.ui.MedicineActivity;
 import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.MedicineViewModel;
 import com.androidstudy.andelamedmanager.util.CirclePagerIndicatorDecoration;
 import com.androidstudy.andelamedmanager.util.ItemOffsetDecoration;
@@ -171,16 +173,20 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
             cardMedDaily.setVisibility(View.VISIBLE);
 
             DailyMedicineStatisticsAdapter dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, medicineList, (v, position) -> {
-//                Farmer farmer = listOfFarmers.get(position);
-//                Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
-//                Bundle b = new Bundle();
-//
-//                b.putString("farmerId", farmer.getFarmerId());
-//                b.putString("farmerName", farmer.getFarmerName());
-//                b.putString("phoneNumber", farmer.getPhoneNumber());
-//                intent.putExtras(b);
-//                startActivity(intent);
+                Medicine medicine = medicineList.get(position);
+                Intent intent = new Intent(getApplicationContext(), MedicineActivity.class);
+                Bundle b = new Bundle();
 
+                b.putString("name", medicine.getName());
+                b.putString("description", medicine.getDescription());
+                b.putString("interval", medicine.getInterval());
+                b.putString("pills", medicine.getPills());
+                b.putString("pillsTaken", medicine.getPillsTaken());
+                b.putBoolean("true", medicine.isHasNotification());
+                b.putString("startDate", medicine.getStartDate());
+                b.putString("endDate", medicine.getEndDate());
+                intent.putExtras(b);
+                startActivity(intent);
             });
 
             recyclerViewDailyMedicineStatistics.setLayoutManager(new LinearLayoutManager(this,
@@ -193,16 +199,20 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
             recyclerViewDailyMedicineStatistics.setAdapter(dailyMedicineStatisticsAdapter);
 
             DailyMedicineAdapter dailyMedicineAdapter = new DailyMedicineAdapter(this, medicineList, (v, position) -> {
-//                Farmer farmer = listOfFarmers.get(position);
-//                Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
-//                Bundle b = new Bundle();
-//
-//                b.putString("farmerId", farmer.getFarmerId());
-//                b.putString("farmerName", farmer.getFarmerName());
-//                b.putString("phoneNumber", farmer.getPhoneNumber());
-//                intent.putExtras(b);
-//                startActivity(intent);
+                Medicine medicine = medicineList.get(position);
+                Intent intent = new Intent(MainActivity.this.getApplicationContext(), MedicineActivity.class);
+                Bundle b = new Bundle();
 
+                b.putString("name", medicine.getName());
+                b.putString("description", medicine.getDescription());
+                b.putString("interval", medicine.getInterval());
+                b.putString("pills", medicine.getPills());
+                b.putString("pillsTaken", medicine.getPillsTaken());
+                b.putBoolean("true", medicine.isHasNotification());
+                b.putString("startDate", medicine.getStartDate());
+                b.putString("endDate", medicine.getEndDate());
+                intent.putExtras(b);
+                MainActivity.this.startActivity(intent);
             });
 
             recyclerViewDailyMedicine.setLayoutManager(new LinearLayoutManager(this,
