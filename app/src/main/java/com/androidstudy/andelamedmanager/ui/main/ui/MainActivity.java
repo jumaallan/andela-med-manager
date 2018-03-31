@@ -8,6 +8,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
@@ -29,9 +30,10 @@ import com.androidstudy.andelamedmanager.data.model.User;
 import com.androidstudy.andelamedmanager.databinding.ActivityMainBinding;
 import com.androidstudy.andelamedmanager.settings.Settings;
 import com.androidstudy.andelamedmanager.ui.auth.ui.AuthActivity;
-import com.androidstudy.andelamedmanager.ui.main.adapter.DailyMedicineStatisticsAdapter;
 import com.androidstudy.andelamedmanager.ui.main.adapter.MainDashboardAdapter;
 import com.androidstudy.andelamedmanager.ui.main.viewmodel.MainViewModel;
+import com.androidstudy.andelamedmanager.ui.medicine.adapter.DailyMedicineAdapter;
+import com.androidstudy.andelamedmanager.ui.medicine.adapter.DailyMedicineStatisticsAdapter;
 import com.androidstudy.andelamedmanager.ui.medicine.ui.AddMedicineActivity;
 import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.MedicineViewModel;
 import com.androidstudy.andelamedmanager.util.CirclePagerIndicatorDecoration;
@@ -64,6 +66,8 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
     RecyclerView recyclerViewDailyMedicineStatistics;
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
+    @BindView(R.id.recyclerViewDailyMedicine)
+    RecyclerView recyclerViewDailyMedicine;
     @BindView(R.id.coordinator_layout)
     CoordinatorLayout coordinatorLayout;
     @BindView(R.id.text_empty)
@@ -73,14 +77,15 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
 
     Calendar calendar;
     SimpleDateFormat simpleDateFormat;
-    List<MenuView> menuViewList;
     User user;
+
     private ProfileDialog profileDialog;
     private SnackProgressBarManager snackProgressBarManager;
     private GoogleApiClient mGoogleApiClient;
 
-    private DailyMedicineStatisticsAdapter dailyMedicineStatisticsAdapter;
     private List<Medicine> medicineList;
+    private List<MenuView> menuViewList;
+    private List<Medicine> demoMedicineList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,6 +127,8 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
                 .setOverlayLayoutAlpha(0.6f);
 
         menuViewList = getMenuOptions();
+        demoMedicineList = getMedicineDemo();
+
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);
@@ -146,6 +153,26 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
 
         recyclerView.setAdapter(mainDashboardAdapter);
 
+        DailyMedicineAdapter dailyMedicineAdapter = new DailyMedicineAdapter(this, demoMedicineList, (v, position) -> {
+//                Farmer farmer = listOfFarmers.get(position);
+//                Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
+//                Bundle b = new Bundle();
+//
+//                b.putString("farmerId", farmer.getFarmerId());
+//                b.putString("farmerName", farmer.getFarmerName());
+//                b.putString("phoneNumber", farmer.getPhoneNumber());
+//                intent.putExtras(b);
+//                startActivity(intent);
+
+        });
+
+
+        recyclerViewDailyMedicine.setLayoutManager(new LinearLayoutManager(this,
+                LinearLayoutManager.VERTICAL, false));
+        recyclerViewDailyMedicine.addItemDecoration(new DividerItemDecoration(this,
+                DividerItemDecoration.VERTICAL));
+        recyclerViewDailyMedicine.setAdapter(dailyMedicineAdapter);
+
         MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
         medicineViewModel.getMedicineList().observe(this, medicines -> {
             if (MainActivity.this.medicineList == null) {
@@ -161,7 +188,7 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
             emptyFrame.setVisibility(View.VISIBLE);
         }
 
-        dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, medicineList, (v, position) -> {
+        DailyMedicineStatisticsAdapter dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, medicineList, (v, position) -> {
 //                Farmer farmer = listOfFarmers.get(position);
 //                Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
 //                Bundle b = new Bundle();
@@ -235,6 +262,15 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
         listViewItems.add(new MenuView(1, "Add Medicine", R.drawable.ic_add_medicine));
         listViewItems.add(new MenuView(3, "Reminders", R.drawable.ic_medicine_reminder));
         listViewItems.add(new MenuView(4, "Monthly Intake", R.drawable.ic_monthly_intake));
+        return listViewItems;
+    }
+
+    //Mock Data for UI Cards
+    private List<Medicine> getMedicineDemo() {
+        List<Medicine> listViewItems = new ArrayList<>();
+        listViewItems.add(new Medicine("Panadol", "This is a pain reliever", "2"));
+        listViewItems.add(new Medicine("Bruffen", "Helps to heal cold and flue", "4"));
+        listViewItems.add(new Medicine("Eno", "Fastest cure for bad stomach pains", "3"));
         return listViewItems;
     }
 

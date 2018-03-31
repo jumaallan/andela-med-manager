@@ -41,7 +41,7 @@
                 android:id="@+id/layout_empty"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_above="@+id/linearTwo"
+                android:layout_above="@+id/recyclerView"
                 android:background="?selectableItemBackground"
                 android:gravity="center"
                 android:orientation="vertical"
@@ -75,7 +75,7 @@
                 android:id="@+id/linearOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_above="@+id/linearTwo"
+                android:layout_above="@+id/recyclerView"
                 android:orientation="vertical">
 
                 <TextView
@@ -105,50 +105,34 @@
                     android:clipToPadding="false"
                     tools:listitem="@layout/row_daily_medicine_statistics" />
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recyclerViewDailyMedicine"
+                <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:clipToPadding="false"
-                    tools:listitem="@layout/row_daily_medicine" />
+                    android:layout_height="match_parent"
+                    card_view:cardCornerRadius="6dp"
+                    card_view:cardElevation="6dp"
+                    card_view:contentPadding="@dimen/card_view_padding">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerViewDailyMedicine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:clipToPadding="false"
+                        tools:listitem="@layout/row_daily_medicine" />
+
+                </android.support.v7.widget.CardView>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/linearTwo"
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:orientation="vertical">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="21dp"
-                    android:layout_marginRight="21dp"
-                    android:layout_marginTop="@dimen/margin_normal"
-                    android:alpha="0.6"
-                    android:background="@color/divider" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:fontFamily="@font/oxygen_bold"
-                    android:text="@string/select_activity"
-                    android:textSize="15sp" />
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/margin_normal"
-                    android:clipToPadding="false"
-                    tools:listitem="@layout/row_main_dashboard" />
-
-            </LinearLayout>
+                android:layout_marginTop="@dimen/margin_small"
+                android:clipToPadding="false"
+                tools:listitem="@layout/row_main_dashboard" />
 
         </RelativeLayout>
 

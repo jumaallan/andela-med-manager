@@ -11,9 +11,10 @@ public class Medicine {
     private String name;
     private String description;
     private String interval;
+//    private String pills;
+//    private boolean hasNotification;  //User can switch them on/off per Med
 //    private String startDate;
 //    private String endDate;
-
 
     public Medicine(String name, String description, String interval) {
         this.name = name;
