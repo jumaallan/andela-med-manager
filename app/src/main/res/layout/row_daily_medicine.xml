@@ -14,6 +14,7 @@
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
+            android:layout_marginStart="@dimen/margin_normal"
             android:contentDescription="@null"
             app:srcCompat="@drawable/ic_add_description" />
 
@@ -35,13 +36,28 @@
                     android:layout_height="wrap_content"
                     tools:text="Medicine Name" />
 
-                <TextView
-                    style="@style/rowHeader"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="50%"
-                    tools:text="Pills Ratio" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/rowHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50%"
+                        tools:text="Pills Ratio" />
+
+                    <ImageView
+                        android:id="@+id/icon_btc_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:contentDescription="@null"
+                        app:srcCompat="@drawable/ic_same" />
+
+                </LinearLayout>
 
             </RelativeLayout>
 

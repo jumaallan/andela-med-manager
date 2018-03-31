@@ -109,6 +109,8 @@
                     xmlns:tools="http://schemas.android.com/tools"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="4dp"
                     card_view:cardCornerRadius="4dp"
                     card_view:cardElevation="6dp"
@@ -129,7 +131,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="@dimen/padding_medium"
                                 android:layout_marginStart="@dimen/padding_normal"
-                                android:text="8:00 am"
+                                android:text="8:00 AM"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                             <ImageView
