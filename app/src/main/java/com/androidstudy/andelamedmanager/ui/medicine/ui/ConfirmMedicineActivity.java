@@ -72,9 +72,7 @@ public class ConfirmMedicineActivity extends ThemableActivity {
         /**
          * User is happy with the data :) Save :)
          */
-        buttonSaveMedicine.setOnClickListener(v -> {
-            saveMedicine();
-        });
+        buttonSaveMedicine.setOnClickListener(v -> saveMedicine());
     }
 
     private void saveMedicine() {
@@ -83,6 +81,7 @@ public class ConfirmMedicineActivity extends ThemableActivity {
                 description,
                 interval,
                 pills,
+                "0",
                 true,
                 startDate,
                 endDate

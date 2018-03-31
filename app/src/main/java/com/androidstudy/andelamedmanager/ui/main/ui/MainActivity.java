@@ -8,6 +8,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -74,6 +75,8 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
     TextView emptyText;
     @BindView(R.id.layout_empty)
     FrameLayout emptyFrame;
+    @BindView(R.id.cardMedDaily)
+    CardView cardMedDaily;
 
     Calendar calendar;
     SimpleDateFormat simpleDateFormat;
@@ -85,7 +88,6 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
 
     private List<Medicine> medicineList;
     private List<MenuView> menuViewList;
-    private List<Medicine> demoMedicineList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,7 +129,6 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
                 .setOverlayLayoutAlpha(0.6f);
 
         menuViewList = getMenuOptions();
-        demoMedicineList = getMedicineDemo();
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.item_offset);
@@ -153,26 +154,6 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
 
         recyclerView.setAdapter(mainDashboardAdapter);
 
-        DailyMedicineAdapter dailyMedicineAdapter = new DailyMedicineAdapter(this, demoMedicineList, (v, position) -> {
-//                Farmer farmer = listOfFarmers.get(position);
-//                Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
-//                Bundle b = new Bundle();
-//
-//                b.putString("farmerId", farmer.getFarmerId());
-//                b.putString("farmerName", farmer.getFarmerName());
-//                b.putString("phoneNumber", farmer.getPhoneNumber());
-//                intent.putExtras(b);
-//                startActivity(intent);
-
-        });
-
-
-        recyclerViewDailyMedicine.setLayoutManager(new LinearLayoutManager(this,
-                LinearLayoutManager.VERTICAL, false));
-        recyclerViewDailyMedicine.addItemDecoration(new DividerItemDecoration(this,
-                DividerItemDecoration.VERTICAL));
-        recyclerViewDailyMedicine.setAdapter(dailyMedicineAdapter);
-
         MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
         medicineViewModel.getMedicineList().observe(this, medicines -> {
             if (MainActivity.this.medicineList == null) {
@@ -183,12 +164,13 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
 
     public void setListData(final List<Medicine> medicineList) {
         this.medicineList = medicineList;
-
         if (medicineList.isEmpty()) {
             emptyFrame.setVisibility(View.VISIBLE);
-        }
+        } else {
 
-        DailyMedicineStatisticsAdapter dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, medicineList, (v, position) -> {
+            cardMedDaily.setVisibility(View.VISIBLE);
+
+            DailyMedicineStatisticsAdapter dailyMedicineStatisticsAdapter = new DailyMedicineStatisticsAdapter(this, medicineList, (v, position) -> {
 //                Farmer farmer = listOfFarmers.get(position);
 //                Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
 //                Bundle b = new Bundle();
@@ -199,16 +181,36 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
 //                intent.putExtras(b);
 //                startActivity(intent);
 
-        });
+            });
 
-        recyclerViewDailyMedicineStatistics.setLayoutManager(new LinearLayoutManager(this,
-                LinearLayoutManager.HORIZONTAL, false));
-        // add pager behavior
-        PagerSnapHelper snapHelper = new PagerSnapHelper();
-        snapHelper.attachToRecyclerView(recyclerViewDailyMedicineStatistics);
-        // pager indicator
-        recyclerViewDailyMedicineStatistics.addItemDecoration(new CirclePagerIndicatorDecoration());
-        recyclerViewDailyMedicineStatistics.setAdapter(dailyMedicineStatisticsAdapter);
+            recyclerViewDailyMedicineStatistics.setLayoutManager(new LinearLayoutManager(this,
+                    LinearLayoutManager.HORIZONTAL, false));
+            // add pager behavior
+            PagerSnapHelper snapHelper = new PagerSnapHelper();
+            snapHelper.attachToRecyclerView(recyclerViewDailyMedicineStatistics);
+            // pager indicator
+            recyclerViewDailyMedicineStatistics.addItemDecoration(new CirclePagerIndicatorDecoration());
+            recyclerViewDailyMedicineStatistics.setAdapter(dailyMedicineStatisticsAdapter);
+
+            DailyMedicineAdapter dailyMedicineAdapter = new DailyMedicineAdapter(this, medicineList, (v, position) -> {
+//                Farmer farmer = listOfFarmers.get(position);
+//                Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
+//                Bundle b = new Bundle();
+//
+//                b.putString("farmerId", farmer.getFarmerId());
+//                b.putString("farmerName", farmer.getFarmerName());
+//                b.putString("phoneNumber", farmer.getPhoneNumber());
+//                intent.putExtras(b);
+//                startActivity(intent);
+
+            });
+
+            recyclerViewDailyMedicine.setLayoutManager(new LinearLayoutManager(this,
+                    LinearLayoutManager.VERTICAL, false));
+            recyclerViewDailyMedicine.addItemDecoration(new DividerItemDecoration(this,
+                    DividerItemDecoration.VERTICAL));
+            recyclerViewDailyMedicine.setAdapter(dailyMedicineAdapter);
+        }
     }
 
     private void init() {
@@ -268,10 +270,10 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
     //Mock Data for UI Cards
     private List<Medicine> getMedicineDemo() {
         List<Medicine> listViewItems = new ArrayList<>();
-        listViewItems.add(new Medicine("Panadol", "This is a pain reliever", "2", "20", true, "", ""));
-        listViewItems.add(new Medicine("Bruffen", "Helps to heal cold and flue", "4", "20", true, "", ""));
-        listViewItems.add(new Medicine("Eno", "Fastest cure for bad stomach pains", "1", "20", true, "", ""));
-        listViewItems.add(new Medicine("Malaria Tabs", "Help to heal Malaria Disease", "3", "20", true, "", ""));
+        listViewItems.add(new Medicine("Panadol", "This is a pain reliever", "2", "20", "", true, "", ""));
+        listViewItems.add(new Medicine("Bruffen", "Helps to heal cold and flue", "4", "20", "", true, "", ""));
+        listViewItems.add(new Medicine("Eno", "Fastest cure for bad stomach pains", "1", "20", "", true, "", ""));
+        listViewItems.add(new Medicine("Malaria Tabs", "Help to heal Malaria Disease", "3", "20", "", true, "", ""));
         return listViewItems;
     }
 

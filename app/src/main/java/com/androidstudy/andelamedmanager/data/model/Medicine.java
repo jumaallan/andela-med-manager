@@ -12,15 +12,17 @@ public class Medicine {
     private String description;
     private String interval;
     private String pills;
+    private String pillsTaken;
     private boolean hasNotification;  //User can switch them on/off per Med
     private String startDate;
     private String endDate;
 
-    public Medicine(String name, String description, String interval, String pills, boolean hasNotification, String startDate, String endDate) {
+    public Medicine(String name, String description, String interval, String pills, String pillsTaken, boolean hasNotification, String startDate, String endDate) {
         this.name = name;
         this.description = description;
         this.interval = interval;
         this.pills = pills;
+        this.pillsTaken = pillsTaken;
         this.hasNotification = hasNotification;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -64,6 +66,14 @@ public class Medicine {
 
     public void setPills(String pills) {
         this.pills = pills;
+    }
+
+    public String getPillsTaken() {
+        return pillsTaken;
+    }
+
+    public void setPillsTaken(String pillsTaken) {
+        this.pillsTaken = pillsTaken;
     }
 
     public boolean isHasNotification() {
