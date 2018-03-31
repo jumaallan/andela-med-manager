@@ -74,6 +74,8 @@ dependencies {
     // State saving/restoring
     implementation deps.state.core
     annotationProcessor deps.state.processor
+    //Added Spark
+    implementation deps.spark
 
     //Testing !!!
     testImplementation 'junit:junit:4.12'

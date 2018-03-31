@@ -21,6 +21,7 @@ def versions = [
         espresso        : '3.0.1',
         snackProgressBar: '2.2',
         state           : '1.1.6',
+        spark           : '1.2.0',
 ]
 
 ext.versions = versions
@@ -75,5 +76,6 @@ ext.deps = [
                 core     : 'com.evernote:android-state:' + versions.state,
                 processor: 'com.evernote:android-state-processor:' + versions.state,
         ],
+        spark           : 'com.robinhood.spark:spark:' + versions.spark,
 
 ]
