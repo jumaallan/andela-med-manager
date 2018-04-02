@@ -38,4 +38,6 @@
     <string name="med_times"> Times</string>
     <string name="notification_title">Medicine</string>
     <string name="notification_text">Please Take Your Meds</string>
+    <string name="activity_monthly_intake">Monthly Intake</string>
+    <string name="activity_reminders">Reminders</string>
 </resources>
