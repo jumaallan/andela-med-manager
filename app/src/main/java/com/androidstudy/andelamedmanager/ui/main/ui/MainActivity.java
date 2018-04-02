@@ -248,9 +248,10 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
                 (this, NOTIFICATION_ID, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         long triggerTime = SystemClock.elapsedRealtime()
-                + AlarmManager.INTERVAL_FIFTEEN_MINUTES;
+                + 60 * 1000;
 
-        long repeatInterval = AlarmManager.INTERVAL_FIFTEEN_MINUTES;
+        long repeatInterval = 60 * 1000;
+//        long repeatInterval = AlarmManager.INTERVAL_FIFTEEN_MINUTES;
 
         //If the Toggle is turned on, set the repeating alarm with a 15 minute interval
         alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
