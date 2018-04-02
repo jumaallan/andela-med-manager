@@ -42,7 +42,9 @@ import com.androidstudy.andelamedmanager.ui.medicine.adapter.DailyMedicineAdapte
 import com.androidstudy.andelamedmanager.ui.medicine.adapter.DailyMedicineStatisticsAdapter;
 import com.androidstudy.andelamedmanager.ui.medicine.ui.AddMedicineActivity;
 import com.androidstudy.andelamedmanager.ui.medicine.ui.MedicineActivity;
+import com.androidstudy.andelamedmanager.ui.medicine.ui.MonthlyIntakeActivity;
 import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.MedicineViewModel;
+import com.androidstudy.andelamedmanager.ui.reminders.ui.ReminderActivity;
 import com.androidstudy.andelamedmanager.util.CirclePagerIndicatorDecoration;
 import com.androidstudy.andelamedmanager.util.ItemOffsetDecoration;
 import com.androidstudy.andelamedmanager.view.ProfileDialog;
@@ -152,8 +154,12 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
                     startActivity(addMedicine);
                     break;
                 case "Reminders":
+                    Intent reminders = new Intent(getApplicationContext(), ReminderActivity.class);
+                    startActivity(reminders);
                     break;
                 case "Monthly Intake":
+                    Intent monthlyIntake = new Intent(getApplicationContext(), MonthlyIntakeActivity.class);
+                    startActivity(monthlyIntake);
                     break;
                 default:
                     Toast.makeText(MainActivity.this, "Sorry, It's Under development", Toast.LENGTH_SHORT).show();
