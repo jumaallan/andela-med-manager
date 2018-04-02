@@ -40,4 +40,4 @@ This is how the Dashboard looks like:
 ### Sign Out
 The users can leave the app by signing out. This clears their user data as well as the app's data and customizations, if any!
 
-<img src="https://github.com/jumadeveloper/AndelaMedManager/blob/master/screenshots/andela-profile-card.png" width="425"/> 
+<img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-profile-card.png" width="425"/> 
