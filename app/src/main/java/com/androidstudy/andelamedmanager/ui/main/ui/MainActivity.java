@@ -1,5 +1,7 @@
 package com.androidstudy.andelamedmanager.ui.main.ui;
 
+import android.app.AlarmManager;
+import android.app.NotificationManager;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -90,6 +92,10 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
     private List<Medicine> medicineList;
     private List<MenuView> menuViewList;
 
+    private NotificationManager mNotificationManager;
+
+    private static final int NOTIFICATION_ID = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,6 +108,9 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
+
+        mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        final AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
