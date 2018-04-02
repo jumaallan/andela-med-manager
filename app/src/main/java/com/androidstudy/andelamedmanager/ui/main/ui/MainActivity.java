@@ -2,12 +2,14 @@ package com.androidstudy.andelamedmanager.ui.main.ui;
 
 import android.app.AlarmManager;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.CardView;
@@ -31,6 +33,7 @@ import com.androidstudy.andelamedmanager.data.model.Medicine;
 import com.androidstudy.andelamedmanager.data.model.MenuView;
 import com.androidstudy.andelamedmanager.data.model.User;
 import com.androidstudy.andelamedmanager.databinding.ActivityMainBinding;
+import com.androidstudy.andelamedmanager.notifications.AlarmReceiver;
 import com.androidstudy.andelamedmanager.settings.Settings;
 import com.androidstudy.andelamedmanager.ui.auth.ui.AuthActivity;
 import com.androidstudy.andelamedmanager.ui.main.adapter.MainDashboardAdapter;
@@ -64,6 +67,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends ThemableActivity implements GoogleApiClient.OnConnectionFailedListener {
 
+    private static final int NOTIFICATION_ID = 0;
     @BindView(R.id.date)
     TextView date;
     @BindView(R.id.recyclerViewDailyMedicineStatistics)
@@ -80,21 +84,16 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
     FrameLayout emptyFrame;
     @BindView(R.id.cardMedDaily)
     CardView cardMedDaily;
-
     Calendar calendar;
     SimpleDateFormat simpleDateFormat;
     User user;
-
+    AlarmManager alarmManager;
     private ProfileDialog profileDialog;
     private SnackProgressBarManager snackProgressBarManager;
     private GoogleApiClient mGoogleApiClient;
-
     private List<Medicine> medicineList;
     private List<MenuView> menuViewList;
-
     private NotificationManager mNotificationManager;
-
-    private static final int NOTIFICATION_ID = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +109,7 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
         ButterKnife.bind(this);
 
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        final AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -235,6 +234,32 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
 
     private void init() {
         emptyText.setText(Html.fromHtml(getString(R.string.text_empty_message)));
+
+        //Alarms
+        //Set up the Notification Broadcast Intent
+        Intent notifyIntent = new Intent(this, AlarmReceiver.class);
+
+        //Check if the Alarm is already set, and check the toggle accordingly
+        boolean alarmUp = (PendingIntent.getBroadcast(this, 0, notifyIntent,
+                PendingIntent.FLAG_NO_CREATE) != null);
+
+        //Set up the PendingIntent for the AlarmManager
+        final PendingIntent notifyPendingIntent = PendingIntent.getBroadcast
+                (this, NOTIFICATION_ID, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        long triggerTime = SystemClock.elapsedRealtime()
+                + AlarmManager.INTERVAL_FIFTEEN_MINUTES;
+
+        long repeatInterval = AlarmManager.INTERVAL_FIFTEEN_MINUTES;
+
+        //If the Toggle is turned on, set the repeating alarm with a 15 minute interval
+        alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                triggerTime, repeatInterval, notifyPendingIntent);
+
+        //TODO :: REwork this
+        //Cancel the alarm and notification if the alarm is turned off
+//        alarmManager.cancel(notifyPendingIntent);
+//        mNotificationManager.cancelAll();
     }
 
     @Override
