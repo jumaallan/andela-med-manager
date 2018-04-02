@@ -24,4 +24,20 @@ You will need the following to run this project:
 ### Login Page
 The User will the be presented with the Login Page, where they are required to authenticate themselves using Google Login
 
-<img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-google-auth.png" width="300"/> 
+<img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-google-auth.png" width="425"/>   <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-login-account.png" width="425"/> 
+
+### Main Dashboard
+After being authenticated, the use is redirected to the Main Dashboard Page, which is the Main Activity in our application. The Dashboard shows the app has no Meds added, and gives the User the options to:
+
+* Add New Medicine
+* See all the Scheduled Reminders for the day
+* See their Monthly Intake, with a Search Option 
+
+This is how the Dashboard looks like:
+
+<img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-main-dashboard-empty.png" width="425"/> 
+
+### Sign Out
+The users can leave the app by signing out. This clears their user data as well as the app's data and customizations, if any!
+
+<img src="https://github.com/jumadeveloper/AndelaMedManager/blob/master/screenshots/andela-profile-card.png" width="425"/> 
