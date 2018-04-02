@@ -51,7 +51,8 @@
             android:enabled="true"
             android:exported="false" />
 
-        <activity android:name=".ui.medicine.ui.MonthlyIntakeActivity"></activity>
+        <activity android:name=".ui.medicine.ui.MonthlyIntakeActivity" />
+        <activity android:name=".ui.reminders.ui.ReminderActivity"></activity>
     </application>
 
 </manifest>
