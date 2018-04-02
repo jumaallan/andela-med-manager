@@ -3,6 +3,9 @@
     package="com.androidstudy.andelamedmanager">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- permission required to automatically restart a
+      repeating alarm if the user reboots the device -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
         android:name=".MedManager"
@@ -42,7 +45,16 @@
         <activity
             android:name=".ui.main.ui.SettingsActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.medicine.ui.MedicineActivity"/>
+        <activity android:name=".ui.medicine.ui.MedicineActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Register the Alarm Receiver -->
+        <receiver android:name=".alarm.AlarmReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
