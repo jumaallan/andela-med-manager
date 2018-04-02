@@ -36,4 +36,6 @@
     <string name="medicine_statistics">Medicine Intake Statistics</string>
     <string name="medicine_info">Medicine Info</string>
     <string name="med_times"> Times</string>
+    <string name="notification_title">Medicine</string>
+    <string name="notification_text">Please Take Your Meds</string>
 </resources>
