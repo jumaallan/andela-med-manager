@@ -24,4 +24,4 @@ You will need the following to run this project:
 ### Login Page
 The User will the be presented with the Login Page, where they are required to authenticate themselves using Google Login
 
-****
+<img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-google-auth.png" width="300"/> 
