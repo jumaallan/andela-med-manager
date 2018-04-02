@@ -51,6 +51,7 @@
             android:enabled="true"
             android:exported="false" />
 
+        <activity android:name=".ui.medicine.ui.MonthlyIntakeActivity"></activity>
     </application>
 
 </manifest>
