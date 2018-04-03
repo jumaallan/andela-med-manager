@@ -166,6 +166,12 @@
         <item name="android:fontFamily">@font/oxygen_regular</item>
     </style>
 
+    <style name="rowBody">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/oxygen_regular</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="medInterval">
         <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">@font/oxygen_regular</item>

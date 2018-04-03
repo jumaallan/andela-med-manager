@@ -42,7 +42,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start|top"
-            android:layout_marginTop="@dimen/margin_normal" />
+            android:layout_marginTop="@dimen/margin_normal"
+            tools:listItem="@layout/row_monthly_intake"/>
 
     </LinearLayout>
 
