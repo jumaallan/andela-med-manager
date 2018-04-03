@@ -33,4 +33,5 @@
     <color name="keyNormal">#777</color>
     <color name="keyPressed">#222</color>
     <color name="grey_300">#E0E0E0</color>
+    <color name="grey">#DBD8D9</color>
 </resources>

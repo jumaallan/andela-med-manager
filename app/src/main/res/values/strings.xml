@@ -40,4 +40,5 @@
     <string name="notification_text">Please Take Your Meds</string>
     <string name="activity_monthly_intake">Monthly Intake</string>
     <string name="activity_reminders">Reminders</string>
+    <string name="search_medicine">Search For Medicine</string>
 </resources>
