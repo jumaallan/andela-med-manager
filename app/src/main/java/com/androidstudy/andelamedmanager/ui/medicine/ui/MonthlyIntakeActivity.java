@@ -1,5 +1,6 @@
 package com.androidstudy.andelamedmanager.ui.medicine.ui;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import com.androidstudy.andelamedmanager.base.ThemableActivity;
 import com.androidstudy.andelamedmanager.data.model.Medicine;
 import com.androidstudy.andelamedmanager.ui.main.adapter.CustomItemClickListener;
 import com.androidstudy.andelamedmanager.ui.medicine.adapter.MonthlyIntakeAdapter;
+import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.MedicineViewModel;
 
 import java.util.List;
 
@@ -48,6 +50,13 @@ public class MonthlyIntakeActivity extends ThemableActivity {
         setTitle(getResources().getString(R.string.activity_monthly_intake));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
+        medicineViewModel.getMedicineList().observe(this, medicines -> {
+            if (MonthlyIntakeActivity.this.medicineList == null) {
+                setListData(medicines);
+            }
+        });
 
         loadSearch();
     }
