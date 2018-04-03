@@ -61,7 +61,7 @@
         </FrameLayout>
 
         <android.support.v7.widget.SearchView
-            android:id="@+id/search_view_farms"
+            android:id="@+id/searchViewMedicine"
             style="@style/SearchView"
             android:layout_width="match_parent"
             android:layout_height="46dp"
