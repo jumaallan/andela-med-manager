@@ -41,4 +41,5 @@
     <string name="activity_monthly_intake">Monthly Intake</string>
     <string name="activity_reminders">Reminders</string>
     <string name="search_medicine">Search For Medicine</string>
+    <string name="text_empty_message_monthly_intake">No Medicine Records. Please Add on the Main Dashboard</string>
 </resources>
