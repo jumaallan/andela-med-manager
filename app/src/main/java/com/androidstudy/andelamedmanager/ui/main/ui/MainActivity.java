@@ -242,26 +242,26 @@ public class MainActivity extends ThemableActivity implements GoogleApiClient.On
         emptyText.setText(Html.fromHtml(getString(R.string.text_empty_message)));
 
         //Alarms
-        //Set up the Notification Broadcast Intent
-        Intent notifyIntent = new Intent(this, AlarmReceiver.class);
-
-        //Check if the Alarm is already set, and check the toggle accordingly
-        boolean alarmUp = (PendingIntent.getBroadcast(this, 0, notifyIntent,
-                PendingIntent.FLAG_NO_CREATE) != null);
-
-        //Set up the PendingIntent for the AlarmManager
-        final PendingIntent notifyPendingIntent = PendingIntent.getBroadcast
-                (this, NOTIFICATION_ID, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        long triggerTime = SystemClock.elapsedRealtime()
-                + 60 * 1000;
-
-        long repeatInterval = 60 * 1000;
-//        long repeatInterval = AlarmManager.INTERVAL_FIFTEEN_MINUTES;
-
-        //If the Toggle is turned on, set the repeating alarm with a 15 minute interval
-        alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
-                triggerTime, repeatInterval, notifyPendingIntent);
+//        //Set up the Notification Broadcast Intent
+//        Intent notifyIntent = new Intent(this, AlarmReceiver.class);
+//
+//        //Check if the Alarm is already set, and check the toggle accordingly
+//        boolean alarmUp = (PendingIntent.getBroadcast(this, 0, notifyIntent,
+//                PendingIntent.FLAG_NO_CREATE) != null);
+//
+//        //Set up the PendingIntent for the AlarmManager
+//        final PendingIntent notifyPendingIntent = PendingIntent.getBroadcast
+//                (this, NOTIFICATION_ID, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+//
+//        long triggerTime = SystemClock.elapsedRealtime()
+//                + 60 * 1000;
+//
+//        long repeatInterval = 60 * 1000;
+////        long repeatInterval = AlarmManager.INTERVAL_FIFTEEN_MINUTES;
+//
+//        //If the Toggle is turned on, set the repeating alarm with a 15 minute interval
+//        alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+//                triggerTime, repeatInterval, notifyPendingIntent);
 
         //TODO :: REwork this
         //Cancel the alarm and notification if the alarm is turned off
