@@ -32,12 +32,7 @@ public class MainDashboardAdapter extends RecyclerView.Adapter<MainDashboardAdap
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.row_main_dashboard, null);
         final MenuOptionsViewHolder mViewHolder = new MenuOptionsViewHolder(view);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onItemClick(v, mViewHolder.getPosition());
-            }
-        });
+        view.setOnClickListener(v -> listener.onItemClick(v, mViewHolder.getPosition()));
         return mViewHolder;
     }
 
@@ -53,11 +48,6 @@ public class MainDashboardAdapter extends RecyclerView.Adapter<MainDashboardAdap
     public int getItemCount() {
         return menuList.size();
     }
-
-   /* @Override
-    public void onClick(View v) {
-
-    }*/
 
     class MenuOptionsViewHolder extends RecyclerView.ViewHolder {
 
