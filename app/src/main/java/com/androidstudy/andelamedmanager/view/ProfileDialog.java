@@ -40,8 +40,6 @@ public class ProfileDialog extends DialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        Box<User> userBox = ((AndelaTrackChallenge) getActivity().getApplicationContext()).getBoxStore().boxFor(User.class);
-//        user = userBox.query().build().findFirst();
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         user = mainViewModel.getUserLiveData();
     }
