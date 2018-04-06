@@ -21,12 +21,11 @@ import butterknife.ButterKnife;
 
 public class MonthlyIntakeAdapter extends RecyclerView.Adapter<MonthlyIntakeAdapter.MedicineViewHolder> implements Filterable {
     CustomItemClickListener listener;
-    private Context context;
     private List<Medicine> medicineList;
     private List<Medicine> medicineListFiltered;
 
     public MonthlyIntakeAdapter(Context context, List<Medicine> medicineList, CustomItemClickListener listener) {
-        this.context = context;
+        Context context1 = context;
         this.medicineList = medicineList;
         this.medicineListFiltered = medicineList;
         this.listener = listener;
@@ -37,12 +36,7 @@ public class MonthlyIntakeAdapter extends RecyclerView.Adapter<MonthlyIntakeAdap
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.row_monthly_intake, parent, false);
         final MedicineViewHolder mViewHolder = new MedicineViewHolder(itemView);
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onItemClick(v, mViewHolder.getPosition());
-            }
-        });
+        itemView.setOnClickListener(v -> listener.onItemClick(v, mViewHolder.getPosition()));
         return mViewHolder;
     }
 

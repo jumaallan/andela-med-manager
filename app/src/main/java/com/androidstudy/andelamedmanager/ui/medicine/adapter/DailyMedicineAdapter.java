@@ -15,12 +15,9 @@ import com.androidstudy.andelamedmanager.R;
 import com.androidstudy.andelamedmanager.data.model.Medicine;
 import com.androidstudy.andelamedmanager.ui.main.adapter.CustomItemClickListener;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
