@@ -65,14 +65,13 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/textViewMedicinePercentage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/padding_medium"
-                    android:layout_marginStart="@dimen/padding_normal"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    tools:text="%" />
+                   <TextView
+                        android:id="@+id/textViewMedicinePercentage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        tools:text="%" />
 
             </LinearLayout>
 

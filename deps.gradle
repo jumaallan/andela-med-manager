@@ -22,6 +22,7 @@ def versions = [
         snackProgressBar: '2.2',
         state           : '1.1.6',
         spark           : '1.2.0',
+        circleProgress  : '1.1',
 ]
 
 ext.versions = versions
@@ -77,5 +78,6 @@ ext.deps = [
                 processor: 'com.evernote:android-state-processor:' + versions.state,
         ],
         spark           : 'com.robinhood.spark:spark:' + versions.spark,
+        circleProgress  : 'io.github.marktony:circle-progress-bar:' + versions.circleProgress,
 
 ]

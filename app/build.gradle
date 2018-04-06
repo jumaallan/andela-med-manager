@@ -76,6 +76,8 @@ dependencies {
     annotationProcessor deps.state.processor
     //Added Spark
     implementation deps.spark
+    //Circular Progress Bar
+    //implementation deps.circleProgress
 
     //Testing !!!
     testImplementation 'junit:junit:4.12'
