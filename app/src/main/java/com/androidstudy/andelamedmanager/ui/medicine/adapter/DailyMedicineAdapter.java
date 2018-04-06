@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.androidstudy.andelamedmanager.R;
@@ -93,8 +94,10 @@ public class DailyMedicineAdapter extends RecyclerView.Adapter<DailyMedicineAdap
         TextView textViewPercentage;
         @BindView(R.id.iconMedicineLevel)
         ImageView iconMedicineLevel;
+        @BindView(R.id.container)
+        LinearLayout container;
 
-        public MedicineHolder(View itemView) {
+        MedicineHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

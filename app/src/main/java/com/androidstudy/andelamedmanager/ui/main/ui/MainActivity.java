@@ -41,7 +41,7 @@ import com.androidstudy.andelamedmanager.ui.medicine.ui.AddMedicineActivity;
 import com.androidstudy.andelamedmanager.ui.medicine.ui.MedicineActivity;
 import com.androidstudy.andelamedmanager.ui.medicine.ui.MonthlyIntakeActivity;
 import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.MedicineViewModel;
-import com.androidstudy.andelamedmanager.ui.reminders.ui.ReminderActivity;
+import com.androidstudy.andelamedmanager.ui.medicine.ui.SearchMedsActivity;
 import com.androidstudy.andelamedmanager.util.CirclePagerIndicatorDecoration;
 import com.androidstudy.andelamedmanager.util.ItemOffsetDecoration;
 import com.androidstudy.andelamedmanager.view.ProfileDialog;
@@ -150,8 +150,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     Intent addMedicine = new Intent(getApplicationContext(), AddMedicineActivity.class);
                     startActivity(addMedicine);
                     break;
-                case "Reminders":
-                    Intent reminders = new Intent(getApplicationContext(), ReminderActivity.class);
+                case "Search Meds":
+                    Intent reminders = new Intent(getApplicationContext(), SearchMedsActivity.class);
                     startActivity(reminders);
                     break;
                 case "Monthly Intake":
@@ -311,8 +311,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private List<MenuView> getMenuOptions() {
         List<MenuView> listViewItems = new ArrayList<>();
         listViewItems.add(new MenuView(1, "Add Medicine", R.drawable.ic_add_medicine));
-        listViewItems.add(new MenuView(3, "Reminders", R.drawable.ic_medicine_reminder));
-        listViewItems.add(new MenuView(4, "Monthly Intake", R.drawable.ic_monthly_intake));
+        listViewItems.add(new MenuView(2, "Monthly Intake", R.drawable.ic_monthly_intake));
+        listViewItems.add(new MenuView(3, "Search Meds", R.drawable.ic_search));
         return listViewItems;
     }
 

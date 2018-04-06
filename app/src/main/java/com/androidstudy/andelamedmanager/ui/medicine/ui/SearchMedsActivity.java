@@ -1,4 +1,4 @@
-package com.androidstudy.andelamedmanager.ui.reminders.ui;
+package com.androidstudy.andelamedmanager.ui.medicine.ui;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import com.androidstudy.andelamedmanager.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ReminderActivity extends AppCompatActivity {
+public class SearchMedsActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -18,7 +18,7 @@ public class ReminderActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reminder);
+        setContentView(R.layout.activity_search_meds);
         ButterKnife.bind(this);
 
         Drawable upArrow = getResources().getDrawable(R.drawable.ic_chevron_left_white_24dp);
