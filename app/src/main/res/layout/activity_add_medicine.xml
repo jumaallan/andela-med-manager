@@ -46,7 +46,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="?selectableItemBackground"
                 android:padding="@dimen/padding_average"
                 app:srcCompat="@drawable/ic_add_medicine" />
 
@@ -88,7 +87,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="?selectableItemBackground"
                 android:padding="@dimen/padding_average"
                 app:srcCompat="@drawable/ic_add_description" />
 
@@ -213,7 +211,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="?selectableItemBackground"
                 android:padding="@dimen/padding_average"
                 app:srcCompat="@drawable/ic_add_time" />
 
@@ -252,7 +249,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="?selectableItemBackground"
                 android:padding="@dimen/padding_average"
                 app:srcCompat="@drawable/ic_add_time" />
 
