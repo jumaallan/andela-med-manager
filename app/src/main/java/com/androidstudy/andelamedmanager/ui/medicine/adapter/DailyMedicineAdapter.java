@@ -15,13 +15,20 @@ import com.androidstudy.andelamedmanager.R;
 import com.androidstudy.andelamedmanager.data.model.Medicine;
 import com.androidstudy.andelamedmanager.ui.main.adapter.CustomItemClickListener;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class DailyMedicineAdapter extends RecyclerView.Adapter<DailyMedicineAdapter.MedicineHolder> {
     CustomItemClickListener listener;
+    Calendar calendar;
+    SimpleDateFormat simpleDateFormat;
     private Context context;
     private List<Medicine> medicineList;
 
@@ -44,31 +51,34 @@ public class DailyMedicineAdapter extends RecyclerView.Adapter<DailyMedicineAdap
     public void onBindViewHolder(MedicineHolder holder, int position) {
         Medicine medicine = medicineList.get(position);
 
-        holder.textViewMedicineName.setText(medicine.getName());
-        //TODO :: CLEAN UP HERE
-        holder.textViewMedicineDescription.setText(String.valueOf(medicine.getStartDate()));
+        calendar = Calendar.getInstance();
 
-        if (medicine.getPillsTaken().equals("0")) {
-            //No Pill Taken
-            holder.textViewPercentage.setText(R.string.full_percentage);
-        } else {
-            //Someone has taken the pill! Calculate Percentage
-            int min = Integer.parseInt(medicine.getPillsTaken());
-            int max = Integer.parseInt(medicine.getPills());
-            if (min < max) {
-                int takePercentage = (Integer.parseInt(medicine.getPillsTaken()) * 100 / Integer.parseInt(medicine.getPills()));
-                holder.textViewPercentage.setText((100 - takePercentage) + context.getString(R.string.percentage));
+        if (medicine.getEndDate().after(calendar.getTime())) {
+            holder.textViewMedicineName.setText(medicine.getName());
+            holder.textViewMedicineDescription.setText(medicine.getDescription());
+
+            if (medicine.getPillsTaken().equals("0")) {
+                //No Pill Taken
+                holder.textViewPercentage.setText(R.string.full_percentage);
             } else {
-                holder.textViewPercentage.setText(R.string.zero_percentage);
+                //Someone has taken the pill! Calculate Percentage
+                int min = Integer.parseInt(medicine.getPillsTaken());
+                int max = Integer.parseInt(medicine.getPills());
+                if (min < max) {
+                    int takePercentage = (Integer.parseInt(medicine.getPillsTaken()) * 100 / Integer.parseInt(medicine.getPills()));
+                    holder.textViewPercentage.setText((100 - takePercentage) + context.getString(R.string.percentage));
+                } else {
+                    holder.textViewPercentage.setText(R.string.zero_percentage);
+                }
             }
-        }
 
-        if (!medicine.getPillsTaken().equals("0")) {
-            //Someone has taken the pill! Show Drop :)
-            Context context = holder.iconMedicineLevel.getContext();
-            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.ic_arrow_drop);
-            DrawableCompat.setTint(drawable, ContextCompat.getColor(context, R.color.color_price_drop));
-            holder.iconMedicineLevel.setImageDrawable(drawable);
+            if (!medicine.getPillsTaken().equals("0")) {
+                //Someone has taken the pill! Show Drop :)
+                Context context = holder.iconMedicineLevel.getContext();
+                Drawable drawable = ContextCompat.getDrawable(context, R.drawable.ic_arrow_drop);
+                DrawableCompat.setTint(drawable, ContextCompat.getColor(context, R.color.color_price_drop));
+                holder.iconMedicineLevel.setImageDrawable(drawable);
+            }
         }
     }
 
