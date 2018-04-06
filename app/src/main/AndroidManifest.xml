@@ -16,7 +16,7 @@
             android:name=".ui.main.ui.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.auth.ui.AuthActivity"
             android:screenOrientation="portrait"
@@ -30,15 +30,15 @@
         <activity
             android:name=".ui.medicine.ui.AddMedicineActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.medicine.ui.ConfirmMedicineActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.medicine.ui.MedicineSuccessActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.medicine.ui.MedicineActivity"
             android:screenOrientation="portrait" />
