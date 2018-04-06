@@ -3,6 +3,8 @@ package com.androidstudy.andelamedmanager.data.model;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+import java.util.Date;
+
 @Entity
 public class
 Medicine {
@@ -15,11 +17,11 @@ Medicine {
     private String pills;
     private String pillsTaken;
     private boolean hasNotification;  //User can switch them on/off per Med
-    private String startDate;
-    private String endDate;
+    private Date startDate;
+    private Date endDate;
     private int days;
 
-    public Medicine(String name, String description, String interval, String pills, String pillsTaken, boolean hasNotification, String startDate, String endDate, int days) {
+    public Medicine(String name, String description, String interval, String pills, String pillsTaken, boolean hasNotification, Date startDate, Date endDate, int days) {
         this.name = name;
         this.description = description;
         this.interval = interval;
@@ -87,19 +89,19 @@ Medicine {
         this.hasNotification = hasNotification;
     }
 
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 

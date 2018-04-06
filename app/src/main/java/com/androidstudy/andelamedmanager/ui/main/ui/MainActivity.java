@@ -193,8 +193,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 b.putString("pills", medicine.getPills());
                 b.putString("pillsTaken", medicine.getPillsTaken());
                 b.putBoolean("true", medicine.isHasNotification());
-                b.putString("startDate", medicine.getStartDate());
-                b.putString("endDate", medicine.getEndDate());
+                b.putString("startDate", String.valueOf(medicine.getStartDate()));
+                b.putString("endDate", String.valueOf(medicine.getEndDate()));
                 b.putInt("days", medicine.getDays());
                 intent.putExtras(b);
                 startActivity(intent);
@@ -220,8 +220,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 b.putString("pills", medicine.getPills());
                 b.putString("pillsTaken", medicine.getPillsTaken());
                 b.putBoolean("true", medicine.isHasNotification());
-                b.putString("startDate", medicine.getStartDate());
-                b.putString("endDate", medicine.getEndDate());
+                b.putString("startDate", String.valueOf(medicine.getStartDate()));
+                b.putString("endDate", String.valueOf(medicine.getEndDate()));
                 b.putInt("days", medicine.getDays());
                 intent.putExtras(b);
                 MainActivity.this.startActivity(intent);
@@ -300,7 +300,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             profileDialog.show(getSupportFragmentManager(), "profile");
             return true;
         } else if (id == R.id.action_settings) {
-           // startActivity(new Intent(this, SettingsActivity.class));
+            // startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
 
@@ -313,16 +313,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         listViewItems.add(new MenuView(1, "Add Medicine", R.drawable.ic_add_medicine));
         listViewItems.add(new MenuView(3, "Reminders", R.drawable.ic_medicine_reminder));
         listViewItems.add(new MenuView(4, "Monthly Intake", R.drawable.ic_monthly_intake));
-        return listViewItems;
-    }
-
-    //Mock Data for UI Cards
-    private List<Medicine> getMedicineDemo() {
-        List<Medicine> listViewItems = new ArrayList<>();
-        listViewItems.add(new Medicine("Panadol", "This is a pain reliever", "2", "20", "", true, "", "", 2));
-        listViewItems.add(new Medicine("Bruffen", "Helps to heal cold and flue", "4", "20", "", true, "", "", 7));
-        listViewItems.add(new Medicine("Eno", "Fastest cure for bad stomach pains", "1", "20", "", true, "", "", 15));
-        listViewItems.add(new Medicine("Malaria Tabs", "Help to heal Malaria Disease", "3", "20", "", true, "", "", 8));
         return listViewItems;
     }
 

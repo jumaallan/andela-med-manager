@@ -88,8 +88,8 @@ public class MonthlyIntakeActivity extends AppCompatActivity {
                 b.putString("pills", medicine.getPills());
                 b.putString("pillsTaken", medicine.getPillsTaken());
                 b.putBoolean("true", medicine.isHasNotification());
-                b.putString("startDate", medicine.getStartDate());
-                b.putString("endDate", medicine.getEndDate());
+                b.putString("startDate", String.valueOf(medicine.getStartDate()));
+                b.putString("endDate", String.valueOf(medicine.getEndDate()));
                 b.putInt("days", medicine.getDays());
                 intent.putExtras(b);
                 startActivity(intent);

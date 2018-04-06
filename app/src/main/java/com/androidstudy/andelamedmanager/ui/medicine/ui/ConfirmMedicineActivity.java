@@ -11,6 +11,11 @@ import com.androidstudy.andelamedmanager.R;
 import com.androidstudy.andelamedmanager.data.model.Medicine;
 import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.AddMedicineViewModel;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -31,7 +36,12 @@ public class ConfirmMedicineActivity extends AppCompatActivity {
     Button buttonEditMedicine;
     @BindView(R.id.buttonSaveMedicine)
     Button buttonSaveMedicine;
-    String name, description, interval, startDate, endDate, pills;
+    String name;
+    String description;
+    String interval;
+    String startDate;
+    String endDate;
+    String pills;
     int days;
     Bundle bundle;
     private AddMedicineViewModel addMedicineViewModel;
@@ -78,6 +88,23 @@ public class ConfirmMedicineActivity extends AppCompatActivity {
     }
 
     private void saveMedicine() {
+
+        Date dateStart = null;
+        Date dateEnd = null;
+
+        DateFormat srcDf = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+             dateStart = srcDf.parse(String.valueOf(startDate));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            dateEnd = srcDf.parse(String.valueOf(endDate));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         addMedicineViewModel.addMedicine(new Medicine(
                 name,
                 description,
@@ -85,8 +112,8 @@ public class ConfirmMedicineActivity extends AppCompatActivity {
                 pills,
                 "0",
                 true,
-                startDate,
-                endDate,
+                dateStart,
+                dateEnd,
                 days
         ));
 
