@@ -1,33 +1,11 @@
 <resources>
-    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
-
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/window_color</item>
-        <item name="cardColor">@color/card_color</item>
-        <item name="dividerColor">@color/divider</item>
-
-        <item name="homeAsUpIndicator">@drawable/ic_arrow_back</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
     </style>
-
-    <style name="AppTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
-
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/window_color_light</item>
-        <item name="cardColor">@color/card_color_light</item>
-        <item name="dividerColor">@color/divider</item>
-
-        <item name="homeAsUpIndicator">@drawable/ic_arrow_back</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
-    </style>
-
-    <style name="TransparentTheme" parent="@style/AppTheme" />
-
-    <style name="TransparentTheme.Light" parent="@style/AppTheme.Light" />
 
     <style name="ToggleButton" parent="@android:style/Widget.CompoundButton.RadioButton">
         <item name="android:foreground">?selectableItemBackground</item>

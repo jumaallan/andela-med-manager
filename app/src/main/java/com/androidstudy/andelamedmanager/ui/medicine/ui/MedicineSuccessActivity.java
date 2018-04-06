@@ -2,17 +2,17 @@ package com.androidstudy.andelamedmanager.ui.medicine.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.androidstudy.andelamedmanager.R;
-import com.androidstudy.andelamedmanager.base.ThemableActivity;
 import com.androidstudy.andelamedmanager.ui.main.ui.MainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MedicineSuccessActivity extends ThemableActivity {
+public class MedicineSuccessActivity extends AppCompatActivity {
 
     @BindView(R.id.textViewMedicineName)
     TextView textViewMedicineName;

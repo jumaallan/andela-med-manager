@@ -4,12 +4,12 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
 import com.androidstudy.andelamedmanager.R;
-import com.androidstudy.andelamedmanager.base.TransparentActivity;
 import com.androidstudy.andelamedmanager.data.model.User;
 import com.androidstudy.andelamedmanager.settings.Settings;
 import com.androidstudy.andelamedmanager.ui.auth.viewmodel.AddUserViewModel;
@@ -25,7 +25,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
-public class AuthActivity extends TransparentActivity implements GoogleApiClient.OnConnectionFailedListener {
+public class
+AuthActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private static final int RC_SIGN_IN = 121;
 

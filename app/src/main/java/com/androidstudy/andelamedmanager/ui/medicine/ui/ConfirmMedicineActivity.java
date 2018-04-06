@@ -3,18 +3,18 @@ package com.androidstudy.andelamedmanager.ui.medicine.ui;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.androidstudy.andelamedmanager.R;
-import com.androidstudy.andelamedmanager.base.ThemableActivity;
 import com.androidstudy.andelamedmanager.data.model.Medicine;
 import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.AddMedicineViewModel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ConfirmMedicineActivity extends ThemableActivity {
+public class ConfirmMedicineActivity extends AppCompatActivity {
 
     @BindView(R.id.textViewMedName)
     TextView textViewMedName;
@@ -83,7 +83,7 @@ public class ConfirmMedicineActivity extends ThemableActivity {
                 description,
                 interval,
                 pills,
-                "2",
+                "0",
                 true,
                 startDate,
                 endDate,

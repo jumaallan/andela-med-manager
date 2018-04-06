@@ -3,11 +3,11 @@ package com.androidstudy.andelamedmanager.ui.medicine.ui;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import com.androidstudy.andelamedmanager.R;
-import com.androidstudy.andelamedmanager.base.ThemableActivity;
 import com.androidstudy.andelamedmanager.data.model.MedData;
 import com.androidstudy.andelamedmanager.ui.medicine.adapter.MedicineSparkAdapter;
 import com.robinhood.spark.SparkView;
@@ -18,7 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MedicineActivity extends ThemableActivity {
+public class MedicineActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;

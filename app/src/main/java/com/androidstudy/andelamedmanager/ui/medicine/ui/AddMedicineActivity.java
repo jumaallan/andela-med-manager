@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,7 +13,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.androidstudy.andelamedmanager.R;
-import com.androidstudy.andelamedmanager.base.ThemableActivity;
 import com.androidstudy.andelamedmanager.ui.main.ui.MainActivity;
 
 import java.text.ParseException;
@@ -25,7 +25,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class AddMedicineActivity extends ThemableActivity {
+public class AddMedicineActivity extends AppCompatActivity {
 
     @BindView(R.id.editTextMedicineName)
     EditText editTextMedicineName;
