@@ -45,7 +45,7 @@ public class DailyMedicineAdapter extends RecyclerView.Adapter<DailyMedicineAdap
         Medicine medicine = medicineList.get(position);
 
         holder.textViewMedicineName.setText(medicine.getName());
-        holder.textViewMedicineDescription.setText(medicine.getDescription());
+        holder.textViewMedicineDescription.setText(medicine.getStartDate());
 
         if (medicine.getPillsTaken().equals("0")) {
             //No Pill Taken

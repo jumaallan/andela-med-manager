@@ -133,17 +133,16 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="@dimen/padding_medium"
                                 android:layout_marginStart="@dimen/padding_normal"
-                                android:text="8:00 AM"
+                                android:text="DAILY MEDICINE"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
-                                app:srcCompat="@drawable/ic_alarm" />
+                                app:srcCompat="@drawable/ic_med_small" />
 
                         </RelativeLayout>
-
 
                         <View
                             android:layout_width="match_parent"

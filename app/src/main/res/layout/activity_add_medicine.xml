@@ -54,7 +54,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/gws_color_material_grey_500" />
 
-            <EditText
+            <com.androidstudy.andelamedmanager.util.CustomEditText
                 android:id="@+id/editTextMedicineName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
