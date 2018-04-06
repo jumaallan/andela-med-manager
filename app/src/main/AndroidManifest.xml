@@ -40,9 +40,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ui.main.ui.SettingsActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ui.medicine.ui.MedicineActivity"
             android:screenOrientation="portrait" />
 
@@ -52,7 +49,7 @@
             android:exported="false" />
 
         <activity android:name=".ui.medicine.ui.MonthlyIntakeActivity" />
-        <activity android:name=".ui.reminders.ui.ReminderActivity"></activity>
+        <activity android:name=".ui.reminders.ui.ReminderActivity"/>
     </application>
 
 </manifest>

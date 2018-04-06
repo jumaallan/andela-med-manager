@@ -2,15 +2,15 @@ package com.androidstudy.andelamedmanager.ui.reminders.ui;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.androidstudy.andelamedmanager.R;
-import com.androidstudy.andelamedmanager.base.ThemableActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ReminderActivity extends ThemableActivity {
+public class ReminderActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
