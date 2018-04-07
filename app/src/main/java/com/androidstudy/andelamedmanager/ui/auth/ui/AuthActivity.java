@@ -25,8 +25,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
-public class
-AuthActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+public class AuthActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private static final int RC_SIGN_IN = 121;
 
@@ -67,9 +66,9 @@ AuthActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFa
     }
 
     private void googleSignIn() {
-        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient)
-         .requestScopes(Drive.SCOPE_FILE)
-                .requestScopes(Drive.SCOPE_APPFOLDER)
+        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+//         .requestScopes(Drive.SCOPE_FILE)
+//                .requestScopes(Drive.SCOPE_APPFOLDER)
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
