@@ -41,7 +41,6 @@ ext.deps = [
         ],
         room            : [
                 core               : 'android.arch.persistence.room:runtime:' + versions.room,
-//                compiler           : 'android.arch.lifecycle:common-java8:' + versions.roomJava8,
                 compiler           : 'android.arch.persistence.room:compiler:' + versions.room,
                 lifecycleExtensions: 'android.arch.lifecycle:extensions:' + versions.roomExtensions,
         ],
@@ -71,7 +70,8 @@ ext.deps = [
         circleImageView : 'de.hdodenhof:circleimageview:' + versions.cicleImageView,
         snackProgressBar: 'com.github.tingyik90:snackprogressbar:' + versions.snackProgressBar,
         playServices    : [
-                auth: 'com.google.android.gms:play-services-auth:' + versions.playServices,
+                auth : 'com.google.android.gms:play-services-auth:' + versions.playServices,
+                drive: 'com.google.android.gms:play-services-drive:' + versions.playServices,
         ],
         state           : [
                 core     : 'com.evernote:android-state:' + versions.state,

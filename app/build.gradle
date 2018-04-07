@@ -71,6 +71,8 @@ dependencies {
     implementation deps.snackProgressBar
     //Google Auth
     implementation deps.playServices.auth
+    //Google Drive Backup
+    implementation deps.playServices.drive
     // State saving/restoring
     implementation deps.state.core
     annotationProcessor deps.state.processor
