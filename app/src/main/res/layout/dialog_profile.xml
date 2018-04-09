@@ -5,71 +5,73 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_view_user"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/text_view_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/padding_medium"
-            android:layout_marginLeft="@dimen/padding_medium"
-            android:layout_marginRight="@dimen/padding_medium"
-            android:layout_marginStart="@dimen/padding_medium"
-            android:layout_marginTop="@dimen/padding_medium"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingEnd="@dimen/padding_normal"
-            android:paddingLeft="@dimen/padding_normal"
-            android:paddingRight="@dimen/padding_normal"
-            android:paddingStart="@dimen/padding_normal"
-            tools:ignore="UseCompoundDrawables">
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintStart_toEndOf="@+id/image_view_user"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Juma Allan" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/image_view_user"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="@dimen/padding_normal"
-                android:layout_marginTop="@dimen/padding_normal"
-                android:contentDescription="@null"
-                app:civ_border_color="@color/white"
-                app:civ_border_width="2dp"
-                tools:src="@tools:sample/avatars" />
-
-            <android.support.v4.widget.Space
-                android:layout_width="@dimen/padding_normal"
-                android:layout_height="0dp" />
-
-            <TextView
-                android:id="@+id/text_view_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingBottom="@dimen/padding_normal"
-                android:paddingTop="@dimen/padding_normal"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                tools:text="Juma Allan" />
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/text_view_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintStart_toStartOf="@+id/text_view_name"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_name"
+            tools:text="allanjuma@gmail.com" />
 
         <View
+            android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginTop="16dp"
             android:alpha="0.5"
-            android:background="@color/divider"/>
+            android:background="@color/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_user" />
 
         <TextView
             android:id="@+id/text_adv"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/padding_medium"
-            android:layout_marginLeft="@dimen/padding_medium"
-            android:layout_marginRight="@dimen/padding_medium"
-            android:layout_marginStart="@dimen/padding_medium"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:padding="@dimen/padding_normal"
             android:text="@string/text_sign_in_advantages"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-    </LinearLayout>
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.v4.widget.NestedScrollView>
