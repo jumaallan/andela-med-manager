@@ -24,7 +24,7 @@ public class SearchMedsActivity extends AppCompatActivity {
         Drawable upArrow = getResources().getDrawable(R.drawable.ic_chevron_left_white_24dp);
         toolbar.setNavigationIcon(upArrow);
         setSupportActionBar(toolbar);
-        setTitle(getResources().getString(R.string.activity_reminders));
+        setTitle(getResources().getString(R.string.activity_search_meds));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }

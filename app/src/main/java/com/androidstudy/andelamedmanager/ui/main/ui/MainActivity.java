@@ -151,8 +151,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     startActivity(addMedicine);
                     break;
                 case "Search Meds":
-                    Intent reminders = new Intent(getApplicationContext(), SearchMedsActivity.class);
-                    startActivity(reminders);
+                    Intent searchMeds = new Intent(getApplicationContext(), SearchMedsActivity.class);
+                    startActivity(searchMeds);
                     break;
                 case "Monthly Intake":
                     Intent monthlyIntake = new Intent(getApplicationContext(), MonthlyIntakeActivity.class);
