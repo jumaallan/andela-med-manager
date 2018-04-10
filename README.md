@@ -10,7 +10,9 @@ The app uses the **MVVM Architecture**. I have used the following components for
 * DataBinding -  minimize the glue code necessary to bind your application logic and layouts.
 
 
-> The final apk can be download here : <insert link>
+> The final apk can be downloaded here : <insert link>
+
+> The Balsamiq Mockup can be downloaded here : <insert link>
 
 ## Prerequisites
 You will need the following to run this project:
@@ -48,9 +50,14 @@ After adding Medicine, the dashboard takes a new look. Its able to show the Dail
 <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-med-one.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-med-two.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-med-three.png" width="280"/> 
 
 ### Medicine Details Page
-This page shows the Medicine Details in an easy to understand way! Just click on the Stats Card or the Daily Medicine List to see this Details Screen.
+This page shows the Medicine Details in an easy to understand way! Just click on the Stats Card or the Daily Medicine List to see this Details Screen. This screen will also show a Medicine Intake Graph.
 
 <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-stats-one.png" width="425"/>   <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-stats-two.png" width="425"/> 
+ 
+### Medicine Search Page
+This page shows all the Meds as list, but has a SearchView to allow a User to Search for a particular Medicine and see its details on the Medicine Details Page!
+
+<img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-search-one.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-search-two.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-search-three.png" width="280"/> 
  
 ### Sign Out
 The users can leave the app by signing out. This clears their user data as well as the app's data and customizations, if any!
@@ -63,3 +70,4 @@ The users can leave the app by signing out. This clears their user data as well 
 ### Undone Parts
 * Not done all Unit Tests
 * Alarm Manager not giving Notifications per Medicine
+* Medicine Intake Graph - Using Dummy Data at the moment
