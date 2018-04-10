@@ -59,6 +59,11 @@ This page shows all the Meds as list, but has a SearchView to allow a User to Se
 
 <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-search-one.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-search-two.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-search-three.png" width="280"/> 
  
+### Monthly Medicine Page
+This page shows the Monthly Medicine taken by the User. The page also allows navigation to the Medicine Details Page
+
+<img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-monthly-one.png" width="425"/>   <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-monthly-two.png" width="425"/> 
+
 ### Sign Out
 The users can leave the app by signing out. This clears their user data as well as the app's data and customizations, if any!
 

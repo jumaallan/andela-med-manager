@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="1dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginEnd="1dp"
+    android:layout_marginStart="1dp"
     android:clickable="true"
     android:focusable="true"
     app:cardPreventCornerOverlap="false"
@@ -75,16 +77,16 @@
                 android:id="@+id/textViewMedicineInterval"
                 style="@style/mainDashBoardCardActivit"
                 android:layout_width="0dp"
-                android:layout_weight=".5"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight=".5" />
 
             <TextView
                 style="@style/mainDashBoardCardActivit"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:textAlignment="textEnd"
                 android:text="View Details"
-                android:layout_height="wrap_content" />
+                android:textAlignment="textEnd" />
 
         </LinearLayout>
 
