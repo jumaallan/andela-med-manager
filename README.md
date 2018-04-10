@@ -37,6 +37,9 @@ This is how the Dashboard looks like (In Empty State - No Meds Added Yet):
 
 <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-main-dashboard-empty.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-monthly-meds-empty.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-search-meds-empty.png" width="280"/> 
 
+### Medicine [Add -> Confirm -> Save] 
+Aft
+
 ### Sign Out
 The users can leave the app by signing out. This clears their user data as well as the app's data and customizations, if any!
 
@@ -45,6 +48,6 @@ The users can leave the app by signing out. This clears their user data as well 
 ### Extra Features
 * Backup User and Medicine Data to their Google Drive - Not fully complete
 
-## Undone Parts
+### Undone Parts
 * Not done all Unit Tests
 * Alarm Manager not giving Notifications per Medicine
