@@ -48,8 +48,12 @@
             android:enabled="true"
             android:exported="false" />
 
-        <activity android:name=".ui.medicine.ui.MonthlyIntakeActivity" />
-        <activity android:name=".ui.medicine.ui.SearchMedsActivity"/>
+        <activity
+            android:name=".ui.medicine.ui.MonthlyIntakeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.medicine.ui.SearchMedsActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
