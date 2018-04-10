@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.androidstudy.med_manager", appContext.getPackageName());
+        assertEquals("com.androidstudy.andelamedmanager", appContext.getPackageName());
     }
 }
