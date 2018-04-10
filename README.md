@@ -33,9 +33,9 @@ After being authenticated, the use is redirected to the Main Dashboard Page, whi
 * See all the Scheduled Reminders for the day
 * See their Monthly Intake, with a Search Option 
 
-This is how the Dashboard looks like:
+This is how the Dashboard looks like (In Empty State - No Meds Added Yet):
 
-<img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-main-dashboard-empty.png" width="425"/> 
+<img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-main-dashboard-empty.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-monthly-meds-empty.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-search-meds-empty.png" width="280"/> 
 
 ### Sign Out
 The users can leave the app by signing out. This clears their user data as well as the app's data and customizations, if any!
