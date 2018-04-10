@@ -29,12 +29,12 @@
             app:srcCompat="@drawable/ic_medicine_medium" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewMedicineName"
             style="@style/mainDashBoardCardActivityFooter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            tools:text="Option Name" />
+            tools:text="Medicine Name" />
 
     </LinearLayout>
 

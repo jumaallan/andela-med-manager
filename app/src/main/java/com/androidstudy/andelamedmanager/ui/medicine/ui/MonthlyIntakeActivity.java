@@ -5,20 +5,17 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import com.androidstudy.andelamedmanager.R;
 import com.androidstudy.andelamedmanager.data.model.Medicine;
-import com.androidstudy.andelamedmanager.ui.main.adapter.CustomItemClickListener;
-import com.androidstudy.andelamedmanager.ui.medicine.adapter.MonthlyIntakeAdapter;
+import com.androidstudy.andelamedmanager.ui.medicine.adapter.MonthlyMedicineAdapter;
 import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.MedicineViewModel;
+import com.androidstudy.andelamedmanager.util.ItemOffsetDecoration;
 
 import java.util.List;
 
@@ -29,6 +26,13 @@ public class MonthlyIntakeActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.layout_empty)
+    FrameLayout emptyFrame;
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
+
+    private List<Medicine> medicineList;
+    private MonthlyMedicineAdapter monthlyMedicineAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +47,13 @@ public class MonthlyIntakeActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        //TODO::USE GRIDS
+        MedicineViewModel medicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
+        medicineViewModel.getMedicineList().observe(this, medicines -> {
+            if (MonthlyIntakeActivity.this.medicineList == null) {
+                setListData(medicines);
+            }
+        });
+
     }
 
     @Override
@@ -51,5 +61,37 @@ public class MonthlyIntakeActivity extends AppCompatActivity {
         finish();
         onBackPressed();
         return true;
+    }
+
+    public void setListData(final List<Medicine> medicineList) {
+        this.medicineList = medicineList;
+
+        if (medicineList.isEmpty()) {
+            emptyFrame.setVisibility(View.VISIBLE);
+        }
+
+        monthlyMedicineAdapter = new MonthlyMedicineAdapter(this, medicineList, (v, position) -> {
+            Medicine medicine = medicineList.get(position);
+            Intent intent = new Intent(getApplicationContext(), MedicineActivity.class);
+            Bundle b = new Bundle();
+
+            b.putString("name", medicine.getName());
+            b.putString("description", medicine.getDescription());
+            b.putString("interval", medicine.getInterval());
+            b.putString("pills", medicine.getPills());
+            b.putString("pillsTaken", medicine.getPillsTaken());
+            b.putBoolean("true", medicine.isHasNotification());
+            b.putString("startDate", String.valueOf(medicine.getStartDate()));
+            b.putString("endDate", String.valueOf(medicine.getEndDate()));
+            b.putInt("days", medicine.getDays());
+            intent.putExtras(b);
+            startActivity(intent);
+
+        });
+
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.item_offset);
+        recyclerView.addItemDecoration(itemDecoration);
+        recyclerView.setAdapter(monthlyMedicineAdapter);
     }
 }

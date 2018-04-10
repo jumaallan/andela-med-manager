@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 .setProgressBarColor(R.color.colorAccent)
                 .setOverlayLayoutAlpha(0.6f);
 
-        menuViewList = getMenuOptions();
+       // menuViewList = getMenuOptions();
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.item_offset);
