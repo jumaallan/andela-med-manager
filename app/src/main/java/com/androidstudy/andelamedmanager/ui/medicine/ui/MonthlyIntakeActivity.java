@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -15,7 +15,6 @@ import com.androidstudy.andelamedmanager.R;
 import com.androidstudy.andelamedmanager.data.model.Medicine;
 import com.androidstudy.andelamedmanager.ui.medicine.adapter.MonthlyMedicineAdapter;
 import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.MedicineViewModel;
-import com.androidstudy.andelamedmanager.util.ItemOffsetDecoration;
 
 import java.util.List;
 
@@ -32,7 +31,6 @@ public class MonthlyIntakeActivity extends AppCompatActivity {
     RecyclerView recyclerView;
 
     private List<Medicine> medicineList;
-    private MonthlyMedicineAdapter monthlyMedicineAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +68,7 @@ public class MonthlyIntakeActivity extends AppCompatActivity {
             emptyFrame.setVisibility(View.VISIBLE);
         }
 
-        monthlyMedicineAdapter = new MonthlyMedicineAdapter(this, medicineList, (v, position) -> {
+        MonthlyMedicineAdapter monthlyMedicineAdapter = new MonthlyMedicineAdapter(this, medicineList, (v, position) -> {
             Medicine medicine = medicineList.get(position);
             Intent intent = new Intent(getApplicationContext(), MedicineActivity.class);
             Bundle b = new Bundle();
@@ -89,9 +87,9 @@ public class MonthlyIntakeActivity extends AppCompatActivity {
 
         });
 
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
-        ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.item_offset);
-        recyclerView.addItemDecoration(itemDecoration);
+        LinearLayoutManager mLayoutManager =
+                new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(monthlyMedicineAdapter);
     }
 }
