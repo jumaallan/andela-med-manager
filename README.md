@@ -38,7 +38,9 @@ This is how the Dashboard looks like (In Empty State - No Meds Added Yet):
 <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-main-dashboard-empty.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-monthly-meds-empty.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-search-meds-empty.png" width="280"/> 
 
 ### Medicine [Add -> Confirm -> Save] 
-Aft
+The User is required to add Medicine, using the Add Medicine option on the Main Dashboard. This is how the process looks like :
+
+<img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-main-dashboard-empty.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-monthly-meds-empty.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-search-meds-empty.png" width="280"/> 
 
 ### Sign Out
 The users can leave the app by signing out. This clears their user data as well as the app's data and customizations, if any!
