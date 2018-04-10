@@ -30,8 +30,8 @@ The User will the be presented with the Login Page, where they are required to a
 After being authenticated, the use is redirected to the Main Dashboard Page, which is the Main Activity in our application. The Dashboard shows the app has no Meds added, and gives the User the options to:
 
 * Add New Medicine
-* See all the Scheduled Reminders for the day
-* See their Monthly Intake, with a Search Option 
+* See their Monthly Intake
+* See list of all Meds with Search Option
 
 This is how the Dashboard looks like (In Empty State - No Meds Added Yet):
 
@@ -48,7 +48,9 @@ After adding Medicine, the dashboard takes a new look. Its able to show the Dail
 <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-med-one.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-med-two.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-med-three.png" width="280"/> 
 
 ### Medicine Details Page
-This page shows the Medicine Details in an easy to understand way!
+This page shows the Medicine Details in an easy to understand way! Just click on the Stats Card or the Daily Medicine List to see this Details Screen.
+
+<img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-stats-one.png" width="425"/>   <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-stats-two.png" width="425"/> 
  
 ### Sign Out
 The users can leave the app by signing out. This clears their user data as well as the app's data and customizations, if any!
