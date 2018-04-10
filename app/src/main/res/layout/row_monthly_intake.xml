@@ -52,47 +52,10 @@
 
                 <TextView
                     style="@style/rowLabelBody"
-                    android:layout_width="0dp"
+                    android:id="@+id/textViewMedicineDescription"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight=".5"
-                    android:text="Medicine Intervals"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    style="@style/rowLabelBody"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".5"
-                    android:text="Medicine Percentage"
-                    android:textColor="@color/black" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="31dp"
-                android:layout_marginTop="@dimen/margin_small"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-                <TextView
-                    style="@style/rowBody"
-                    android:id="@+id/textViewMedicineInterval"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:layout_weight=".5"
-                    tools:text="3 Times" />
-
-                <TextView
-                    style="@style/rowBody"
-                    android:id="@+id/textViewMedicinePercentage"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:layout_weight=".5"
-                    tools:text="95 %" />
+                    android:text="Medicine Description" />
 
             </LinearLayout>
 

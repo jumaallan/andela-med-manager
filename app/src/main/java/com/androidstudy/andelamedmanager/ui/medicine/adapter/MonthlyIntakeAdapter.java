@@ -45,8 +45,7 @@ public class MonthlyIntakeAdapter extends RecyclerView.Adapter<MonthlyIntakeAdap
         final Medicine medicine = medicineListFiltered.get(position);
 
         holder.textViewMedicineName.setText(medicine.getName());
-        holder.textViewMedicineInterval.setText(medicine.getInterval());
-
+        holder.textViewMedicineDescription.setText(medicine.getDescription());
     }
 
     @Override
@@ -109,10 +108,8 @@ public class MonthlyIntakeAdapter extends RecyclerView.Adapter<MonthlyIntakeAdap
     class MedicineViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.textViewMedicineName)
         TextView textViewMedicineName;
-        @BindView(R.id.textViewMedicineInterval)
-        TextView textViewMedicineInterval;
-        @BindView(R.id.textViewMedicinePercentage)
-        TextView textViewMedicinePercentage;
+        @BindView(R.id.textViewMedicineDescription)
+        TextView textViewMedicineDescription;
 
         MedicineViewHolder(View view) {
             super(view);
