@@ -41,3 +41,10 @@ This is how the Dashboard looks like (In Empty State - No Meds Added Yet):
 The users can leave the app by signing out. This clears their user data as well as the app's data and customizations, if any!
 
 <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-profile-card.png" width="425"/> 
+
+### Extra Features
+* Backup User and Medicine Data to their Google Drive - Not fully complete
+
+## Undone Parts
+* Not done all Unit Tests
+* Alarm Manager not giving Notifications per Medicine
