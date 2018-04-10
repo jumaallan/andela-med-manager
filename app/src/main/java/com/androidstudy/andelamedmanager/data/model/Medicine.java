@@ -16,7 +16,7 @@ Medicine {
     private String interval;
     private String pills;
     private String pillsTaken;
-    private boolean hasNotification;  //User can switch them on/off per Med
+    private boolean hasNotification;  //User can switch them on/off per Med //Next Version - Hahaha, No time :)
     private Date startDate;
     private Date endDate;
     private int days;

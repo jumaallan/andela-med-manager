@@ -51,7 +51,6 @@ public class MonthlyIntakeActivity extends AppCompatActivity {
                 setListData(medicines);
             }
         });
-
     }
 
     @Override
