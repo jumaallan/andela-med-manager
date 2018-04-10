@@ -56,7 +56,7 @@
                 android:gravity="center_horizontal"
                 android:padding="@dimen/padding_normal"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                tools:text="@string/text_empty_message_monthly_intake" />
+                android:text="@string/text_empty_message_monthly_intake" />
 
         </FrameLayout>
 
