@@ -26,7 +26,7 @@ The User will the be presented with the Login Page, where they are required to a
 
 <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-google-auth.png" width="425"/>   <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-login-account.png" width="425"/> 
 
-### Main Dashboard
+### Main Dashboard 
 After being authenticated, the use is redirected to the Main Dashboard Page, which is the Main Activity in our application. The Dashboard shows the app has no Meds added, and gives the User the options to:
 
 * Add New Medicine
@@ -42,6 +42,14 @@ The User is required to add Medicine, using the Add Medicine option on the Main 
 
 <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-add-medicine.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-confirm-medicine.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-medicine-success.png" width="280"/> 
 
+### Main Dashboard with Medicine Data
+After adding Medicine, the dashboard takes a new look. Its able to show the Daily Medicine stats as swipe-able cards on the top and a list also below it. The app will also show what percentage of the Medicine is remaining with a RED DROP ARROW to show drop i.e The User is taking the Meds. A flat line is seen at 100% to show that the user has not taken any meds yet.
+
+<img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-med-one.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-med-two.png" width="280"/> <img src="https://github.com/jumaallan/AndelaMedManager/blob/master/screenshots/andela-med-three.png" width="280"/> 
+
+### Medicine Details Page
+This page shows the Medicine Details in an easy to understand way!
+ 
 ### Sign Out
 The users can leave the app by signing out. This clears their user data as well as the app's data and customizations, if any!
 
