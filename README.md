@@ -12,7 +12,7 @@ The app uses the **MVVM Architecture**. I have used the following components for
 
 > The final apk can be downloaded here : <insert link>
 
-> The Balsamiq Mockup can be downloaded here : <insert link>
+> The Balsamiq Mockup can be downloaded here : https://github.com/jumaallan/AndelaMedManager/tree/master/mockup/AndelaMedManager.bmpr
 
 ## Prerequisites
 You will need the following to run this project:
