@@ -40,8 +40,8 @@ import com.androidstudy.andelamedmanager.ui.medicine.adapter.DailyMedicineStatis
 import com.androidstudy.andelamedmanager.ui.medicine.ui.AddMedicineActivity;
 import com.androidstudy.andelamedmanager.ui.medicine.ui.MedicineActivity;
 import com.androidstudy.andelamedmanager.ui.medicine.ui.MonthlyIntakeActivity;
-import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.MedicineViewModel;
 import com.androidstudy.andelamedmanager.ui.medicine.ui.SearchMedsActivity;
+import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.MedicineViewModel;
 import com.androidstudy.andelamedmanager.util.CirclePagerIndicatorDecoration;
 import com.androidstudy.andelamedmanager.util.ItemOffsetDecoration;
 import com.androidstudy.andelamedmanager.view.ProfileDialog;
