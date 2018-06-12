@@ -36,6 +36,5 @@ public class AddMedicineViewModel extends AndroidViewModel {
             db.medicineDao().addMedicine(params[0]);
             return null;
         }
-
     }
 }
