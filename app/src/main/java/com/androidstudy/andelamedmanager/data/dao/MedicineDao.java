@@ -14,4 +14,7 @@ public abstract class MedicineDao implements BaseDao<Medicine> {
     //Get all Medicine
     @Query("SELECT * FROM Medicine")
     public abstract LiveData<List<Medicine>> getAllMedicine();
+
+    @Query("DELETE FROM Medicine")
+    public abstract void deleteAll();
 }

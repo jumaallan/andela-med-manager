@@ -10,4 +10,7 @@ public abstract class UserDao implements BaseDao<User> {
 
     @Query("SELECT * FROM User WHERE id = :id")
     public abstract User getUserById(String id);
+
+    @Query("DELETE FROM User")
+    public abstract void deleteALl();
 }
