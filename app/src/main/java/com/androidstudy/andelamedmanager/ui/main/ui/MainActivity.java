@@ -40,8 +40,8 @@ import com.androidstudy.andelamedmanager.ui.medicine.adapter.DailyMedicineStatis
 import com.androidstudy.andelamedmanager.ui.medicine.ui.AddMedicineActivity;
 import com.androidstudy.andelamedmanager.ui.medicine.ui.MedicineActivity;
 import com.androidstudy.andelamedmanager.ui.medicine.ui.MonthlyIntakeActivity;
-import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.MedicineViewModel;
 import com.androidstudy.andelamedmanager.ui.medicine.ui.SearchMedsActivity;
+import com.androidstudy.andelamedmanager.ui.medicine.viewmodel.MedicineViewModel;
 import com.androidstudy.andelamedmanager.util.CirclePagerIndicatorDecoration;
 import com.androidstudy.andelamedmanager.util.ItemOffsetDecoration;
 import com.androidstudy.andelamedmanager.view.ProfileDialog;
@@ -260,7 +260,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 //        alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
 //                triggerTime, repeatInterval, notifyPendingIntent);
 
-        //TODO :: REwork this
+        //TODO :: Rework this
         //Cancel the alarm and notification if the alarm is turned off
 //        alarmManager.cancel(notifyPendingIntent);
 //        mNotificationManager.cancelAll();
