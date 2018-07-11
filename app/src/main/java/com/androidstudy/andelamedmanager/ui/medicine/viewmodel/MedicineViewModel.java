@@ -10,7 +10,6 @@ import com.androidstudy.andelamedmanager.data.model.Medicine;
 
 import java.util.List;
 
-
 public class MedicineViewModel extends AndroidViewModel {
 
     private final LiveData<List<Medicine>> medicineList;
